@@ -1,0 +1,6 @@
+{
+  "name": "BCSC Consulting",
+  "description": "Business Consulting & Solutions Center official website with sticky animated navbar and responsive mobile toggle menu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
