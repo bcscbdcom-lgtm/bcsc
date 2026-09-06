@@ -101,6 +101,7 @@
             <li><a href="#credentials" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="credentials" data-i18n="nav.credentials">যোগ্যতা</a></li>
             <li><a href="#certificates" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="certificates" data-i18n="nav.certificates">সনদপত্র</a></li>
             <li><a href="#case-studies" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="case-studies" data-i18n="nav.caseStudies">কেস স্টাডি</a></li>
+            <li><a href="#faq" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="faq" data-i18n="nav.faq">এফএকিউ</a></li>
             <li><a href="#insights" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="insights" data-i18n="nav.blog">ব্লগ</a></li>
             <li><a href="#gallery" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="gallery" data-i18n="nav.gallery">গ্যালারি</a></li>
             <li><a href="#contact" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="contact" data-i18n="nav.contact">যোগাযোগ</a></li>
@@ -139,6 +140,7 @@
           <a href="#credentials" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.credentials">যোগ্যতা</a>
           <a href="#certificates" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.certificates">সনদপত্র</a>
           <a href="#case-studies" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.caseStudies">কেস স্টাডি</a>
+          <a href="#faq" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.faq">এফএকিউ</a>
           <a href="#insights" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.blog">ব্লগ</a>
           <a href="#gallery" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.gallery">গ্যালারি</a>
           <a href="#contact" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center bg-white/5 font-semibold" data-i18n="nav.contact">যোগাযোগ</a>
@@ -465,6 +467,27 @@
         </div>
       </section>
 
+      <!-- 11. FAQ ACCORDION SECTION -->
+      <section id="faq" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
+        <div class="max-w-[1000px] mx-auto">
+          <div class="text-center max-w-[750px] mx-auto mb-14">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="faq.eyebrow">
+              সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)
+            </span>
+            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="faq.title">
+              সাধারণ জিজ্ঞাসা ও পরিষ্কার উত্তর
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base" data-i18n="faq.subtitle">
+              ভ্যাট, ইনকাম ট্যাক্স, ট্রেড লাইসেন্স ও কোম্পানি গঠন সংক্রান্ত আপনার প্রয়োজনীয় প্রশ্নাবলীর উত্তর।
+            </p>
+          </div>
+
+          <div class="space-y-4" id="faq-container">
+            <!-- Rendered by Vanilla JS -->
+          </div>
+        </div>
+      </section>
+
       <!-- 11. BLOG / INSIGHTS -->
       <section id="insights" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
         <div class="max-w-[1240px] mx-auto">
@@ -660,6 +683,114 @@
               </a>
             </div>
 
+          </div>
+
+          <!-- INTERACTIVE CONTACT & CONSULTATION FORM WITH CLIENT-SIDE VALIDATION -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-lg mb-14 max-w-[900px] mx-auto">
+            <div class="text-center mb-8">
+              <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-2" data-i18n="form.eyebrow">
+                পরামর্শ বার্তা পাঠান
+              </span>
+              <h3 class="font-serif-heading text-2xl sm:text-3xl font-bold text-slate-900" data-i18n="form.title">
+                অনলাইন অ্যাপয়েন্টমেন্ট ও তথ্য অনুসন্ধান
+              </h3>
+              <p class="text-slate-600 text-xs sm:text-sm mt-1" data-i18n="form.subtitle">
+                নিচের ফর্মে আপনার তথ্য প্রদান করুন। আমাদের প্রতিনিধি খুব দ্রুত যোগাযোগ করবে।
+              </p>
+            </div>
+
+            <!-- SUCCESS CONFIRMATION BANNER (DISMISSIBLE) -->
+            <div id="contact-success-banner" class="hidden mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm flex items-start justify-between gap-3 shadow-sm">
+              <div class="flex items-start gap-3">
+                <span class="text-xl">✅</span>
+                <div>
+                  <h5 class="font-bold text-emerald-950 mb-0.5" data-i18n="form.successTitle">বার্তাটি সফলভাবে পাঠানো হয়েছে!</h5>
+                  <p class="text-xs sm:text-sm text-emerald-800" data-i18n="form.successMsg">
+                    ধন্যবাদ! বিসিএসসি টিম দ্রুত আপনার সাথে কল বা ইমেইলের মাধ্যমে যোগাযোগ করবে।
+                  </p>
+                </div>
+              </div>
+              <button type="button" onclick="dismissSuccessBanner()" class="text-emerald-700 hover:text-emerald-950 font-bold text-lg leading-none p-1 focus:outline-none" title="বন্ধ করুন">
+                ✕
+              </button>
+            </div>
+
+            <form id="bcsc-contact-form" class="space-y-5" novalidate onsubmit="handleFormSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <!-- Name Field -->
+                <div>
+                  <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.nameLabel">
+                    আপনার নাম <span class="text-red-500">*</span>
+                  </label>
+                  <input type="text" id="contact-name" name="name" onblur="validateName()" oninput="clearError('name')" placeholder="যেমন: শেখ মুহাম্মাদ সালিম" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
+                  <p id="err-name" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errName">
+                    অনুগ্রহ করে আপনার সঠিক নাম লিখুন (নূন্যতম ২ অক্ষর)।
+                  </p>
+                </div>
+
+                <!-- Phone Field -->
+                <div>
+                  <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.phoneLabel">
+                    মোবাইল নম্বর <span class="text-red-500">*</span>
+                  </label>
+                  <input type="tel" id="contact-phone" name="phone" onblur="validatePhone()" oninput="clearError('phone')" placeholder="যেমন: 01993306990" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
+                  <p id="err-phone" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errPhone">
+                    ১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <!-- Email Field -->
+                <div>
+                  <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.emailLabel">
+                    ইমেইল ঠিকানা <span class="text-red-500">*</span>
+                  </label>
+                  <input type="email" id="contact-email" name="email" onblur="validateEmail()" oninput="clearError('email')" placeholder="যেমন: bcscbd.com@gmail.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
+                  <p id="err-email" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errEmail">
+                    সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।
+                  </p>
+                </div>
+
+                <!-- Service Selector Dropdown -->
+                <div>
+                  <label for="contact-service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.serviceLabel">
+                    প্রয়োজনীয় সেবা নির্বাচন করুন <span class="text-red-500">*</span>
+                  </label>
+                  <select id="contact-service" name="service" onchange="validateService(); clearError('service')" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all bg-white">
+                    <option value="" disabled selected data-i18n="form.serviceDefault">সেবা নির্বাচন করুন...</option>
+                    <option value="Accounting" data-i18n="form.sOpt1">হিসাবরক্ষণ ও বুককিপিং</option>
+                    <option value="Tax" data-i18n="form.sOpt2">আয়কর রিটার্ন সেবা</option>
+                    <option value="VAT" data-i18n="form.sOpt3">ভ্যাট ও বিআইএন কনসালটেন্সি</option>
+                    <option value="RJSC" data-i18n="form.sOpt4">আরজেএসসি কোম্পানি গঠন</option>
+                    <option value="IRC_ERC" data-i18n="form.sOpt5">আইআরসি ও ইআরসি রেজিস্ট্রেশন</option>
+                    <option value="Other" data-i18n="form.sOpt6">অন্যান্য আইনি ও ব্যবসায়িক পরামর্শ</option>
+                  </select>
+                  <p id="err-service" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errService">
+                    অনুগ্রহ করে একটি সেবা নির্বাচন করুন।
+                  </p>
+                </div>
+              </div>
+
+              <!-- Message Field -->
+              <div>
+                <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.msgLabel">
+                  আপনার বার্তা / প্রশ্ন <span class="text-red-500">*</span>
+                </label>
+                <textarea id="contact-message" name="message" rows="4" onblur="validateMessage()" oninput="clearError('message')" placeholder="আপনার প্রয়োজন বা জিজ্ঞাসার সংক্ষেপ বিবরণ লিখুন..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all"></textarea>
+                <p id="err-message" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errMsg">
+                  অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2 text-center">
+                <button type="submit" class="w-full sm:w-auto bg-[#0b1d3a] hover:bg-[#153261] text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
+                  <span>✉️</span>
+                  <span data-i18n="form.submitBtn">বার্তা পাঠান</span>
+                </button>
+              </div>
+            </form>
           </div>
 
           <!-- 16. GOOGLE MAPS EMBED SECTION -->
@@ -888,7 +1019,34 @@
           'footer.s3': 'ভ্যাট ও বিআইএন কনসালটেন্সি',
           'footer.s4': 'আরজেএসসি কোম্পানি গঠন',
           'footer.rights': '© 2026 BCSC. সর্বস্বত্ব সংরক্ষিত।',
-          'floating.whatsAppChat': 'হোয়াটসঅ্যাপ'
+          'floating.whatsAppChat': 'হোয়াটসঅ্যাপ',
+          'nav.faq': 'এফএকিউ',
+          'faq.eyebrow': 'সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)',
+          'faq.title': 'সাধারণ জিজ্ঞাসা ও পরিষ্কার উত্তর',
+          'faq.subtitle': 'ভ্যাট, ইনকাম ট্যাক্স, ট্রেড লাইসেন্স ও কোম্পানি গঠন সংক্রান্ত আপনার প্রয়োজনীয় প্রশ্নাবলীর উত্তর।',
+          'form.eyebrow': 'পরামর্শ বার্তা পাঠান',
+          'form.title': 'অনলাইন অ্যাপয়েন্টমেন্ট ও তথ্য অনুসন্ধান',
+          'form.subtitle': 'নিচের ফর্মে আপনার তথ্য প্রদান করুন। আমাদের প্রতিনিধি খুব দ্রুত যোগাযোগ করবে।',
+          'form.successTitle': 'বার্তাটি সফলভাবে পাঠানো হয়েছে!',
+          'form.successMsg': 'ধন্যবাদ! বিসিএসসি টিম দ্রুত আপনার সাথে কল বা ইমেইলের মাধ্যমে যোগাযোগ করবে।',
+          'form.nameLabel': 'আপনার নাম',
+          'form.phoneLabel': 'মোবাইল নম্বর',
+          'form.emailLabel': 'ইমেইল ঠিকানা',
+          'form.serviceLabel': 'প্রয়োজনীয় সেবা নির্বাচন করুন',
+          'form.msgLabel': 'আপনার বার্তা / প্রশ্ন',
+          'form.serviceDefault': 'সেবা নির্বাচন করুন...',
+          'form.sOpt1': 'হিসাবরক্ষণ ও বুককিপিং',
+          'form.sOpt2': 'আয়কর রিটার্ন সেবা',
+          'form.sOpt3': 'ভ্যাট ও বিআইএন কনসালটেন্সি',
+          'form.sOpt4': 'আরজেএসসি কোম্পানি গঠন',
+          'form.sOpt5': 'আইআরসি ও ইআরসি রেজিস্ট্রেশন',
+          'form.sOpt6': 'অন্যান্য আইনি ও ব্যবসায়িক পরামর্শ',
+          'form.submitBtn': 'বার্তা পাঠান',
+          'form.errName': 'অনুগ্রহ করে আপনার সঠিক নাম লিখুন (নূন্যতম ২ অক্ষর)।',
+          'form.errPhone': '১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।',
+          'form.errEmail': 'সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।',
+          'form.errService': 'অনুগ্রহ করে একটি সেবা নির্বাচন করুন।',
+          'form.errMsg': 'অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।'
         },
         en: {
           'nav.slogan': 'Consult. Solve. Succeed.',
@@ -903,6 +1061,33 @@
           'nav.blog': 'Blog',
           'nav.gallery': 'Gallery',
           'nav.contact': 'Contact',
+          'nav.faq': 'FAQ',
+          'faq.eyebrow': 'FREQUENTLY ASKED QUESTIONS',
+          'faq.title': 'Clear Answers to Common Queries',
+          'faq.subtitle': 'Essential answers regarding VAT, income tax, trade license, and company formation.',
+          'form.eyebrow': 'SEND CONSULTATION MESSAGE',
+          'form.title': 'Online Appointment & Inquiry',
+          'form.subtitle': 'Please fill out the form below. Our representative will contact you promptly.',
+          'form.successTitle': 'Message Sent Successfully!',
+          'form.successMsg': 'Thank you! The BCSC team will reach out to you via phone or email shortly.',
+          'form.nameLabel': 'YOUR NAME',
+          'form.phoneLabel': 'MOBILE NUMBER',
+          'form.emailLabel': 'EMAIL ADDRESS',
+          'form.serviceLabel': 'SELECT REQUIRED SERVICE',
+          'form.msgLabel': 'YOUR MESSAGE / INQUIRY',
+          'form.serviceDefault': 'Select a service...',
+          'form.sOpt1': 'Accounting & Bookkeeping',
+          'form.sOpt2': 'Income Tax Return Services',
+          'form.sOpt3': 'VAT & BIN Consultancy',
+          'form.sOpt4': 'RJSC Company Formation',
+          'form.sOpt5': 'IRC & ERC Registration',
+          'form.sOpt6': 'Other Legal & Advisory Services',
+          'form.submitBtn': 'Send Message',
+          'form.errName': 'Please enter a valid name (minimum 2 characters).',
+          'form.errPhone': 'Please enter a valid 11-digit Bangladeshi mobile number (e.g., 01712345678 or +8801993306990).',
+          'form.errEmail': 'Please enter a valid email address (e.g., name@example.com).',
+          'form.errService': 'Please select a required service.',
+          'form.errMsg': 'Please enter your message (minimum 10 characters).',
           'nav.consultation': 'Book Consultation',
           'hero.eyebrow': 'TRUSTED BUSINESS SUPPORT ACROSS BANGLADESH',
           'hero.titleLine1': 'Business clarity.',
@@ -1130,6 +1315,93 @@
         { bn: { q: '"আমদানি সনদের (IRC) দ্রুত নবায়ন এবং কাস্টমস সংক্রান্ত যে কোনো জটিলতায় বিসিএসসি এক নির্ভরযোগ্য নাম।"', n: 'প্রোপাইটর', c: 'ট্রুমার্ক ইন্টারন্যাশনাল' }, en: { q: '"For rapid IRC renewals and customs documentation support, BCSC is our most trusted partner."', n: 'Proprietor', c: 'TrueMark International' } }
       ];
 
+      // 5 Interactive FAQ Questions & Answers
+      const faqData = [
+        {
+          id: 'faq-1',
+          bn: {
+            q: 'প্রশ্ন: মূসক ও ভ্যাট (VAT) নিবন্ধনে কী কী নথিপত্র প্রয়োজন হয়?',
+            a: 'উত্তর: ট্রেড লাইসেন্স, জাতীয় পরিচয়পত্র (NID), টিআইএন (e-TIN), ব্যাংক অ্যাকাউন্ট সার্টিফিকেট, এবং ব্যবসা প্রতিষ্ঠানের ভাড়ার চুক্তিপত্র বা মালিকানার প্রমাণপত্র।'
+          },
+          en: {
+            q: 'Q: What documents are required for VAT/BIN registration?',
+            a: 'A: Trade License, National ID (NID), e-TIN Certificate, Bank Account Solvency Certificate, and Office Rent Agreement or Ownership Proof.'
+          }
+        },
+        {
+          id: 'faq-2',
+          bn: {
+            q: 'প্রশ্ন: নতুন প্রাইভেট লিমিটেড কোম্পানি (RJSC) নিবন্ধনে কতদিন সময় লাগে?',
+            a: 'উত্তর: নামের ছাড়পত্র (Name Clearance), মেমোরেন্ডাম ও আর্টিকেলস প্রস্তুত এবং সরকারি ফি জমা দেওয়ার পর সাধারণত ৫ থেকে ৭ কর্মদিবসের মধ্যে নিগমন সনদ (Certificate of Incorporation) পাওয়া যায়।'
+          },
+          en: {
+            q: 'Q: How long does it take to incorporate a new Private Limited Company at RJSC?',
+            a: 'A: After obtaining Name Clearance, drafting Memorandum & Articles, and paying government fees, the Certificate of Incorporation is typically issued within 5 to 7 working days.'
+          }
+        },
+        {
+          id: 'faq-3',
+          bn: {
+            q: 'প্রশ্ন: বার্ষিক আয়কর রিটার্ন দাখিলের সঠিক নিয়ম ও শেষ সময়সীমা কখন?',
+            a: 'উত্তর: প্রতি বছর ৩০ নভেম্বর কর দিবসের (Tax Day) মধ্যে আয়কর রিটার্ন জমা দেওয়া বাধ্যতামূলক। বিসিএসসি সময়মতো ট্যাক্স ক্যালকুলেশন ও এনবিআরে যথানিয়মে ফাইলিং সম্পন্ন করে থাকে।'
+          },
+          en: {
+            q: 'Q: What is the official deadline and process for annual Income Tax return filing?',
+            a: 'A: Income tax returns must be filed by Tax Day (30th November each year). BCSC manages accurate tax calculations and timely NBR submission.'
+          }
+        },
+        {
+          id: 'faq-4',
+          bn: {
+            q: 'প্রশ্ন: নতুন ব্যবসার জন্য ব্যাংক লোন পেতে প্রজেক্ট প্রোফাইল কতটা জরুরি?',
+            a: 'উত্তর: যেকোনো ব্যাংক বা আর্থিক প্রতিষ্ঠান থেকে বিনিয়োগ বা ঋণ পেতে একটি বাস্তবসম্মত ফিজিবিলিটি স্টাডি ও আর্থিক প্রক্ষেপণসহ প্রকল্প প্রোফাইল তৈরি করা আবশ্যক।'
+          },
+          en: {
+            q: 'Q: How crucial is a Project Feasibility Profile for securing a bank loan?',
+            a: 'A: A realistic feasibility study with comprehensive financial projections is mandatory for banks and financial institutions to evaluate and approve loans or investments.'
+          }
+        },
+        {
+          id: 'faq-5',
+          bn: {
+            q: 'প্রশ্ন: বিসিএসসি কীভাবে একটি প্রতিষ্ঠানের হিসাব ও ভ্যাট অডিটের প্রস্তুতি সম্পন্ন করে?',
+            a: 'উত্তর: আমরা লেজার বুক, ক্রয়-বিক্রয় হিসাব (মূসক ৬.১ ও ৬.২), ভিডিএস কর্তন ও চালানপত্র যাচাই-বাছাই করে সংবিধিবদ্ধ নিরীক্ষার সম্পূর্ণ শিডিউল ফাইল প্রস্তুত করে দিই।'
+          },
+          en: {
+            q: 'Q: How does BCSC assist companies in preparing for statutory accounting & VAT audits?',
+            a: 'A: We reconcile ledger books, sales/purchase registers (Mushak 6.1 & 6.2), VDS deductions, and Treasury Challans to assemble an audit-ready schedule file.'
+          }
+        }
+      ];
+
+      let activeFaqId = 'faq-1';
+
+      function renderFaqAccordion() {
+        const container = document.getElementById('faq-container');
+        if (!container) return;
+        container.innerHTML = faqData.map((item) => {
+          const isOpen = activeFaqId === item.id;
+          return `
+            <div class="bg-white border ${isOpen ? 'border-[#d99b26] ring-1 ring-[#d99b26]/30' : 'border-slate-200'} rounded-xl transition-all shadow-sm overflow-hidden">
+              <button type="button" onclick="toggleFaq('${item.id}')" class="w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-[#1d4ed8] focus:outline-none transition-colors">
+                <span>${item[currentLang].q}</span>
+                <span class="w-7 h-7 rounded-full ${isOpen ? 'bg-[#d99b26] text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-extrabold text-base shrink-0 transition-all">
+                  ${isOpen ? '−' : '+'}
+                </span>
+              </button>
+              <div class="${isOpen ? 'block' : 'hidden'} px-5 sm:px-6 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                <p>${item[currentLang].a}</p>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function toggleFaq(id) {
+        activeFaqId = activeFaqId === id ? null : id;
+        renderFaqAccordion();
+      }
+
       // Render Dynamic Grids
       function renderDynamicContent() {
         // Services
@@ -1250,6 +1522,123 @@
             </div>
           </div>
         `).join('');
+
+        // FAQ Accordion
+        renderFaqAccordion();
+      }
+
+      // Client-side Form Validation Handlers
+      function validateName() {
+        const input = document.getElementById('contact-name');
+        const err = document.getElementById('err-name');
+        if (!input || !err) return false;
+        if (!input.value.trim() || input.value.trim().length < 2) {
+          err.classList.remove('hidden');
+          input.classList.add('border-red-500', 'bg-red-50/20');
+          return false;
+        }
+        err.classList.add('hidden');
+        input.classList.remove('border-red-500', 'bg-red-50/20');
+        input.classList.add('border-emerald-500');
+        return true;
+      }
+
+      function validatePhone() {
+        const input = document.getElementById('contact-phone');
+        const err = document.getElementById('err-phone');
+        if (!input || !err) return false;
+        const phoneRegex = /^(?:\+?8801|01)[3-9]\d{8}$/;
+        const cleanVal = input.value.trim().replace(/[\s-]/g, '');
+        if (!phoneRegex.test(cleanVal)) {
+          err.classList.remove('hidden');
+          input.classList.add('border-red-500', 'bg-red-50/20');
+          return false;
+        }
+        err.classList.add('hidden');
+        input.classList.remove('border-red-500', 'bg-red-50/20');
+        input.classList.add('border-emerald-500');
+        return true;
+      }
+
+      function validateEmail() {
+        const input = document.getElementById('contact-email');
+        const err = document.getElementById('err-email');
+        if (!input || !err) return false;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(input.value.trim())) {
+          err.classList.remove('hidden');
+          input.classList.add('border-red-500', 'bg-red-50/20');
+          return false;
+        }
+        err.classList.add('hidden');
+        input.classList.remove('border-red-500', 'bg-red-50/20');
+        input.classList.add('border-emerald-500');
+        return true;
+      }
+
+      function validateService() {
+        const input = document.getElementById('contact-service');
+        const err = document.getElementById('err-service');
+        if (!input || !err) return false;
+        if (!input.value) {
+          err.classList.remove('hidden');
+          input.classList.add('border-red-500', 'bg-red-50/20');
+          return false;
+        }
+        err.classList.add('hidden');
+        input.classList.remove('border-red-500', 'bg-red-50/20');
+        input.classList.add('border-emerald-500');
+        return true;
+      }
+
+      function validateMessage() {
+        const input = document.getElementById('contact-message');
+        const err = document.getElementById('err-message');
+        if (!input || !err) return false;
+        if (!input.value.trim() || input.value.trim().length < 10) {
+          err.classList.remove('hidden');
+          input.classList.add('border-red-500', 'bg-red-50/20');
+          return false;
+        }
+        err.classList.add('hidden');
+        input.classList.remove('border-red-500', 'bg-red-50/20');
+        input.classList.add('border-emerald-500');
+        return true;
+      }
+
+      function clearError(field) {
+        const err = document.getElementById('err-' + field);
+        const input = document.getElementById('contact-' + field);
+        if (err) err.classList.add('hidden');
+        if (input) input.classList.remove('border-red-500', 'bg-red-50/20');
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        const isNameValid = validateName();
+        const isPhoneValid = validatePhone();
+        const isEmailValid = validateEmail();
+        const isServiceValid = validateService();
+        const isMsgValid = validateMessage();
+
+        if (isNameValid && isPhoneValid && isEmailValid && isServiceValid && isMsgValid) {
+          const banner = document.getElementById('contact-success-banner');
+          if (banner) {
+            banner.classList.remove('hidden');
+            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          const form = document.getElementById('bcsc-contact-form');
+          if (form) form.reset();
+          ['name', 'phone', 'email', 'service', 'message'].forEach(f => {
+            const el = document.getElementById('contact-' + f);
+            if (el) el.classList.remove('border-emerald-500', 'border-red-500');
+          });
+        }
+      }
+
+      function dismissSuccessBanner() {
+        const banner = document.getElementById('contact-success-banner');
+        if (banner) banner.classList.add('hidden');
       }
 
       // Language Switcher Function
