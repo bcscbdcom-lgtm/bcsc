@@ -60,69 +60,332 @@
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0.5rem;
-        right: 0.5rem;
+        left: 0.35rem;
+        right: 0.35rem;
         height: 2.5px;
         background-color: #d99b26;
         border-radius: 9999px;
         box-shadow: 0 0 8px rgba(217, 155, 38, 0.8);
       }
+      @media (min-width: 900px) {
+        .desktop-nav-menu {
+          display: flex !important;
+        }
+        .mobile-menu-toggle {
+          display: none !important;
+        }
+        .mobile-nav-drawer {
+          display: none !important;
+        }
+      }
+      @media (max-width: 899px) {
+        .desktop-nav-menu {
+          display: none !important;
+        }
+        .mobile-menu-toggle {
+          display: flex !important;
+        }
+        .mobile-nav-drawer {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        .mobile-nav-drawer.is-open {
+          max-height: 520px;
+          opacity: 1;
+          padding-top: 1rem !important;
+          padding-bottom: 1rem !important;
+        }
+      }
+
+      /* Absolute visibility - Ensure no cards or sections are hidden by default animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .service-card-item,
+      .service-card-item.is-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        will-change: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Hero Vibrant Section - Royal Blue & Architectural Blueprint Grid */
+      .hero-vibrant {
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: 85vh !important;
+        padding: 120px 24px 80px !important;
+        background-color: #0c367d !important;
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(135deg, #0c367d 0%, #1652ba 100%) !important;
+        background-size: 36px 36px, 36px 36px, 100% 100% !important;
+      }
+
+      /* Ambient Glow Spheres */
+      .hero-vibrant::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -100px !important;
+        left: -100px !important;
+        width: 500px !important;
+        height: 500px !important;
+        background: radial-gradient(circle, rgba(37, 99, 235, 0.45) 0%, rgba(37, 99, 235, 0) 70%) !important;
+        filter: blur(100px) !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+      }
+
+      .hero-vibrant::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -100px !important;
+        right: -100px !important;
+        width: 450px !important;
+        height: 450px !important;
+        background: radial-gradient(circle, rgba(217, 155, 38, 0.25) 0%, rgba(217, 155, 38, 0) 70%) !important;
+        filter: blur(90px) !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+      }
+
+      /* Hero Content Typography */
+      .hero-vibrant .hero-headline {
+        color: #dfb15b !important;
+        font-family: 'Playfair Display', Georgia, serif !important;
+        font-size: clamp(2.5rem, 5vw, 4rem) !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .hero-vibrant .hero-subbody {
+        color: #f1f5f9 !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        max-width: 580px !important;
+        margin-bottom: 2rem !important;
+      }
+
+      /* Founder Glassmorphism Card Styling */
+      .founder-glass-card {
+        background: rgba(255, 255, 255, 0.07) !important;
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        backdrop-filter: blur(12px) !important;
+        border-radius: 20px !important;
+        padding: 24px !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35) !important;
+      }
+
+      .founder-photo-container {
+        background: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 100%) !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        height: 320px !important;
+        position: relative !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      }
+
+      .founder-photo {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+      }
+
+      /* Floating Stats Bar */
+      .floating-stats-wrapper {
+        position: relative !important;
+        z-index: 10 !important;
+        margin-top: -50px !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .floating-stats-card {
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 24px 16px !important;
+      }
+
+      .gold-stat-icon {
+        font-size: 1.75rem !important;
+        display: inline-block !important;
+        margin-bottom: 6px !important;
+        filter: drop-shadow(0 2px 4px rgba(217, 155, 38, 0.3)) !important;
+      }
+
+      /* Google Map Skeleton Pulse Animation */
+      .map-skeleton-box {
+        position: relative !important;
+        background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%) !important;
+        background-size: 200% 100% !important;
+        animation: mapPulse 1.5s ease-in-out infinite !important;
+      }
+      @keyframes mapPulse {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+      .map-skeleton-box.loaded {
+        animation: none !important;
+        background: transparent !important;
+      }
+
+      /* Error Micro-interaction Shake Animation */
+      @keyframes fieldShake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+      }
+
+      #err-name:not(:empty),
+      #err-phone:not(:empty),
+      #err-email:not(:empty),
+      #err-service:not(:empty),
+      #err-message:not(:empty) {
+        color: #dc2626 !important;
+        font-size: 0.85rem !important;
+        font-weight: 500 !important;
+        margin-top: 4px !important;
+        display: block !important;
+        animation: fieldShake 0.35s ease-in-out !important;
+      }
+
+      /* Input Focus Glow Ring */
+      #bcsc-contact-form input,
+      #bcsc-contact-form select,
+      #bcsc-contact-form textarea {
+        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+        outline: none !important;
+      }
+
+      #bcsc-contact-form input:focus,
+      #bcsc-contact-form select:focus,
+      #bcsc-contact-form textarea:focus {
+        border-color: #1d4ed8 !important;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2) !important;
+      }
     </style>
+
+    <!-- JSON-LD FAQ Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "মূসক ও ভ্যাট (VAT) নিবন্ধনে কী কী নথিপত্র প্রয়োজন হয়?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ট্রেড লাইসেন্স, জাতীয় পরিচয়পত্র (NID), টিআইএন (e-TIN), ব্যাংক অ্যাকাউন্ট সার্টিফিকেট, এবং ব্যবসা প্রতিষ্ঠানের ভাড়ার চুক্তিপত্র বা মালিকানার প্রমাণপত্র।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "নতুন প্রাইভেট লিমিটেড কোম্পানি (RJSC) নিবন্ধনে কতদিন সময় লাগে?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "নামের ছাড়পত্র (Name Clearance), মেমোরেন্ডাম ও আর্টিকেলস প্রস্তুত এবং সরকারি ফি জমা দেওয়ার পর সাধারণত ৫ থেকে ৭ কর্মদিবসের মধ্যে নিগমন সনদ (Certificate of Incorporation) পাওয়া যায়।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "বার্ষিক আয়কর রিটার্ন দাখিলের সঠিক নিয়ম ও শেষ সময়সীমা কখন?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "প্রতি বছর ৩০ নভেম্বর কর দিবসের (Tax Day) মধ্যে আয়কর রিটার্ন জমা দেওয়া বাধ্যতামূলক। বিসিএসসি সময়মতো ট্যাক্স ক্যালকুলেশন ও এনবিআরে যথানিয়মে ফাইলিং সম্পন্ন করে থাকে।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "নতুন ব্যবসার জন্য ব্যাংক লোন পেতে প্রজেক্ট প্রোফাইল কতটা জরুরি?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "যেকোনো ব্যাংক বা আর্থিক প্রতিষ্ঠান থেকে বিনিয়োগ বা ঋণ পেতে একটি বাস্তবসম্মত ফিজিবিলিটি স্টাডি ও আর্থিক প্রক্ষেপণসহ প্রকল্প প্রোফাইল তৈরি করা আবশ্যক।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "বিসিএসসি কীভাবে একটি প্রতিষ্ঠানের হিসাব ও ভ্যাট অডিটের প্রস্তুতি সম্পন্ন করে?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "আমরা লেজার বুক, ক্রয়-বিক্রয় হিসাব (মূসক ৬.১ ও ৬.২), ভিডিএস কর্তন ও চালানপত্র যাচাই-বাছাই করে সংবিধিবদ্ধ নিরীক্ষার সম্পূর্ণ শিডিউল ফাইল প্রস্তুত করে দিই।"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-white text-slate-900 antialiased selection:bg-amber-400 selection:text-slate-900">
 
     <!-- 1. STICKY HEADER / NAVBAR -->
     <header id="main-header" class="sticky top-0 z-50 bg-[#0b1d3a] border-b border-white/10 transition-all duration-300 py-3">
-      <div class="max-w-[1320px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
+      <div class="max-w-[1400px] mx-auto px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-3">
         
         <!-- Logo & Brand -->
-        <a href="#home" class="flex items-center gap-3 group shrink-0 focus:outline-none">
-          <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-10 h-10 rounded-lg flex items-center justify-center shadow-md group-hover:bg-[#b8821d] transition-colors">
+        <a href="#home" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 focus:outline-none">
+          <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center shadow-md group-hover:bg-[#b8821d] transition-colors">
             B
           </div>
           <div class="flex flex-col">
-            <span class="text-white text-lg sm:text-xl font-bold tracking-wide leading-tight group-hover:text-amber-300 transition-colors">
+            <span class="text-white text-base sm:text-xl font-bold tracking-wide leading-tight group-hover:text-amber-300 transition-colors">
               BCSC
             </span>
-            <span class="text-slate-300 text-[11px] sm:text-[12px] tracking-wide whitespace-nowrap font-medium" data-i18n="nav.slogan">
+            <span class="text-slate-300 text-[10.5px] sm:text-[12px] tracking-wide whitespace-nowrap font-medium" data-i18n="nav.slogan">
               পরামর্শ • সমাধান • সাফল্য
             </span>
           </div>
         </a>
 
-        <!-- Center Navigation Menu (11 Links) -->
-        <nav class="hidden xl:flex items-center" aria-label="Desktop Navigation">
-          <ul class="flex items-center gap-1 list-none m-0 p-0">
-            <li><a href="#home" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block active-nav-item" data-section="home" data-i18n="nav.home">হোম</a></li>
-            <li><a href="#about" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="about" data-i18n="nav.about">সম্পর্কে</a></li>
-            <li><a href="#founder" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="founder" data-i18n="nav.founder">প্রতিষ্ঠাতা</a></li>
-            <li><a href="#services" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="services" data-i18n="nav.services">সেবাসমূহ</a></li>
-            <li><a href="#industries" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="industries" data-i18n="nav.industries">শিল্পখাত</a></li>
-            <li><a href="#credentials" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="credentials" data-i18n="nav.credentials">যোগ্যতা</a></li>
-            <li><a href="#certificates" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="certificates" data-i18n="nav.certificates">সনদপত্র</a></li>
-            <li><a href="#case-studies" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="case-studies" data-i18n="nav.caseStudies">কেস স্টাডি</a></li>
-            <li><a href="#faq" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="faq" data-i18n="nav.faq">এফএকিউ</a></li>
-            <li><a href="#insights" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="insights" data-i18n="nav.blog">ব্লগ</a></li>
-            <li><a href="#gallery" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="gallery" data-i18n="nav.gallery">গ্যালারি</a></li>
-            <li><a href="#contact" class="nav-link relative px-2.5 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white transition-colors block" data-section="contact" data-i18n="nav.contact">যোগাযোগ</a></li>
+        <!-- Center Navigation Menu (Always visible on Desktop >= 900px) -->
+        <nav class="desktop-nav-menu items-center" aria-label="Desktop Navigation">
+          <ul class="flex items-center gap-0.5 min-[1000px]:gap-1 min-[1200px]:gap-2 list-none m-0 p-0">
+            <li><a href="#home" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block active-nav-item" data-section="home" data-i18n="nav.home">হোম</a></li>
+            <li><a href="#about" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="about" data-i18n="nav.about">সম্পর্কে</a></li>
+            <li><a href="#founder" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="founder" data-i18n="nav.founder">প্রতিষ্ঠাতা</a></li>
+            <li><a href="#services" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="services" data-i18n="nav.services">সেবাসমূহ</a></li>
+            <li><a href="#industries" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="industries" data-i18n="nav.industries">শিল্পখাত</a></li>
+            <li><a href="#credentials" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="credentials" data-i18n="nav.credentials">যোগ্যতা</a></li>
+            <li><a href="#certificates" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="certificates" data-i18n="nav.certificates">সনদপত্র</a></li>
+            <li><a href="#case-studies" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="case-studies" data-i18n="nav.caseStudies">কেস স্টাডি</a></li>
+            <li><a href="#faq" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="faq" data-i18n="nav.faq">এফএকিউ</a></li>
+            <li><a href="#insights" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="insights" data-i18n="nav.blog">ব্লগ</a></li>
+            <li><a href="#gallery" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="gallery" data-i18n="nav.gallery">গ্যালারি</a></li>
+            <li><a href="#contact" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="contact" data-i18n="nav.contact">যোগাযোগ</a></li>
           </ul>
         </nav>
 
         <!-- Right Header Action Buttons -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <!-- Language Switch Pill Button -->
-          <button type="button" id="lang-switch-btn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-amber-300 hover:text-amber-200 transition-all focus:outline-none focus:ring-2 focus:ring-[#d99b26]" title="ভাষা পরিবর্তন করুন">
+          <button type="button" id="lang-switch-btn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-amber-300 hover:text-amber-200 transition-all focus:outline-none focus:ring-2 focus:ring-[#d99b26]" title="ভাষা পরিবর্তন করুন">
             <span>🌐</span>
             <span id="lang-switch-text">EN</span>
           </button>
 
           <!-- Consultation CTA Button -->
-          <a href="#contact" class="bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] font-bold text-xs sm:text-sm px-3.5 sm:px-4 py-2 rounded-md transition-all shadow hover:shadow-amber-500/20 whitespace-nowrap" data-i18n="nav.consultation">
+          <a href="#contact" class="bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md transition-all shadow hover:shadow-amber-500/20 whitespace-nowrap" data-i18n="nav.consultation">
             পরামর্শ বুক করুন
           </a>
 
           <!-- Mobile Hamburger Toggle Button -->
-          <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
+          <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="mobile-menu-toggle p-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
             <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             <svg id="close-icon" class="w-6 h-6 hidden text-[#d99b26]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
@@ -130,7 +393,7 @@
       </div>
 
       <!-- Mobile Navigation Drawer -->
-      <div id="mobile-drawer" class="hidden xl:hidden bg-[#07152b] border-b border-white/15 px-4 py-4 shadow-2xl">
+      <div id="mobile-drawer" class="mobile-nav-drawer bg-[#07152b] border-b border-white/15 px-4 shadow-2xl">
         <div class="grid grid-cols-2 gap-2 mb-2">
           <a href="#home" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.home">হোম</a>
           <a href="#about" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.about">সম্পর্কে</a>
@@ -149,102 +412,120 @@
     </header>
 
     <main>
-      <!-- 2. HERO SECTION -->
-      <section id="home" class="relative text-white pt-16 pb-28 sm:pt-20 sm:pb-32 px-4 sm:px-6 bg-[radial-gradient(circle_at_85%_30%,#153261_0%,#0b1d3a_70%)]">
-        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- 2. HERO SECTION (Vibrant Royal Blue & Architectural Blueprint Grid) -->
+      <section id="home" class="hero-vibrant text-white">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
           
-          <!-- Hero Main Content -->
+          <!-- Hero Main Content (Left Column) -->
           <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase text-[#d99b26] mb-5 bg-[#d99b26]/10 border border-[#d99b26]/20 px-3.5 py-1.5 rounded-full">
+            <!-- Trust Pill -->
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase text-[#dfb15b] mb-5 bg-[#dfb15b]/10 border border-[#dfb15b]/25 px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
               <span>🛡️</span>
               <span data-i18n="hero.eyebrow">সমগ্র বাংলাদেশে বিশ্বস্ত ব্যবসায়িক ও আইনি সহায়তা</span>
             </div>
 
-            <h1 class="font-serif-heading text-3xl sm:text-5xl lg:text-[52px] font-bold leading-[1.2] mb-3 text-white tracking-tight">
+            <!-- Gold Serif Headline -->
+            <h1 class="hero-headline">
               <span data-i18n="hero.titleLine1">ব্যবসায়ে স্বচ্ছতা।</span><br />
               <span class="text-amber-300" data-i18n="hero.titleLine2">নিয়মানুবর্তিতা</span> <span data-i18n="hero.titleLine3">& আত্মবিশ্বাস।</span>
             </h1>
 
-            <div class="text-[#d99b26] font-bold text-xs sm:text-sm tracking-widest uppercase mb-5 font-mono" data-i18n="hero.pillars">
+            <div class="text-[#dfb15b] font-bold text-xs sm:text-sm tracking-widest uppercase mb-5 font-mono" data-i18n="hero.pillars">
               STRATEGY • SOLUTION • SUCCESS • GROWTH
             </div>
 
-            <p class="text-slate-200 text-base sm:text-lg max-w-[580px] mb-8 leading-relaxed font-normal" data-i18n="hero.description">
+            <!-- Crisp Off-White Sub-body -->
+            <p class="hero-subbody" data-i18n="hero.description">
               বিসিএসসি বাস্তবমুখী পেশাদার সেবার মাধ্যমে ব্যবসায় প্রতিষ্ঠানগুলোকে অ্যাকাউন্টিং, আয়কর, ভ্যাট, কোম্পানি সংক্রান্ত কাজ, আইনি বাধ্যবাধকতা এবং কৌশলগত প্রবৃদ্ধিতে সহযোগিতা করে।
             </p>
 
+            <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-8">
-              <a href="#contact" class="bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] font-bold text-sm sm:text-base px-7 py-3.5 rounded-md transition-all shadow-lg hover:shadow-amber-500/20" data-i18n="hero.bookBtn">
+              <a href="#contact" class="bg-[#dfb15b] hover:bg-[#c99a45] text-[#0b1d3a] font-bold text-sm sm:text-base px-7 py-3.5 rounded-lg transition-all shadow-lg hover:shadow-amber-500/20 active:scale-95" data-i18n="hero.bookBtn">
                 পরামর্শ বুক করুন
               </a>
-              <a href="#services" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-md transition-all" data-i18n="hero.exploreBtn">
+              <a href="#services" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-lg transition-all backdrop-blur-sm active:scale-95" data-i18n="hero.exploreBtn">
                 সেবাসমূহ দেখুন
               </a>
             </div>
 
-            <div class="flex flex-wrap items-center gap-5 sm:gap-6 text-xs sm:text-sm text-slate-300">
-              <span class="flex items-center gap-1.5 font-medium">
-                <span class="text-[#d99b26]">✓</span> <span data-i18n="hero.featureSince">২০০৯ সাল থেকে</span>
+            <!-- 3 Checkmark Badges -->
+            <div class="flex flex-wrap items-center gap-5 sm:gap-6 text-xs sm:text-sm text-slate-200">
+              <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
+                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureSince">২০০৯ সাল থেকে</span>
               </span>
-              <span class="flex items-center gap-1.5 font-medium">
-                <span class="text-[#d99b26]">✓</span> <span data-i18n="hero.featureCountry">সারাদেশে নির্ভরযোগ্য সেবা</span>
+              <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
+                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureCountry">সারাদেশে নির্ভরযোগ্য সেবা</span>
               </span>
-              <span class="flex items-center gap-1.5 font-medium">
-                <span class="text-[#d99b26]">✓</span> <span data-i18n="hero.featureSupport">দ্রুত ও দায়িত্বশীল সাপোর্ট</span>
+              <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
+                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureSupport">দ্রুত ও দায়িত্বশীল সাপোর্ট</span>
               </span>
             </div>
           </div>
 
-          <!-- Hero Founder Card Right -->
+          <!-- Hero Founder Glassmorphism Card (Right Column) -->
           <div class="lg:col-span-5">
-            <div class="bg-white/[0.05] border border-white/15 rounded-2xl p-6 backdrop-blur-md shadow-2xl">
-              <div class="bg-gradient-to-br from-[#1d4ed8] to-[#0f2c59] h-[250px] sm:h-[270px] rounded-xl flex flex-col items-center justify-center text-white/95 mb-5 relative overflow-hidden shadow-inner border border-white/10">
-                <div class="text-4xl sm:text-5xl font-extrabold tracking-widest text-white/90">
-                  SMS
-                </div>
-                <div class="absolute bottom-3 text-xs tracking-wider text-blue-200/80 font-mono">
-                  BCSC FOUNDER
+            <div class="founder-glass-card">
+              <!-- Photo Container -->
+              <div class="founder-photo-container mb-5 shadow-inner">
+                <img 
+                  src="sms-photo.png" 
+                  alt="Shaikh Muhammad Salim" 
+                  class="founder-photo" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                />
+                <div class="hidden w-full h-full bg-gradient-to-br from-[#1d4ed8] to-[#0f2c59] flex-col items-center justify-center text-white p-6 text-center">
+                  <div class="w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-3xl font-extrabold text-[#dfb15b] mb-3 shadow-md">
+                    SMS
+                  </div>
+                  <span class="text-lg font-bold text-white">শেখ মুহাম্মাদ সালিম</span>
+                  <span class="text-xs text-blue-200 mt-1 font-mono">Shaikh Muhammad Salim</span>
                 </div>
               </div>
 
-              <div>
+              <!-- Founder Profile Text -->
+              <div class="text-left">
                 <span class="text-[11px] uppercase tracking-wider text-slate-300 font-bold block mb-1" data-i18n="hero.founderBadge">
                   প্রতিষ্ঠাতা ও প্রধান পরামর্শক
                 </span>
-                <h3 class="text-2xl font-bold font-sans text-white mb-1.5" data-i18n="hero.founderName">
+                <h3 class="text-xl sm:text-2xl font-bold font-sans text-white mb-1.5" data-i18n="hero.founderName">
                   শেখ মুহাম্মাদ সালিম
                 </h3>
-                <p class="text-sm text-blue-300 font-semibold" data-i18n="hero.founderTitle">
-                  RAT (ICAB) | MBA | M.Com | CMA (Inter)
+                <p class="text-xs sm:text-sm text-amber-300 font-semibold leading-relaxed" data-i18n="hero.founderTitle">
+                  RAT (ICAB) | CA (PL) | MBA | M.Com | CMA (Inter)
                 </p>
               </div>
             </div>
           </div>
 
         </div>
-      </section>
 
-      <!-- 3. FLOATING STATS BAR (-60px overlap) -->
-      <div class="max-w-[1180px] mx-auto -mt-14 sm:-mt-16 relative z-10 px-4">
-        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100 p-6 sm:p-8">
-          <div class="text-center px-3 pb-4 md:pb-0">
-            <div class="text-3xl sm:text-4xl font-extrabold text-[#1d4ed8] leading-tight mb-1" data-i18n="stats.expNum">১৬+</div>
-            <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.expLabel">বছরের পেশাদার অভিজ্ঞতা</div>
-          </div>
-          <div class="text-center px-3 pb-4 md:pb-0">
-            <div class="text-3xl sm:text-4xl font-extrabold text-[#1d4ed8] leading-tight mb-1" data-i18n="stats.clientsNum">১০০+</div>
-            <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.clientsLabel">ব্যবসায়িক ক্লায়েন্ট</div>
-          </div>
-          <div class="text-center px-3 pt-4 md:pt-0">
-            <div class="text-3xl sm:text-4xl font-extrabold text-[#1d4ed8] leading-tight mb-1" data-i18n="stats.projectsNum">৫০০+</div>
-            <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.projectsLabel">সম্পন্ন প্রকল্প</div>
-          </div>
-          <div class="text-center px-3 pt-4 md:pt-0">
-            <div class="text-3xl sm:text-4xl font-extrabold text-[#1d4ed8] leading-tight mb-1" data-i18n="stats.supportNum">২৪/৭</div>
-            <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.supportLabel">ক্লায়েন্ট সাপোর্ট</div>
+        <!-- Floating Stats Bar Container Inside Section Bottom -->
+        <div class="floating-stats-wrapper max-w-[1180px] mx-auto mt-12 sm:mt-16">
+          <div class="floating-stats-card grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100 p-6 sm:p-8">
+            <div class="text-center px-3 pb-4 md:pb-0">
+              <span class="gold-stat-icon">📅</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.expNum">১৬+</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.expLabel">বছরের পেশাদার অভিজ্ঞতা</div>
+            </div>
+            <div class="text-center px-3 pb-4 md:pb-0">
+              <span class="gold-stat-icon">🏢</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.clientsNum">১০০+</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.clientsLabel">ব্যবসায়িক ক্লায়েন্ট</div>
+            </div>
+            <div class="text-center px-3 pt-4 md:pt-0">
+              <span class="gold-stat-icon">📋</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.projectsNum">৫০০+</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.projectsLabel">সম্পন্ন প্রকল্প</div>
+            </div>
+            <div class="text-center px-3 pt-4 md:pt-0">
+              <span class="gold-stat-icon">🎧</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.supportNum">২৪/৭</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.supportLabel">ক্লায়েন্ট সাপোর্ট</div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- 4. ABOUT SECTION -->
       <section id="about" class="py-20 sm:py-24 px-4 sm:px-6">
@@ -596,6 +877,16 @@
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="contact.title">
               আপনার ব্যবসার প্রয়োজনে সরাসরি কথা বলুন
             </h2>
+            <!-- ESTIMATED RESPONSE TIME WIDGET (DIRECTLY BELOW TITLE) -->
+            <div class="mt-2.5 mb-4 flex items-center justify-center">
+              <div class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full shadow-xs">
+                <span class="relative flex h-2.5 w-2.5 shrink-0">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span data-i18n="contact.responseTime">সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়</span>
+              </div>
+            </div>
             <p class="text-slate-600 text-base" data-i18n="contact.subtitle">
               অ্যাকাউন্টিং, আয়কর, ভ্যাট, কোম্পানি গঠন, রেজিস্ট্রেশন ও আইনি সেবার জন্য আমাদের সাথে যোগাযোগ করুন।
             </p>
@@ -618,9 +909,6 @@
                 </a>
                 <a href="tel:+8801714545568" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1d4ed8] block transition-colors">
                   +880 1714-545568
-                </a>
-                <a href="tel:+8801777086888" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1d4ed8] block transition-colors">
-                  +880 1777-086888
                 </a>
               </div>
             </div>
@@ -662,9 +950,15 @@
               <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-3" data-i18n="contact.khulnaAddr">
                 ২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০
               </p>
-              <a href="https://maps.google.com/?q=Azad+Laundry+Mor+Khulna" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
-                গুগল ম্যাপে দেখুন ↗
-              </a>
+              <div class="flex items-center gap-3 flex-wrap">
+                <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
+                  📍 গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                </a>
+                <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                  <span>📋</span>
+                  <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                </button>
+              </div>
             </div>
 
             <!-- Card 5: DHAKA OFFICE -->
@@ -676,11 +970,17 @@
                 ঢাকা অফিস
               </span>
               <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-3" data-i18n="contact.dhakaAddr">
-                ৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা
+                ৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০
               </p>
-              <a href="https://maps.google.com/?q=Pritom+Jaman+Tower+Paltan+Dhaka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
-                গুগল ম্যাপে দেখুন ↗
-              </a>
+              <div class="flex items-center gap-3 flex-wrap">
+                <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
+                  📍 গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                </a>
+                <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                  <span>📋</span>
+                  <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -697,6 +997,13 @@
               <p class="text-slate-600 text-xs sm:text-sm mt-1" data-i18n="form.subtitle">
                 নিচের ফর্মে আপনার তথ্য প্রদান করুন। আমাদের প্রতিনিধি খুব দ্রুত যোগাযোগ করবে।
               </p>
+              <div class="mt-3 inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow-2xs">
+                <span class="relative flex h-2 w-2 shrink-0">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span data-i18n="form.responseTime">সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়</span>
+              </div>
             </div>
 
             <!-- SUCCESS CONFIRMATION BANNER (DISMISSIBLE) -->
@@ -722,10 +1029,8 @@
                   <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.nameLabel">
                     আপনার নাম <span class="text-red-500">*</span>
                   </label>
-                  <input type="text" id="contact-name" name="name" onblur="validateName()" oninput="clearError('name')" placeholder="যেমন: শেখ মুহাম্মাদ সালিম" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
-                  <p id="err-name" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errName">
-                    অনুগ্রহ করে আপনার সঠিক নাম লিখুন (নূন্যতম ২ অক্ষর)।
-                  </p>
+                  <input type="text" id="contact-name" name="name" onblur="validateName()" oninput="clearError('name')" placeholder="যেমন: শেখ মুহাম্মাদ সালিম" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <p id="err-name"></p>
                 </div>
 
                 <!-- Phone Field -->
@@ -733,10 +1038,8 @@
                   <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.phoneLabel">
                     মোবাইল নম্বর <span class="text-red-500">*</span>
                   </label>
-                  <input type="tel" id="contact-phone" name="phone" onblur="validatePhone()" oninput="clearError('phone')" placeholder="যেমন: 01993306990" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
-                  <p id="err-phone" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errPhone">
-                    ১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।
-                  </p>
+                  <input type="tel" id="contact-phone" name="phone" onblur="validatePhone()" oninput="clearError('phone')" placeholder="যেমন: 01993306990" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <p id="err-phone"></p>
                 </div>
               </div>
 
@@ -746,10 +1049,8 @@
                   <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.emailLabel">
                     ইমেইল ঠিকানা <span class="text-red-500">*</span>
                   </label>
-                  <input type="email" id="contact-email" name="email" onblur="validateEmail()" oninput="clearError('email')" placeholder="যেমন: bcscbd.com@gmail.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all" />
-                  <p id="err-email" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errEmail">
-                    সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।
-                  </p>
+                  <input type="email" id="contact-email" name="email" onblur="validateEmail()" oninput="clearError('email')" placeholder="যেমন: bcscbd.com@gmail.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <p id="err-email"></p>
                 </div>
 
                 <!-- Service Selector Dropdown -->
@@ -757,7 +1058,7 @@
                   <label for="contact-service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.serviceLabel">
                     প্রয়োজনীয় সেবা নির্বাচন করুন <span class="text-red-500">*</span>
                   </label>
-                  <select id="contact-service" name="service" onchange="validateService(); clearError('service')" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all bg-white">
+                  <select id="contact-service" name="service" onchange="validateService(); clearError('service')" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all bg-white">
                     <option value="" disabled selected data-i18n="form.serviceDefault">সেবা নির্বাচন করুন...</option>
                     <option value="Accounting" data-i18n="form.sOpt1">হিসাবরক্ষণ ও বুককিপিং</option>
                     <option value="Tax" data-i18n="form.sOpt2">আয়কর রিটার্ন সেবা</option>
@@ -766,9 +1067,7 @@
                     <option value="IRC_ERC" data-i18n="form.sOpt5">আইআরসি ও ইআরসি রেজিস্ট্রেশন</option>
                     <option value="Other" data-i18n="form.sOpt6">অন্যান্য আইনি ও ব্যবসায়িক পরামর্শ</option>
                   </select>
-                  <p id="err-service" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errService">
-                    অনুগ্রহ করে একটি সেবা নির্বাচন করুন।
-                  </p>
+                  <p id="err-service"></p>
                 </div>
               </div>
 
@@ -777,17 +1076,15 @@
                 <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.msgLabel">
                   আপনার বার্তা / প্রশ্ন <span class="text-red-500">*</span>
                 </label>
-                <textarea id="contact-message" name="message" rows="4" onblur="validateMessage()" oninput="clearError('message')" placeholder="আপনার প্রয়োজন বা জিজ্ঞাসার সংক্ষেপ বিবরণ লিখুন..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#1d4ed8] focus:border-transparent transition-all"></textarea>
-                <p id="err-message" class="hidden text-red-600 text-xs mt-1.5 font-medium" data-i18n="form.errMsg">
-                  অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।
-                </p>
+                <textarea id="contact-message" name="message" rows="4" onblur="validateMessage()" oninput="clearError('message')" placeholder="আপনার প্রয়োজন বা জিজ্ঞাসার সংক্ষেপ বিবরণ লিখুন..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all"></textarea>
+                <p id="err-message"></p>
               </div>
 
               <!-- Submit Button -->
               <div class="pt-2 text-center">
-                <button type="submit" class="w-full sm:w-auto bg-[#0b1d3a] hover:bg-[#153261] text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
-                  <span>✉️</span>
-                  <span data-i18n="form.submitBtn">বার্তা পাঠান</span>
+                <button type="submit" id="contact-submit-btn" class="w-full sm:w-auto bg-[#0b1d3a] hover:bg-[#153261] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
+                  <span id="submit-icon">✉️</span>
+                  <span id="submit-text" data-i18n="form.submitBtn">বার্তা পাঠান</span>
                 </button>
               </div>
             </form>
@@ -800,24 +1097,52 @@
                 অফিসের অবস্থান
               </span>
               <h4 class="text-xl font-bold text-slate-900 font-serif-heading" data-i18n="contact.mapsTitle">
-                গুগল ম্যাপস লোকেশন
+                গুগল ম্যাপস পিন পয়েন্ট লোকেশন
               </h4>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
-                <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
-                  <span data-i18n="contact.khulnaTitle">খুলনা অফিস</span>
-                  <span class="text-xs text-slate-500">আজাদ লন্ড্রি মোড়</span>
+              <!-- Khulna Office Map -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
+                <div>
+                  <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
+                    <span data-i18n="contact.khulnaTitle">খুলনা অফিস</span>
+                    <span class="text-xs text-slate-500">আজাদ লন্ড্রি মোড়, গল্লামারী</span>
+                  </div>
+                  <div class="map-skeleton-box w-full h-[280px]">
+                    <iframe title="BCSC Khulna Office Map" src="https://maps.google.com/maps?q=22.806457,89.544747&hl=bn&z=17&output=embed" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
+                  </div>
                 </div>
-                <iframe title="BCSC Khulna Office Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8926978601673!2d89.54474727588327!3d22.806457024346894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a00557457788443%3A0xe54e8ffbce57ee20!2sAzad%20Laundry%20Mor!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-2 flex-wrap">
+                  <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
+                    📍 খুলনা অফিসের সঠিক পিন পয়েন্ট ↗
+                  </a>
+                  <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                    <span>📋</span>
+                    <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                  </button>
+                </div>
               </div>
 
-              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
-                <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
-                  <span data-i18n="contact.dhakaTitle">ঢাকা অফিস</span>
-                  <span class="text-xs text-slate-500">পুরানা পল্টন</span>
+              <!-- Dhaka Office Map -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
+                <div>
+                  <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
+                    <span data-i18n="contact.dhakaTitle">ঢাকা অফিস</span>
+                    <span class="text-xs text-slate-500">প্রীতم জামান টাওয়ার, পুরানা পল্টন</span>
+                  </div>
+                  <div class="map-skeleton-box w-full h-[280px]">
+                    <iframe title="BCSC Dhaka Office Map" src="https://maps.google.com/maps?q=23.7314,90.4132&hl=bn&z=17&output=embed" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
+                  </div>
                 </div>
-                <iframe title="BCSC Dhaka Office Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.378949580665!2d90.41215177591008!3d23.733857589417852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b85a3c487373%3A0x6b306b9961db6c1e!2sPritom%20Zaman%20Tower%2C%2037%2F2%20Purana%20Paltan%2C%20Dhaka%201000!5e0!3m2!1sen!2sbd!4v1710000000001!5m2!1sen!2sbd" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-2 flex-wrap">
+                  <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
+                    🏢 ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
+                  </a>
+                  <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                    <span>📋</span>
+                    <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -850,52 +1175,201 @@
       </section>
     </main>
 
-    <!-- 17. DEEP NAVY FOOTER -->
-    <footer class="bg-[#07152b] text-slate-400 pt-16 pb-8 px-4 sm:px-6 text-sm border-t border-white/5">
-      <div class="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
-        <div class="md:col-span-6">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-10 h-10 rounded-lg flex items-center justify-center">
-              B
+    <!-- 17. DEEP NAVY CORPORATE FOOTER (OPTION 1) -->
+    <footer class="bg-[#07152b] text-slate-300 pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-sm border-t border-white/10 font-sans">
+      <div class="max-w-[1400px] mx-auto">
+        
+        <!-- 4-Column Grid Structure -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1.3fr] gap-8 lg:gap-10 pb-12 border-b border-white/[0.08]">
+          
+          <!-- Column 1: Brand Identity -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-10 h-10 rounded-lg flex items-center justify-center shadow-md shrink-0">
+                B
+              </div>
+              <div>
+                <h2 class="text-white text-2xl font-bold font-serif-heading tracking-wide leading-tight">BCSC</h2>
+                <span class="text-amber-400 text-xs font-semibold block" data-i18n="nav.slogan">পরামর্শ • সমাধান • সাফল্য</span>
+              </div>
             </div>
-            <div>
-              <h2 class="text-white text-lg font-bold font-sans">BCSC</h2>
-              <span class="text-slate-300 text-xs block" data-i18n="footer.sub">বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার</span>
+
+            <p class="text-[#94a3b8] text-xs sm:text-sm leading-relaxed" data-i18n="footer.aboutText">
+              ২০০৯ সাল থেকে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।
+            </p>
+
+            <div class="pt-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#d99b26]/15 border border-[#d99b26]/30 text-[#d99b26] text-xs font-semibold tracking-wide" data-i18n="footer.corePillars">
+                কৌশল • সমাধান • সাফল্য • অগ্রগতি
+              </span>
             </div>
           </div>
-          <p class="text-slate-300 text-sm max-w-sm leading-relaxed" data-i18n="footer.aboutText">
-            সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।
+
+          <!-- Column 2: Quick Links -->
+          <div>
+            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.quickLinks">
+              গুরুত্বপূর্ণ লিংক
+            </h3>
+            <ul class="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a href="#about" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.about">সম্পর্কে</span>
+                </a>
+              </li>
+              <li>
+                <a href="#founder" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.founder">প্রতিষ্ঠাতা</span>
+                </a>
+              </li>
+              <li>
+                <a href="#credentials" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.credentials">যোগ্যতা</span>
+                </a>
+              </li>
+              <li>
+                <a href="#certificates" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.certificates">সনদপত্র</span>
+                </a>
+              </li>
+              <li>
+                <a href="#case-studies" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.caseStudies">কেস স্টাডি</span>
+                </a>
+              </li>
+              <li>
+                <a href="#faq" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.faq">এফএকিউ</span>
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.contact">যোগাযোগ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Core Services -->
+          <div>
+            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.coreServices">
+              প্রধান সেবাসমূহ
+            </h3>
+            <ul class="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s2">আয়কর প্রস্তুতি ও পরিকল্পনা</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s3">ভ্যাট ও বিআইএন কনসালটেন্সি (আইন ২০১২)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s4">আরজেএসসি কোম্পানি গঠন ও ফাইলিং</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s_audit">সংবিধিবদ্ধ অডিট ও অ্যাসুরেন্স সাপোর্ট</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s1">হিসাবরক্ষণ ও বুককিপিং (MIS)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s_license">ট্রেড, আইআরসি, ইআরসি ও বাণিজ্যিক লাইসেন্স</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
+                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s_project">প্রকল্প প্রোফাইল ও ফিজিবিলিটি রিপোর্ট</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Offices & Verified Trust -->
+          <div>
+            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.officesVerify">
+              অফিস ও ভ্যালিডেশন
+            </h3>
+            
+            <div class="space-y-3 text-xs sm:text-sm">
+              <!-- Direct Contact -->
+              <div class="space-y-1">
+                <div class="flex items-center gap-2 text-[#94a3b8] flex-wrap">
+                  <span>📞</span>
+                  <a href="tel:+8801993306990" class="hover:text-white transition-colors font-semibold">+880 1993-306990</a>
+                  <span>|</span>
+                  <a href="tel:+8801714545568" class="hover:text-white transition-colors font-semibold">+880 1714-545568</a>
+                </div>
+                <div class="flex items-center gap-2 text-[#94a3b8]">
+                  <span>✉️</span>
+                  <a href="mailto:bcscbd.com@gmail.com" class="hover:text-white transition-colors">bcscbd.com@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Physical Offices -->
+              <div class="space-y-2 pt-1">
+                <div>
+                  <span class="text-amber-400 font-bold text-xs block" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
+                  <p class="text-[#94a3b8] text-xs leading-tight" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা</p>
+                </div>
+                <div>
+                  <span class="text-amber-400 font-bold text-xs block" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
+                  <p class="text-[#94a3b8] text-xs leading-tight" data-i18n="contact.khulnaAddr">২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০</p>
+                </div>
+              </div>
+
+              <!-- Official Trust Badges Box -->
+              <div class="bg-[#0b1d3a] border border-[#d99b26]/30 rounded-xl p-3 space-y-2 mt-3 shadow-md">
+                <div class="flex items-start gap-2 text-xs">
+                  <span class="text-amber-400 shrink-0">🏛️</span>
+                  <span class="text-slate-200 font-medium" data-i18n="footer.tradeLicense">
+                    ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025
+                  </span>
+                </div>
+                <div class="flex items-start gap-2 text-xs">
+                  <span class="text-amber-400 shrink-0">🛡️</span>
+                  <span class="text-slate-200 font-medium" data-i18n="footer.icabReg">
+                    ICAB রেজিস্ট্রেশন: Reg: 15409 | RAT: 131
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sub-Footer Legal Bar -->
+        <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-[#94a3b8] gap-3">
+          <p data-i18n="footer.rights">
+            © 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।
+          </p>
+          <p class="text-amber-400 font-semibold" data-i18n="footer.leadConsultant">
+            প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)
           </p>
         </div>
 
-        <div class="md:col-span-3">
-          <h5 class="text-white text-sm font-bold font-sans mb-4 uppercase tracking-wider text-amber-400" data-i18n="footer.quickLinks">
-            গুরুত্বপূর্ণ লিংক
-          </h5>
-          <ul class="space-y-2.5">
-            <li><a href="#about" class="text-slate-300 hover:text-white transition-colors" data-i18n="nav.about">সম্পর্কে</a></li>
-            <li><a href="#services" class="text-slate-300 hover:text-white transition-colors" data-i18n="nav.services">সেবাসমূহ</a></li>
-            <li><a href="#founder" class="text-slate-300 hover:text-white transition-colors" data-i18n="nav.founder">প্রতিষ্ঠাতা</a></li>
-            <li><a href="#contact" class="text-slate-300 hover:text-white transition-colors" data-i18n="nav.contact">যোগাযোগ</a></li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-3">
-          <h5 class="text-white text-sm font-bold font-sans mb-4 uppercase tracking-wider text-amber-400" data-i18n="footer.coreServices">
-            প্রধান সেবাসমূহ
-          </h5>
-          <ul class="space-y-2.5">
-            <li><a href="#services" class="text-slate-300 hover:text-white transition-colors" data-i18n="footer.s1">হিসাবরক্ষণ ও বুককিপিং</a></li>
-            <li><a href="#services" class="text-slate-300 hover:text-white transition-colors" data-i18n="footer.s2">আয়কর সেবা</a></li>
-            <li><a href="#services" class="text-slate-300 hover:text-white transition-colors" data-i18n="footer.s3">ভ্যাট ও বিআইএন কনসালটেন্সি</a></li>
-            <li><a href="#services" class="text-slate-300 hover:text-white transition-colors" data-i18n="footer.s4">আরজেএসসি কোম্পানি গঠন</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="max-w-[1240px] mx-auto mt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-slate-400 gap-3">
-        <p data-i18n="footer.rights">© 2026 BCSC. সর্বস্বত্ব সংরক্ষিত।</p>
-        <p class="text-[#d99b26] font-semibold" data-i18n="nav.slogan">পরামর্শ • সমাধান • সাফল্য</p>
       </div>
     </footer>
 
@@ -904,7 +1378,7 @@
       ↑
     </button>
 
-    <a href="https://wa.me/8801993306990" target="_blank" rel="noopener noreferrer" class="fixed bottom-5 sm:bottom-6 right-5 sm:right-6 bg-[#25d366] hover:bg-[#20bd5a] text-white px-4 py-2.5 rounded-full flex items-center gap-2 font-semibold text-xs sm:text-sm shadow-xl transition-all duration-200 z-40 hover:scale-105 shadow-emerald-500/25" title="হোয়াটসঅ্যাপে চ্যাট করুন">
+    <a href="https://wa.me/8801993306990?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20consult%20with%20BCSC%20regarding%20business%20and%20tax%20advisory%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-5 sm:bottom-6 right-5 sm:right-6 bg-[#25d366] hover:bg-[#20bd5a] text-white px-4 py-2.5 rounded-full flex items-center gap-2 font-semibold text-xs sm:text-sm shadow-xl transition-all duration-200 z-40 hover:scale-105 shadow-emerald-500/25" title="হোয়াটসঅ্যাপে চ্যাট করুন">
       <span>💬</span>
       <span data-i18n="floating.whatsAppChat">হোয়াটসঅ্যাপ</span>
     </a>
@@ -1006,19 +1480,28 @@
           'contact.khulnaTitle': 'খুলনা অফিস',
           'contact.khulnaAddr': '২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০',
           'contact.dhakaTitle': 'ঢাকা অফিস',
-          'contact.dhakaAddr': '৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা',
+          'contact.dhakaAddr': '৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০',
           'contact.openMaps': 'গুগল ম্যাপে দেখুন ↗',
+          'contact.copyBtn': 'কপি ঠিকানা',
           'contact.mapsEyebrow': 'অফিসের অবস্থান',
           'contact.mapsTitle': 'গুগল ম্যাপস লোকেশন',
           'footer.sub': 'বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার',
-          'footer.aboutText': 'সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।',
+          'footer.aboutText': '২০০৯ সাল থেকে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।',
+          'footer.corePillars': 'কৌশল • সমাধান • সাফল্য • অগ্রগতি',
           'footer.quickLinks': 'গুরুত্বপূর্ণ লিংক',
           'footer.coreServices': 'প্রধান সেবাসমূহ',
-          'footer.s1': 'হিসাবরক্ষণ ও বুককিপিং',
-          'footer.s2': 'আয়কর সেবা',
-          'footer.s3': 'ভ্যাট ও বিআইএন কনসালটেন্সি',
-          'footer.s4': 'আরজেএসসি কোম্পানি গঠন',
-          'footer.rights': '© 2026 BCSC. সর্বস্বত্ব সংরক্ষিত।',
+          'footer.officesVerify': 'অফিস ও ভ্যালিডেশন',
+          'footer.s1': 'হিসাবরক্ষণ ও বুককিপিং (MIS)',
+          'footer.s2': 'আয়কর প্রস্তুতি ও পরিকল্পনা',
+          'footer.s3': 'ভ্যাট ও বিআইএন কনসালটেন্সি (আইন ২০১২)',
+          'footer.s4': 'আরজেএসসি কোম্পানি গঠন ও ফাইলিং',
+          'footer.s_audit': 'সংবিধিবদ্ধ অডিট ও অ্যাসুরেন্স সাপোর্ট',
+          'footer.s_license': 'ট্রেড, আইআরসি, ইআরসি ও বাণিজ্যিক লাইসেন্স',
+          'footer.s_project': 'প্রকল্প প্রোফাইল ও ফিজিবিলিটি রিপোর্ট',
+          'footer.tradeLicense': 'ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025',
+          'footer.icabReg': 'ICAB রেজিস্ট্রেশন: Reg: 15409 | RAT: 131',
+          'footer.rights': '© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।',
+          'footer.leadConsultant': 'প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)',
           'floating.whatsAppChat': 'হোয়াটসঅ্যাপ',
           'nav.faq': 'এফএকিউ',
           'faq.eyebrow': 'সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)',
@@ -1046,7 +1529,9 @@
           'form.errPhone': '১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।',
           'form.errEmail': 'সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।',
           'form.errService': 'অনুগ্রহ করে একটি সেবা নির্বাচন করুন।',
-          'form.errMsg': 'অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।'
+          'form.errMsg': 'অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।',
+          'contact.responseTime': 'সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়',
+          'form.responseTime': 'সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়'
         },
         en: {
           'nav.slogan': 'Consult. Solve. Succeed.',
@@ -1088,6 +1573,8 @@
           'form.errEmail': 'Please enter a valid email address (e.g., name@example.com).',
           'form.errService': 'Please select a required service.',
           'form.errMsg': 'Please enter your message (minimum 10 characters).',
+          'contact.responseTime': 'Usually responds within 2 hours',
+          'form.responseTime': 'Usually responds within 2 hours',
           'nav.consultation': 'Book Consultation',
           'hero.eyebrow': 'TRUSTED BUSINESS SUPPORT ACROSS BANGLADESH',
           'hero.titleLine1': 'Business clarity.',
@@ -1171,52 +1658,60 @@
           'contact.mapsEyebrow': 'FIND OUR OFFICES',
           'contact.mapsTitle': 'Google Maps Location',
           'footer.sub': 'Business Consulting & Solutions Center',
-          'footer.aboutText': 'Professional accounting, tax, VAT, compliance and business advisory support across Bangladesh.',
+          'footer.aboutText': 'Professional accounting, tax, VAT, compliance and business advisory support across Bangladesh since 2009.',
+          'footer.corePillars': 'Strategy • Solution • Success • Growth',
           'footer.quickLinks': 'Quick Links',
           'footer.coreServices': 'Core Services',
-          'footer.s1': 'Accounting & Bookkeeping',
-          'footer.s2': 'Income Tax Services',
-          'footer.s3': 'VAT & BIN Consultancy',
-          'footer.s4': 'RJSC Company Formation',
-          'footer.rights': '© 2026 BCSC. All Rights Reserved.',
+          'footer.officesVerify': 'Offices & Verification',
+          'footer.s1': 'Accounting & Financial Statements (MIS)',
+          'footer.s2': 'Income Tax Preparation & Planning',
+          'footer.s3': 'VAT & BIN Consultancy (VAT Act 2012)',
+          'footer.s4': 'RJSC Company Incorporation & Filings',
+          'footer.s_audit': 'Statutory Audit & Assurance Support',
+          'footer.s_license': 'Trade, IRC, ERC & Commercial Licenses',
+          'footer.s_project': 'Project Profile & Feasibility Reports',
+          'footer.tradeLicense': 'Trade License: TRAD/DSCC/013070/2025 (DSCC)',
+          'footer.icabReg': 'ICAB Registration: Reg: 15409 | RAT: 131',
+          'footer.rights': '© 2026 Business Consulting and Solutions Center (BCSC). All Rights Reserved.',
+          'footer.leadConsultant': 'Lead Consultant: Shaikh Muhammad Salim, RAT (ICAB)',
           'floating.whatsAppChat': 'WhatsApp'
         }
       };
 
-      // 18 Services Data
+      // 18 Services Data (Complete Data - Zero Truncation)
       const servicesData = [
-        { icon: '📊', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনন্দিন বুককিপিং, ব্যাংক রিকনসিলিয়েশন ও স্বয়ংক্রিয় অ্যাকাউন্টিং পদ্ধতি স্থাপন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily bookkeeping, bank reconciliations and setup of automated accounting systems.' } },
-        { icon: '📈', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'মাসিক আর্থিক বিবরণী, ক্যাশ ফ্লো স্টেটমেন্ট এবং আইএফআরএস মানদণ্ডে রিপোর্ট তৈরি।' }, en: { t: 'Financial Statements & MIS', d: 'Monthly financial reports, cash flow analysis and IFRS compliant statements.' } },
-        { icon: '📝', bn: { t: 'আয়কর সেবা', d: 'ব্যক্তিগত ও কর্পোরেট আয়কর রিটার্ন জমা, ট্যাক্স ফাইল প্রসেসিং এবং নোটিশ ব্যবস্থাপনা।' }, en: { t: 'Income Tax Services', d: 'Individual and corporate income tax return filing and tax assessment support.' } },
-        { icon: '🏷️', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'অনলাইন ভ্যাট রেজিস্ট্রেশন (BIN), মাসিক ভ্যাট ৯.১ রিটার্ন এবং ট্রেজারি চালান প্রসেস।' }, en: { t: 'VAT & BIN Consultancy', d: 'Online VAT Registration (BIN), monthly VAT 9.1 return filing and advisory.' } },
-        { icon: '🏢', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড, ওয়ান ম্যান কোম্পানি (OMC) ও পার্টনারশিপ ফার্মের নিবন্ধনে পূর্ণাঙ্গ সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited, One Person Company (OPC) & Partnership firm registration.' } },
-        { icon: '📜', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার ট্রান্সফার, মূলধন বৃদ্ধি, বার্ষিক রিটার্ন ফিলিং এবং পরিচালক পরিবর্তনের আইনি পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, capital increases, annual returns filing and board resolutions.' } },
-        { icon: '🌐', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি সনদ (IRC) এবং রপ্তানি সনদ (ERC) নতুন প্রসেসিং ও বার্ষিক নবায়ন সেবা।' }, en: { t: 'IRC & ERC Registration', d: 'Import Registration Certificate & Export Registration Certificate issuance & renewal.' } },
-        { icon: '🏗️', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বাংলাদেশ বিনিয়োগ উন্নয়ন কর্তৃপক্ষ (BIDA) হতে ওয়ার্ক পারমিট ও শিল্প অনুমোদন।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority registration and work permits.' } },
-        { icon: 'TM', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম, লোগো এবং কপিরাইট সুরক্ষায় সরকারি ট্রেডমার্ক আবেদন প্রক্রিয়া।' }, en: { t: 'Trademark Registration', d: 'Protection of brand names, logos and copyrights via government registration.' } },
-        { icon: '⚖️', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স এবং কারখানার নিয়মকানুন কমপ্লায়েন্স।' }, en: { t: 'Regulatory Compliance', d: 'Trade license, Environment clearances, Fire license and statutory compliance.' } },
-        { icon: '🔍', bn: { t: 'অডিট সাপোর্ট', d: 'বার্ষিক বহিরাগত অডিটের প্রস্তুতি, ফাইল গুছানো এবং ইন্টারনাল অডিট টিম সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Preparation for annual external audits, documentation and internal controls.' } },
-        { icon: '🏛️', bn: { t: 'সম্পদ মূল্যায়ন', d: 'কোম্পানির স্থায়ী ও চলতি সম্পদের সঠিক মূল্য নির্ধারণ এবং আর্থিক মূল্যায়ন পেপারস।' }, en: { t: 'Asset Valuation', d: 'Accurate valuation of fixed and current assets for business restructuring.' } },
-        { icon: '📁', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও নতুন বিনিয়োগের জন্য বিস্তারিত সম্ভাব্যতা যাচাই রিপোর্ট ও প্রজেক্ট ফাইল।' }, en: { t: 'Project Feasibility Profile', d: 'Detailed feasibility studies and project profiles for bank loan approvals.' } },
-        { icon: '💻', bn: { t: 'অ্যাকাউন্টিং সফটওয়্যার সেবা', d: 'QuickBooks, Tally ও ক্লাউড হিসাবরক্ষণ সফটওয়্যার সেটআপ, ডেটা মাইগ্রেশন ও স্টাফ ট্রেনিং।' }, en: { t: 'Accounting Software Services', d: 'QuickBooks, Tally & cloud accounting software setup, data migration & staff training.' } },
-        { icon: '🌐', bn: { t: 'ওয়েবসাইট ডেভেলপমেন্ট', d: 'উদ্যোক্তা ও কর্পোরেট প্রতিষ্ঠানের আধুনিক ওয়েবসাইট তৈরি এবং ডিজিটাল উপস্থিতি গড়ে তোলা।' }, en: { t: 'Website Development', d: 'Custom corporate websites & digital presence solutions for growing businesses.' } },
-        { icon: '👥', bn: { t: 'পেরোল সহায়তা ও কমপ্লায়েন্স', d: 'কর্মচারীদের পে-স্লিপ, ট্যাক্স ডিডাকশন (TDS), প্রভিডেন্ট ফান্ড ও পেরোল প্রসেসিং।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee pay slips, TDS tax deductions, provident fund and full payroll management.' } },
-        { icon: '💡', bn: { t: 'বিজনেস এডভাইজরি ও স্টার্টআপ সাপোর্ট', d: 'নতুন ব্যবসার আইনি কাঠামো গঠন, খরচ কমানো ও কৌশলগত প্রবৃদ্ধির পরামর্শ।' }, en: { t: 'Business Advisory & Startup Support', d: 'Startup structuring, cost optimization, legal setup & strategic growth advisory.' } },
-        { icon: '🎓', bn: { t: 'প্রশিক্ষণ ও ক্যাপাসিটি বিল্ডিং', d: 'অ্যাকাউন্টিং, ভ্যাট, ট্যাক্স ফাইলিং ও আধুনিক এআই (AI) টুলস ব্যবহারে হাতেকলমে প্রশিক্ষণ।' }, en: { t: 'Training & Capacity Building', d: 'Practical hands-on training in accounting, VAT, tax filing & modern AI tools.' } }
+        { icon: '📊', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনিক লেনদেন লিপিবদ্ধকরণ ও লেজার সংরক্ষণ। অ্যাকাউন্টিং সিস্টেম স্থাপন ও ব্যাংক রিকনসিলিয়েশন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily transaction recording and ledger maintenance. Automated accounting setup and bank reconciliation.' } },
+        { icon: '📈', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
+        { icon: '📝', bn: { t: 'আয়কর সেবা', d: 'ই-টিন, বার্ষিক আয়কর রিটার্ন প্রস্তুত ও এনবিআর ফাইলিং। ব্যক্তিগত ও কর্পোরেট ট্যাক্স ফাইল প্রসেসিং।' }, en: { t: 'Income Tax Services', d: 'e-TIN, annual tax return filing and NBR submission. Individual and corporate tax file processing.' } },
+        { icon: '🏷️', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'মূসক নিবন্ধন, ৯.১ রিটার্ন ও ভিডিএস অডিট। ট্রেজারি চালান প্রসেসিং ও অনলাইন ভ্যাট পরামর্শ।' }, en: { t: 'VAT & BIN Consultancy', d: 'VAT registration, 9.1 return filing and VDS audits. Treasury challans and online VAT advisory.' } },
+        { icon: '🏢', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওএমসি এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
+        { icon: '📜', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার হস্তান্তর, বার্ষিক রিটার্ন ও ফর্ম ১২ ফাইলিং। মূলধন বৃদ্ধি ও পরিচালক পরিবর্তন সংক্রান্ত পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, annual returns and Form 12 filings. Capital increase and director changes.' } },
+        { icon: '🌐', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
+        { icon: '🏗️', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
+        { icon: '™️', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগো কপিরাইট সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট পেটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo copyright protection. Government trademark and patent applications.' } },
+        { icon: '⚖️', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র ও ফায়ার লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances.' } },
+        { icon: '🔍', bn: { t: 'অডিট সাপোর্ট', d: 'সংবিধিবদ্ধ নিরীক্ষার শিডিউল ফাইল ও অডিট ফেসিলিটেশন। ইন্টারনাল অডিট টিম প্রস্তুতি সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Statutory audit schedule file preparation and audit facilitation. Internal audit team support.' } },
+        { icon: '🏛️', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
+        { icon: '📁', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
+        { icon: '💻', bn: { t: 'কুইকবুকস ও ট্যালি', d: 'ক্লাউড অ্যাকাউন্টিং সফটওয়্যার সেটআপ ও অটোমেশন। ক্লাউড মাইগ্রেশন ও অ্যাকাউন্টিং স্টাফ ট্রেনিং।' }, en: { t: 'QuickBooks & Tally Setup', d: 'Cloud accounting software setup and automation. Data migration and staff hands-on training.' } },
+        { icon: '🌐', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
+        { icon: '👥', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },
+        { icon: '💡', bn: { t: 'ব্যবসায়িক পরামর্শ', d: 'নতুন স্টার্টআপ গঠন ও কৌশলগত ব্যবসায়িক পরিকল্পনা। আইনি কাঠামো নির্ধারণ ও খরচ সাশ্রয়।' }, en: { t: 'Business Advisory & Startups', d: 'New startup formation and strategic business planning. Legal structuring and cost optimization.' } },
+        { icon: '🎓', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } }
       ];
 
-      // 10 Industries
+      // 10 Industries Data
       const industriesData = [
-        { icon: '🏢', bn: 'রিয়েল এস্টেট ও নির্মাণ', en: 'Real Estate & Construction' },
-        { icon: '🏥', bn: 'স্বাস্থ্যসেবা ও ফার্মাসিউটিক্যালস', en: 'Healthcare & Pharma' },
-        { icon: '🏭', bn: 'উৎপাদন ও আরএমজি', en: 'Manufacturing & RMG' },
-        { icon: '💻', bn: 'আইটি ও সফটওয়্যার', en: 'IT & Software Services' },
-        { icon: '🚢', bn: 'আমদানি ও রপ্তানি', en: 'Import & Export Trade' },
-        { icon: '🛒', bn: 'ই-কমার্স ও রিটেইল', en: 'E-commerce & Retail' },
-        { icon: '🏨', bn: 'হোটেল ও পর্যটন', en: 'Hospitality & Tourism' },
-        { icon: '🎓', bn: 'শিক্ষা ও প্রশিক্ষণ', en: 'Education & Training' },
-        { icon: '🚚', bn: 'পরিবহন ও লজিস্টিকস', en: 'Transport & Logistics' },
-        { icon: '🏦', bn: 'আর্থিক ও অলাভজনক সংস্থা', en: 'Financial & Non-Profit' }
+        { icon: '🏭', bn: 'ম্যানুফ্যাকচারিং', en: 'Manufacturing' },
+        { icon: '🏪', bn: 'ট্রেডিং ও পাইকারি', en: 'Trading & Wholesale' },
+        { icon: '🏢', bn: 'রিয়েল এস্টেট', en: 'Real Estate' },
+        { icon: '🏥', bn: 'হেলথকেয়ার ও ফার্মা', en: 'Healthcare & Pharma' },
+        { icon: '👕', bn: 'গার্মেন্টস ও টেক্সটাইল', en: 'Garments & Textile' },
+        { icon: '🌾', bn: 'এগ্রো ফার্মিং', en: 'Agro Farming' },
+        { icon: '🚢', bn: 'আমদানি-রপ্তানি', en: 'Import-Export' },
+        { icon: '💻', bn: 'তথ্যপ্রযুক্তি (IT)', en: 'Information Technology (IT)' },
+        { icon: '🤝', bn: 'এনজিও ও ট্রাস্ট', en: 'NGO & Trust' },
+        { icon: '💼', bn: 'প্রফেশনাল সার্ভিসেস', en: 'Professional Services' }
       ];
 
       // 5 Professional Credentials
@@ -1236,48 +1731,48 @@
         { icon: '📊', bn: { t: 'IFRS & IAS ফিন্যান্সিয়াল রিপোর্টিং', sub: 'আন্তর্জাতিক অ্যাকাউন্টিং মানদণ্ড ও করপোরেট রিপোর্টিং' }, en: { t: 'IFRS & IAS Financial Reporting', sub: 'International Accounting Standards Certification' } }
       ];
 
-      // 3 Case Studies
+      // 3 Detailed Case Studies
       const caseStudiesData = [
         {
           bn: {
-            title: 'রিয়েল এস্টেট কোম্পানির ৪ বছরের বকেয়া ট্যাক্স সমাধান',
-            c: 'চ্যালেঞ্জ: জটিল হিসাবনিকাশের কারণে এনবিআর থেকে নোটিশ ও অতিরিক্ত জরিমানা।',
-            a: 'সমাধান: BCSC টিম ৪ বছরের ফাইল পুনর্গঠন করে সঠিক আইনি ছাড় দাবি করে।',
-            o: 'ফলাফল: পেনাল্টি মওকুফ সহ আইনসম্মতভাবে রিটার্ন অনুমোদন।'
+            title: 'বিশৃঙ্খল হিসাবরক্ষণ পুনর্গঠন',
+            c: 'চ্যালেঞ্জ: ৫ বছরের ব্যাকলগ অ্যাকাউন্টস, জটিল হিসাবনিকাশ ও অসম্পূর্ণ লেজার।',
+            a: 'সমাধান: BCSC টিম ৫ বছরের ব্যাকলগ অ্যাকাউন্টস পুনর্গঠন করে ডিজিটাল বুককিপিং সিস্টেমে স্থানান্তর করে।',
+            o: 'ফলাফল: ৬ সপ্তাহে সম্পূর্ণ স্বচ্ছ রূপান্তর ও এনবিআরে যথাসময়ে ফাইলিং সম্পন্ন।'
           },
           en: {
-            title: 'Resolving 4 Years Backlog Tax for Real Estate Firm',
-            c: 'Challenge: NBR audit notices and heavy penalties due to improper bookkeeping.',
-            a: 'Approach: BCSC reconstructed 4 years of accounts and filed structured appeals.',
-            o: 'Outcome: Penalties waived and returns officially approved by NBR.'
+            title: 'Restructuring Disorganized Bookkeeping Backlog',
+            c: 'Challenge: 5 years of backlogged accounts, complex calculations, and incomplete ledgers.',
+            a: 'Approach: BCSC team reconstructed 5 years of backlog accounts and migrated to digital bookkeeping.',
+            o: 'Outcome: Transparent financial reports restored in 6 weeks and timely NBR filings completed.'
           }
         },
         {
           bn: {
-            title: 'ফার্মাসিউটিক্যাল ইম্পোর্টারের ভ্যাট ও বিআইএন সমস্যা',
-            c: 'চ্যালেঞ্জ: নতুন ভ্যাট ৯.১ ফাইলিং প্রক্রিয়ায় অসঙ্গতি ও কাস্টমস ব্লক।',
-            a: 'সমাধান: স্বয়ংক্রিয় ভ্যাট রেজিস্ট্রার সিস্টেম স্থাপন ও অনলাইন কাস্টমস ক্লিয়ারেন্স।',
-            o: 'ফলাফল: বিআইএন লক মুক্ত হয়ে ব্যবসায়িক আমদানি পুনরায় সচল।'
+            title: 'ভ্যাট কমপ্লায়েন্স ও নিরীক্ষা শিডিউল',
+            c: 'চ্যালেঞ্জ: নতুন ভ্যাট আইন ২০১২ অনুযায়ী মূসক ৯.১ রিটার্ন ফাইলিং ও ভিডিএস অসঙ্গতি।',
+            a: 'সমাধান: স্বয়ংক্রিয় ভ্যাট হিসাবব্যবস্থা, মূসক ৬.১ ও ৬.২ রেজিস্টার এবং ট্রেজারি চালান প্রসেসিং।',
+            o: 'ফলাফল: মূসক নিরীক্ষার ঝুঁকি দূরীকরণ ও সঠিক ভ্যাট রেট নির্ধারণ।'
           },
           en: {
-            title: 'Pharma Importer VAT & BIN Compliance Issue',
-            c: 'Challenge: Inconsistencies in online VAT 9.1 returns causing customs lock.',
-            a: 'Approach: Implemented digital VAT registers and reconciled Treasury Challans.',
-            o: 'Outcome: BIN unlocked and import customs clearance fully restored.'
+            title: 'VAT Compliance & Audit Schedule File',
+            c: 'Challenge: Inconsistencies in VAT 9.1 returns and VDS deductions under VAT Act 2012.',
+            a: 'Approach: Implemented automated VAT accounting, Mushak 6.1 & 6.2 registers and treasury challans.',
+            o: 'Outcome: Complete mitigation of VAT audit risks and accurate tax rate determination.'
           }
         },
         {
           bn: {
-            title: 'আইটি স্টার্টআপের আরজেএসসি গঠন ও বিডা অনুমোদন',
-            c: 'চ্যালেঞ্জ: বিদেশী বিনিয়োগ আকর্ষণ করতে কোম্পানি স্ট্রাকচার ও ওয়ার্ক পারমিট প্রয়োজন।',
-            a: 'সমাধান: দ্রুত আরজেএসসি কোম্পানি গঠন, ইনভেস্টমেন্ট নিবন্ধন ও আইআরসি ইস্যু।',
-            o: 'ফলাফল: ১ মাসের মধ্যে আন্তর্জাতিক ব্যাংকিং সুবিধা সচল।'
+            title: 'নতুন প্রাইভেট লিমিটেড কোম্পানি স্থাপন',
+            c: 'চ্যালেঞ্জ: দ্রুত কোম্পানি গঠন, মেমোরেন্ডাম, টিআইএন, ট্রেড লাইসেন্স ও ব্যাংক অ্যাকাউন্ট খোলার জরুরি তাগিদ।',
+            a: 'সমাধান: আরজেএসসি নেম ক্লিয়ারেন্স, মেমোরেন্ডাম অব অ্যাসোসিয়েশন প্রস্তুত ও দ্রুত প্রসেসিং।',
+            o: 'ফলাফল: মেমোরেন্ডাম থেকে ব্যাংক অ্যাকাউন্ট পর্যন্ত মাত্র ৭ দিনে সম্পন্ন।'
           },
           en: {
-            title: 'RJSC Formation & BIDA Permit for Tech Startup',
-            c: 'Challenge: Urgent company incorporation required for overseas funding.',
-            a: 'Approach: Accelerated RJSC registration, BIDA approval, and IRC processing.',
-            o: 'Outcome: Banking & foreign investment channels active within 30 days.'
+            title: 'Incorporation of New Private Limited Company',
+            c: 'Challenge: Urgent need for company registration, Memorandum, e-TIN, Trade License & Bank Account.',
+            a: 'Approach: Fast-track RJSC Name Clearance, drafting Memorandum of Association, and filing.',
+            o: 'Outcome: Complete incorporation from Memorandum to corporate bank account in 7 days.'
           }
         }
       ];
@@ -1406,8 +1901,8 @@
       function renderDynamicContent() {
         // Services
         const sContainer = document.getElementById('services-grid');
-        sContainer.innerHTML = servicesData.map(s => `
-          <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group">
+        sContainer.innerHTML = servicesData.map((s, idx) => `
+          <div class="service-card-item bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group" style="transition-delay: ${(idx % 3) * 80}ms;">
             <div class="w-12 h-12 rounded-lg bg-amber-50 text-[#d99b26] flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-[#d99b26] group-hover:text-white transition-colors">
               ${s.icon}
             </div>
@@ -1419,6 +1914,8 @@
             </p>
           </div>
         `).join('');
+
+        observeServiceCards();
 
         // Industries
         const iContainer = document.getElementById('industries-grid');
@@ -1528,16 +2025,25 @@
       }
 
       // Client-side Form Validation Handlers
+      function clearError(field) {
+        const err = document.getElementById('err-' + field);
+        const input = document.getElementById('contact-' + field);
+        if (err) err.textContent = '';
+        if (input) input.classList.remove('border-red-500', 'bg-red-50/20');
+      }
+
       function validateName() {
         const input = document.getElementById('contact-name');
         const err = document.getElementById('err-name');
         if (!input || !err) return false;
         if (!input.value.trim() || input.value.trim().length < 2) {
-          err.classList.remove('hidden');
+          err.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+            ? 'Please enter your valid name (at least 2 characters).'
+            : 'অনুগ্রহ করে আপনার সঠিক নাম লিখুন (নূন্যতম ২ অক্ষর)।';
           input.classList.add('border-red-500', 'bg-red-50/20');
           return false;
         }
-        err.classList.add('hidden');
+        err.textContent = '';
         input.classList.remove('border-red-500', 'bg-red-50/20');
         input.classList.add('border-emerald-500');
         return true;
@@ -1550,11 +2056,13 @@
         const phoneRegex = /^(?:\+?8801|01)[3-9]\d{8}$/;
         const cleanVal = input.value.trim().replace(/[\s-]/g, '');
         if (!phoneRegex.test(cleanVal)) {
-          err.classList.remove('hidden');
+          err.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+            ? 'Enter a valid 11-digit Bangladeshi phone number (e.g., 01712345678).'
+            : '১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।';
           input.classList.add('border-red-500', 'bg-red-50/20');
           return false;
         }
-        err.classList.add('hidden');
+        err.textContent = '';
         input.classList.remove('border-red-500', 'bg-red-50/20');
         input.classList.add('border-emerald-500');
         return true;
@@ -1564,13 +2072,16 @@
         const input = document.getElementById('contact-email');
         const err = document.getElementById('err-email');
         if (!input || !err) return false;
+        const emailVal = input.value.trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(input.value.trim())) {
-          err.classList.remove('hidden');
+        if (!emailVal || !emailRegex.test(emailVal)) {
+          err.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+            ? 'Please provide a valid email address (e.g., name@example.com).'
+            : 'সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।';
           input.classList.add('border-red-500', 'bg-red-50/20');
           return false;
         }
-        err.classList.add('hidden');
+        err.textContent = '';
         input.classList.remove('border-red-500', 'bg-red-50/20');
         input.classList.add('border-emerald-500');
         return true;
@@ -1581,11 +2092,13 @@
         const err = document.getElementById('err-service');
         if (!input || !err) return false;
         if (!input.value) {
-          err.classList.remove('hidden');
+          err.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+            ? 'Please select a required service.'
+            : 'অনুগ্রহ করে একটি সেবা নির্বাচন করুন।';
           input.classList.add('border-red-500', 'bg-red-50/20');
           return false;
         }
-        err.classList.add('hidden');
+        err.textContent = '';
         input.classList.remove('border-red-500', 'bg-red-50/20');
         input.classList.add('border-emerald-500');
         return true;
@@ -1596,44 +2109,96 @@
         const err = document.getElementById('err-message');
         if (!input || !err) return false;
         if (!input.value.trim() || input.value.trim().length < 10) {
-          err.classList.remove('hidden');
+          err.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+            ? 'Please enter your inquiry/message (at least 10 characters).'
+            : 'অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।';
           input.classList.add('border-red-500', 'bg-red-50/20');
           return false;
         }
-        err.classList.add('hidden');
+        err.textContent = '';
         input.classList.remove('border-red-500', 'bg-red-50/20');
         input.classList.add('border-emerald-500');
         return true;
       }
 
-      function clearError(field) {
-        const err = document.getElementById('err-' + field);
-        const input = document.getElementById('contact-' + field);
-        if (err) err.classList.add('hidden');
-        if (input) input.classList.remove('border-red-500', 'bg-red-50/20');
-      }
-
       function handleFormSubmit(event) {
         event.preventDefault();
+
+        // 1. Clear any existing error messages before running checks
+        ['name', 'phone', 'email', 'service', 'message'].forEach(clearError);
+
+        // 2. Validate all fields
         const isNameValid = validateName();
         const isPhoneValid = validatePhone();
         const isEmailValid = validateEmail();
         const isServiceValid = validateService();
         const isMsgValid = validateMessage();
 
-        if (isNameValid && isPhoneValid && isEmailValid && isServiceValid && isMsgValid) {
+        const fieldResults = [
+          { valid: isNameValid, id: 'contact-name' },
+          { valid: isPhoneValid, id: 'contact-phone' },
+          { valid: isEmailValid, id: 'contact-email' },
+          { valid: isServiceValid, id: 'contact-service' },
+          { valid: isMsgValid, id: 'contact-message' }
+        ];
+
+        const firstErr = fieldResults.find(f => !f.valid);
+
+        if (firstErr) {
+          // Error Handling Branch (Validation FAILS):
+          // Automatically focus the first erroneous input field.
+          const errEl = document.getElementById(firstErr.id);
+          if (errEl) errEl.focus();
+          // DO NOT disable the submit button—keep it interactive so user can correct errors immediately.
+          return;
+        }
+
+        // Success Branch (Validation PASSES):
+        const submitBtn = document.getElementById('contact-submit-btn');
+        const submitText = document.getElementById('submit-text');
+        const submitIcon = document.getElementById('submit-icon');
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+          submitBtn.style.cursor = 'not-allowed';
+          if (submitIcon) submitIcon.textContent = '⏳';
+          if (submitText) {
+            submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'bn')
+              ? 'পাঠানো হচ্ছে...'
+              : 'Sending...';
+          }
+        }
+
+        // Simulate transmission with a 1.5-second timeout
+        setTimeout(() => {
           const banner = document.getElementById('contact-success-banner');
           if (banner) {
             banner.classList.remove('hidden');
             banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
+
           const form = document.getElementById('bcsc-contact-form');
           if (form) form.reset();
+
           ['name', 'phone', 'email', 'service', 'message'].forEach(f => {
             const el = document.getElementById('contact-' + f);
             if (el) el.classList.remove('border-emerald-500', 'border-red-500');
           });
-        }
+
+          // Restore submit button state
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+            if (submitIcon) submitIcon.textContent = '✉️';
+            if (submitText) {
+              submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+                ? 'Send Message'
+                : 'বার্তা পাঠান';
+            }
+          }
+        }, 1500);
       }
 
       function dismissSuccessBanner() {
@@ -1667,21 +2232,24 @@
         const hamburger = document.getElementById('hamburger-icon');
         const close = document.getElementById('close-icon');
 
-        if (drawer.classList.contains('hidden')) {
-          drawer.classList.remove('hidden');
+        if (!drawer.classList.contains('is-open')) {
+          drawer.classList.add('is-open');
           hamburger.classList.add('hidden');
           close.classList.remove('hidden');
         } else {
-          drawer.classList.add('hidden');
+          drawer.classList.remove('is-open');
           hamburger.classList.remove('hidden');
           close.classList.add('hidden');
         }
       }
 
       function closeMobileMenu() {
-        document.getElementById('mobile-drawer').classList.add('hidden');
-        document.getElementById('hamburger-icon').classList.remove('hidden');
-        document.getElementById('close-icon').classList.add('hidden');
+        const drawer = document.getElementById('mobile-drawer');
+        if (drawer) drawer.classList.remove('is-open');
+        const hamburger = document.getElementById('hamburger-icon');
+        const close = document.getElementById('close-icon');
+        if (hamburger) hamburger.classList.remove('hidden');
+        if (close) close.classList.add('hidden');
       }
 
       // Scroll to top
@@ -1689,7 +2257,28 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      // Scroll Spy & Header Shrink
+      // Service Cards Scroll Observer
+      function observeServiceCards() {
+        const cards = document.querySelectorAll('.service-card-item');
+        if (!cards.length) return;
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+          cards.forEach(card => observer.observe(card));
+        } else {
+          cards.forEach(card => card.classList.add('is-visible'));
+        }
+      }
+
+      // Scroll Spy & Header Shadow on Scroll
       window.addEventListener('scroll', () => {
         const btn = document.getElementById('back-to-top-btn');
         if (window.scrollY > 300) {
@@ -1700,17 +2289,40 @@
           btn.classList.remove('flex');
         }
 
-        // Active link spy
+        // Header Box Shadow on Scroll & Active link spy accounting accurately for sticky header height
+        const header = document.getElementById('main-header');
+        if (header) {
+          if (window.scrollY > 20) {
+            header.classList.add('shadow-xl', 'shadow-black/40', 'border-white/15');
+          } else {
+            header.classList.remove('shadow-xl', 'shadow-black/40', 'border-white/15');
+          }
+        }
+
+        const headerHeight = header ? header.offsetHeight : 64;
+        const scrollPosition = window.scrollY + headerHeight + 20;
+
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
         let currentSec = '';
 
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 120;
-          if (window.scrollY >= sectionTop) {
-            currentSec = section.getAttribute('id');
-          }
-        });
+        // Handle page bottom scroll
+        if ((window.innerHeight + Math.round(window.scrollY)) >= document.documentElement.scrollHeight - 40) {
+          const lastSection = sections[sections.length - 1];
+          if (lastSection) currentSec = lastSection.getAttribute('id');
+        } else {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+              currentSec = section.getAttribute('id');
+            }
+          });
+        }
+
+        if (!currentSec && sections.length > 0 && window.scrollY < 200) {
+          currentSec = 'home';
+        }
 
         navLinks.forEach(link => {
           link.classList.remove('active-nav-item');
@@ -1720,10 +2332,74 @@
         });
       });
 
+      // Copy Address to Clipboard Functionality
+      function copyAddress(addressText, btnElement) {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(addressText)
+            .then(() => triggerCopySuccess(btnElement))
+            .catch(() => fallbackCopy(addressText, btnElement));
+        } else {
+          fallbackCopy(addressText, btnElement);
+        }
+      }
+
+      function fallbackCopy(text, btnElement) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          triggerCopySuccess(btnElement);
+        } catch (err) {
+          console.error('Copy address failed', err);
+        }
+        document.body.removeChild(textArea);
+      }
+
+      function triggerCopySuccess(btnElement) {
+        const toast = document.getElementById('copy-toast');
+        const toastMsg = document.getElementById('toast-msg');
+        if (toastMsg) {
+          toastMsg.textContent = (currentLang === 'bn') 
+            ? 'ঠিকানা ক্লিপবোর্ডে কপি করা হয়েছে!' 
+            : 'Address copied to clipboard!';
+        }
+        if (toast) {
+          toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
+          }, 2500);
+        }
+        if (btnElement) {
+          const textSpan = btnElement.querySelector('span:last-child');
+          const originalText = textSpan ? textSpan.textContent : '';
+          if (textSpan) {
+            textSpan.textContent = (currentLang === 'bn') ? 'কপি হয়েছে!' : 'Copied!';
+          }
+          btnElement.classList.add('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+          setTimeout(() => {
+            if (textSpan && originalText) textSpan.textContent = originalText;
+            btnElement.classList.remove('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+          }, 2000);
+        }
+      }
+
       // Initial Render on page load
       document.addEventListener('DOMContentLoaded', () => {
         renderDynamicContent();
       });
     </script>
+
+    <!-- COPY ADDRESS TOAST NOTIFICATION -->
+    <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-xs sm:text-sm font-bold px-4 py-3 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-2.5 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300">
+      <span class="text-emerald-400 text-base">✓</span>
+      <span id="toast-msg">ঠিকানা ক্লিপবোর্ডে কপি করা হয়েছে!</span>
+    </div>
   </body>
 </html>
