@@ -116,9 +116,13 @@
       .service-card-item.is-visible {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: none !important;
-        will-change: auto;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        will-change: transform, box-shadow;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .service-card-item:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.16), 0 10px 15px -5px rgba(29, 78, 216, 0.12) !important;
       }
 
       /* Hero Vibrant Section - Royal Blue & Architectural Blueprint Grid */
@@ -266,19 +270,121 @@
         animation: fieldShake 0.35s ease-in-out !important;
       }
 
-      /* Input Focus Glow Ring */
+      /* Form Input Interactions & Focus Transitions */
       #bcsc-contact-form input,
       #bcsc-contact-form select,
       #bcsc-contact-form textarea {
-        transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+        transition: all 0.25s ease-in-out !important;
+        background-color: #ffffff !important;
         outline: none !important;
       }
 
       #bcsc-contact-form input:focus,
       #bcsc-contact-form select:focus,
       #bcsc-contact-form textarea:focus {
+        background-color: #f8fafc !important;
         border-color: #1d4ed8 !important;
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2) !important;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15) !important;
+      }
+
+      /* Safe Validation States (avoid false-positive red boxes on load) */
+      #bcsc-contact-form input:not(:placeholder-shown):valid,
+      #bcsc-contact-form textarea:not(:placeholder-shown):valid {
+        border-color: #16a34a !important;
+      }
+
+      #bcsc-contact-form input:not(:placeholder-shown):invalid,
+      #bcsc-contact-form textarea:not(:placeholder-shown):invalid {
+        border-color: #dc2626 !important;
+      }
+
+      /* Loading Spinner & Submit Button Styles */
+      @keyframes btnSpin {
+        to { transform: rotate(360deg); }
+      }
+
+      .btn-loading {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        pointer-events: none !important;
+        opacity: 0.85 !important;
+        cursor: not-allowed !important;
+      }
+
+      .btn-loading::before {
+        content: '' !important;
+        width: 16px !important;
+        height: 16px !important;
+        border: 2px solid #ffffff !important;
+        border-top-color: transparent !important;
+        border-radius: 50% !important;
+        animation: btnSpin 0.7s linear infinite !important;
+      }
+
+      /* Ultra-Compact Footer & Trust Banner Styling */
+      .trust-strip-compact {
+        padding: 12px 24px !important;
+        margin: 0 !important;
+      }
+
+      .trust-btn-compact {
+        padding: 8px 18px !important;
+        font-size: 0.875rem !important;
+        line-height: 1.25 !important;
+      }
+
+      footer.bcsc-footer {
+        background-color: #07152b !important;
+        color: #cbd5e1 !important;
+        padding: 36px 0 16px !important;
+      }
+
+      footer.bcsc-footer h3,
+      footer.bcsc-footer h4 {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 10px !important;
+      }
+
+      footer.bcsc-footer a.footer-nav-link {
+        color: #94a3b8 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+      }
+
+      footer.bcsc-footer a.footer-nav-link:hover {
+        color: #dfb15b !important;
+      }
+
+      footer.bcsc-footer ul > li {
+        margin-bottom: 5px !important;
+        font-size: 0.875rem !important;
+        line-height: 1.4 !important;
+      }
+
+      footer.bcsc-footer .office-info-card,
+      footer.bcsc-footer .office-detail,
+      footer.bcsc-footer .office-address-text {
+        color: #e2e8f0 !important;
+        font-size: 0.85rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 8px !important;
+      }
+
+      footer.bcsc-footer .footer-util-icon {
+        color: #dfb15b !important;
+        display: inline-block;
+      }
+
+      footer.bcsc-footer .sub-footer-legal-bar {
+        padding: 12px 0 35px !important;
+        margin-top: 20px !important;
+        font-size: 0.8rem !important;
+        color: #94a3b8 !important;
       }
     </style>
 
@@ -1101,47 +1207,57 @@
               </h4>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Khulna Office Map -->
-              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
+              <!-- Dhaka Office Map (LEFT) -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between h-full">
+                <div>
+                  <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
+                    <span data-i18n="contact.dhakaTitle">ঢাকা অফিস</span>
+                    <span class="text-xs text-slate-500">প্রীতম জামান টাওয়ার, পুরানা পল্টন</span>
+                  </div>
+                  <div class="map-skeleton-box w-full h-[260px]">
+                    <iframe title="BCSC Dhaka Office Map" src="https://maps.google.com/maps?q=23.7327925,90.411991&hl=bn&z=17&output=embed" width="100%" height="260" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
+                  </div>
+                </div>
+                <div class="p-3.5 bg-slate-50 border-t border-slate-200 flex flex-col gap-2">
+                  <p class="text-xs text-slate-700 font-medium leading-relaxed" data-i18n="contact.dhakaAddr">
+                    ৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা
+                  </p>
+                  <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
+                    <a href="https://www.google.com/maps/place/Zaman+Tower/@23.7327925,90.411991,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
+                      🏢 ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
+                    </a>
+                    <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                      <span>📋</span>
+                      <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Khulna Office Map (RIGHT) -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between h-full">
                 <div>
                   <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
                     <span data-i18n="contact.khulnaTitle">খুলনা অফিস</span>
                     <span class="text-xs text-slate-500">আজাদ লন্ড্রি মোড়, গল্লামারী</span>
                   </div>
-                  <div class="map-skeleton-box w-full h-[280px]">
-                    <iframe title="BCSC Khulna Office Map" src="https://maps.google.com/maps?q=22.806457,89.544747&hl=bn&z=17&output=embed" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
+                  <div class="map-skeleton-box w-full h-[260px]">
+                    <iframe title="BCSC Khulna Office Map" src="https://maps.google.com/maps?q=22.808632,89.5530796&hl=bn&z=17&output=embed" width="100%" height="260" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
                   </div>
                 </div>
-                <div class="p-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-2 flex-wrap">
-                  <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
-                    📍 খুলনা অফিসের সঠিক পিন পয়েন্ট ↗
-                  </a>
-                  <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                    <span>📋</span>
-                    <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Dhaka Office Map -->
-              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
-                <div>
-                  <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
-                    <span data-i18n="contact.dhakaTitle">ঢাকা অফিস</span>
-                    <span class="text-xs text-slate-500">প্রীতم জামান টাওয়ার, পুরানা পল্টন</span>
+                <div class="p-3.5 bg-slate-50 border-t border-slate-200 flex flex-col gap-2">
+                  <p class="text-xs text-slate-700 font-medium leading-relaxed" data-i18n="contact.khulnaAddr">
+                    ২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০
+                  </p>
+                  <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
+                    <a href="https://www.google.com/maps/place/Business+Consulting+%26+Solutions+Center+(BCSC)/@22.808632,89.5530796,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
+                      📍 খুলনা অফিসের সঠিক পিন পয়েন্ট ↗
+                    </a>
+                    <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                      <span>📋</span>
+                      <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
+                    </button>
                   </div>
-                  <div class="map-skeleton-box w-full h-[280px]">
-                    <iframe title="BCSC Dhaka Office Map" src="https://maps.google.com/maps?q=23.7314,90.4132&hl=bn&z=17&output=embed" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
-                  </div>
-                </div>
-                <div class="p-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-2 flex-wrap">
-                  <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
-                    🏢 ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
-                  </a>
-                  <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                    <span>📋</span>
-                    <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
-                  </button>
                 </div>
               </div>
             </div>
@@ -1150,56 +1266,56 @@
       </section>
 
       <!-- 17. LEGAL COMPLIANCE & TRUST STRIP (ABOVE FOOTER) -->
-      <section class="py-12 px-4 sm:px-6 bg-[#07152b] text-white border-t border-amber-500/30">
-        <div class="max-w-[1240px] mx-auto bg-gradient-to-r from-[#0b1d3a] via-[#153261] to-[#0b1d3a] border border-[#d99b26]/40 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-[#d99b26] text-[#0b1d3a] flex items-center justify-center font-bold text-2xl shrink-0 shadow-lg">
+      <section class="py-2.5 px-4 sm:px-6 bg-[#07152b] text-white border-t border-amber-500/30">
+        <div class="max-w-[1400px] mx-auto bg-gradient-to-r from-[#0b1d3a] via-[#153261] to-[#0b1d3a] border border-[#d99b26]/40 rounded-xl trust-strip-compact shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[#dfb15b] text-[#07152b] flex items-center justify-center font-bold text-xl shrink-0 shadow-md">
               🏛️
             </div>
             <div>
-              <span class="text-xs font-bold text-amber-300 uppercase tracking-wider block mb-0.5" data-i18n="trust.eyebrow">
+              <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider block mb-0.5" data-i18n="trust.eyebrow">
                 সরকারি ট্রেড লাইসেন্স ও পেশাগত সদস্যপদ
               </span>
-              <h3 class="text-base sm:text-lg font-bold text-white font-sans" data-i18n="trust.title">
+              <h3 class="text-xs sm:text-sm md:text-base font-bold text-white font-sans leading-tight" data-i18n="trust.title">
                 গভ. অ্যাপ্রুভড ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025 (ঢাকা দক্ষিণ সিটি কর্পোরেশন)
               </h3>
-              <p class="text-xs sm:text-sm text-slate-300 mt-1" data-i18n="trust.sub">
-                ICAB পেশাগত রেজিস্ট্রেশন: ICAB Reg No: 15409 | RAT No: 131 (মেয়াদ কার্যকরের তারিখ: ০৩ নভেম্বর ২০২৪)
+              <p class="text-xs text-slate-300 mt-0.5" data-i18n="trust.sub">
+                ICAB পেশাগত রেজিস্ট্রেশন: ICAB Reg No: 15409 | RAT No: 131
               </p>
             </div>
           </div>
-          <a href="#contact" class="bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition-all whitespace-nowrap shadow-md shrink-0" data-i18n="trust.btn">
+          <a href="#contact" class="bg-[#dfb15b] hover:bg-[#c99c48] text-[#07152b] font-bold trust-btn-compact rounded-lg transition-all whitespace-nowrap shadow-md shrink-0 active:scale-95" data-i18n="trust.btn">
             পরামর্শ গ্রহণ করুন
           </a>
         </div>
       </section>
     </main>
 
-    <!-- 17. DEEP NAVY CORPORATE FOOTER (OPTION 1) -->
-    <footer class="bg-[#07152b] text-slate-300 pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-sm border-t border-white/10 font-sans">
+    <!-- 17. DEEP NAVY CORPORATE FOOTER (ULTRA-COMPACT) -->
+    <footer class="bcsc-footer bg-[#07152b] text-[#cbd5e1] px-4 sm:px-6 lg:px-8 border-t border-white/10 font-sans">
       <div class="max-w-[1400px] mx-auto">
         
         <!-- 4-Column Grid Structure -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1.3fr] gap-8 lg:gap-10 pb-12 border-b border-white/[0.08]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr_1.3fr] gap-6 lg:gap-8 pb-6 border-b border-white/[0.08]">
           
           <!-- Column 1: Brand Identity -->
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-10 h-10 rounded-lg flex items-center justify-center shadow-md shrink-0">
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2.5">
+              <div class="bg-[#dfb15b] text-[#07152b] font-extrabold text-lg w-8 h-8 rounded-md flex items-center justify-center shadow-md shrink-0">
                 B
               </div>
               <div>
-                <h2 class="text-white text-2xl font-bold font-serif-heading tracking-wide leading-tight">BCSC</h2>
-                <span class="text-amber-400 text-xs font-semibold block" data-i18n="nav.slogan">পরামর্শ • সমাধান • সাফল্য</span>
+                <h2 class="text-white text-xl font-bold font-serif-heading tracking-wide leading-tight">BCSC</h2>
+                <span class="text-[#dfb15b] text-[11px] font-semibold block" data-i18n="nav.slogan">পরামর্শ • সমাধান • সাফল্য</span>
               </div>
             </div>
 
-            <p class="text-[#94a3b8] text-xs sm:text-sm leading-relaxed" data-i18n="footer.aboutText">
+            <p class="text-[#cbd5e1] text-xs leading-relaxed" data-i18n="footer.aboutText">
               ২০০৯ সাল থেকে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।
             </p>
 
-            <div class="pt-1">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#d99b26]/15 border border-[#d99b26]/30 text-[#d99b26] text-xs font-semibold tracking-wide" data-i18n="footer.corePillars">
+            <div class="pt-0.5">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#dfb15b]/15 border border-[#dfb15b]/30 text-[#dfb15b] text-[11px] font-semibold tracking-wide" data-i18n="footer.corePillars">
                 কৌশল • সমাধান • সাফল্য • অগ্রগতি
               </span>
             </div>
@@ -1207,49 +1323,49 @@
 
           <!-- Column 2: Quick Links -->
           <div>
-            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.quickLinks">
+            <h3 class="text-white font-bold font-serif-heading pb-1 border-b border-white/[0.08] inline-block pr-3" data-i18n="footer.quickLinks">
               গুরুত্বপূর্ণ লিংক
             </h3>
-            <ul class="space-y-2.5 text-xs sm:text-sm">
+            <ul class="text-xs sm:text-sm">
               <li>
-                <a href="#about" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#about" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.about">সম্পর্কে</span>
                 </a>
               </li>
               <li>
-                <a href="#founder" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#founder" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.founder">প্রতিষ্ঠাতা</span>
                 </a>
               </li>
               <li>
-                <a href="#credentials" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#credentials" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.credentials">যোগ্যতা</span>
                 </a>
               </li>
               <li>
-                <a href="#certificates" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#certificates" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.certificates">সনদপত্র</span>
                 </a>
               </li>
               <li>
-                <a href="#case-studies" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#case-studies" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.caseStudies">কেস স্টাডি</span>
                 </a>
               </li>
               <li>
-                <a href="#faq" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#faq" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.faq">এফএকিউ</span>
                 </a>
               </li>
               <li>
-                <a href="#contact" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#contact" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.contact">যোগাযোগ</span>
                 </a>
               </li>
@@ -1258,101 +1374,85 @@
 
           <!-- Column 3: Core Services -->
           <div>
-            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.coreServices">
+            <h3 class="text-white font-bold font-serif-heading pb-1 border-b border-white/[0.08] inline-block pr-3" data-i18n="footer.coreServices">
               প্রধান সেবাসমূহ
             </h3>
-            <ul class="space-y-2.5 text-xs sm:text-sm">
+            <ul class="text-xs sm:text-sm">
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s2">আয়কর প্রস্তুতি ও পরিকল্পনা</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s3">ভ্যাট ও বিআইএন কনসালটেন্সি (আইন ২০১২)</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s4">আরজেএসসি কোম্পানি গঠন ও ফাইলিং</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s_audit">সংবিধিবদ্ধ অডিট ও অ্যাসুরেন্স সাপোর্ট</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s1">হিসাবরক্ষণ ও বুককিপিং (MIS)</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s_license">ট্রেড, আইআরসি, ইআরসি ও বাণিজ্যিক লাইসেন্স</span>
                 </a>
               </li>
               <li>
-                <a href="#services" class="text-[#94a3b8] hover:text-[#d99b26] transition-colors flex items-center gap-2 group">
-                  <span class="text-[#d99b26] text-xs opacity-70 group-hover:translate-x-1 transition-transform">▸</span>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s_project">প্রকল্প প্রোফাইল ও ফিজিবিলিটি রিপোর্ট</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          <!-- Column 4: Offices & Verified Trust -->
+          <!-- Column 4: Offices & Contact (Clean & Compact with duplicate box deleted) -->
           <div>
-            <h3 class="text-white text-base sm:text-lg font-bold font-serif-heading mb-4 pb-1 border-b border-white/[0.08] inline-block pr-4" data-i18n="footer.officesVerify">
-              অফিস ও ভ্যালিডেশন
+            <h3 class="text-white font-bold font-serif-heading pb-1 border-b border-white/[0.08] inline-block pr-3" data-i18n="footer.officesVerify">
+              অফিস ও যোগাযোগ
             </h3>
             
-            <div class="space-y-3 text-xs sm:text-sm">
+            <div class="space-y-2 text-xs sm:text-sm">
               <!-- Direct Contact -->
               <div class="space-y-1">
-                <div class="flex items-center gap-2 text-[#94a3b8] flex-wrap">
-                  <span>📞</span>
-                  <a href="tel:+8801993306990" class="hover:text-white transition-colors font-semibold">+880 1993-306990</a>
-                  <span>|</span>
-                  <a href="tel:+8801714545568" class="hover:text-white transition-colors font-semibold">+880 1714-545568</a>
+                <div class="flex items-center gap-1.5 text-[#e2e8f0] flex-wrap office-detail">
+                  <span class="footer-util-icon">📞</span>
+                  <a href="tel:+8801993306990" class="footer-nav-link font-semibold">+880 1993-306990</a>
+                  <span class="text-[#dfb15b]/60">|</span>
+                  <a href="tel:+8801714545568" class="footer-nav-link font-semibold">+880 1714-545568</a>
                 </div>
-                <div class="flex items-center gap-2 text-[#94a3b8]">
-                  <span>✉️</span>
-                  <a href="mailto:bcscbd.com@gmail.com" class="hover:text-white transition-colors">bcscbd.com@gmail.com</a>
+                <div class="flex items-center gap-1.5 text-[#e2e8f0] office-detail">
+                  <span class="footer-util-icon">✉️</span>
+                  <a href="mailto:bcscbd.com@gmail.com" class="footer-nav-link">bcscbd.com@gmail.com</a>
                 </div>
               </div>
 
               <!-- Physical Offices -->
-              <div class="space-y-2 pt-1">
-                <div>
-                  <span class="text-amber-400 font-bold text-xs block" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
-                  <p class="text-[#94a3b8] text-xs leading-tight" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা</p>
+              <div class="space-y-1.5 pt-0.5">
+                <div class="office-detail">
+                  <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
+                  <p class="office-address-text" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা</p>
                 </div>
-                <div>
-                  <span class="text-amber-400 font-bold text-xs block" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
-                  <p class="text-[#94a3b8] text-xs leading-tight" data-i18n="contact.khulnaAddr">২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০</p>
-                </div>
-              </div>
-
-              <!-- Official Trust Badges Box -->
-              <div class="bg-[#0b1d3a] border border-[#d99b26]/30 rounded-xl p-3 space-y-2 mt-3 shadow-md">
-                <div class="flex items-start gap-2 text-xs">
-                  <span class="text-amber-400 shrink-0">🏛️</span>
-                  <span class="text-slate-200 font-medium" data-i18n="footer.tradeLicense">
-                    ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025
-                  </span>
-                </div>
-                <div class="flex items-start gap-2 text-xs">
-                  <span class="text-amber-400 shrink-0">🛡️</span>
-                  <span class="text-slate-200 font-medium" data-i18n="footer.icabReg">
-                    ICAB রেজিস্ট্রেশন: Reg: 15409 | RAT: 131
-                  </span>
+                <div class="office-detail">
+                  <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
+                  <p class="office-address-text" data-i18n="contact.khulnaAddr">২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০</p>
                 </div>
               </div>
             </div>
@@ -1360,14 +1460,16 @@
 
         </div>
 
-        <!-- Sub-Footer Legal Bar -->
-        <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-[#94a3b8] gap-3">
-          <p data-i18n="footer.rights">
-            © 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।
+        <!-- Sub-Footer Legal Bar (Clean 1-Row Minimalist Layout) -->
+        <div class="sub-footer-legal-bar border-t border-white/[0.08] flex flex-col md:flex-row justify-between items-center gap-2">
+          <p class="text-center md:text-left flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1">
+            <span data-i18n="footer.rights">© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।</span>
+            <span class="hidden md:inline text-[#dfb15b]">|</span>
+            <span class="text-[#dfb15b] font-semibold" data-i18n="footer.leadConsultant">
+              প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)
+            </span>
           </p>
-          <p class="text-amber-400 font-semibold" data-i18n="footer.leadConsultant">
-            প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)
-          </p>
+          <div class="hidden lg:block w-36 shrink-0" aria-hidden="true"></div>
         </div>
 
       </div>
@@ -1902,7 +2004,7 @@
         // Services
         const sContainer = document.getElementById('services-grid');
         sContainer.innerHTML = servicesData.map((s, idx) => `
-          <div class="service-card-item bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group" style="transition-delay: ${(idx % 3) * 80}ms;">
+          <div class="service-card-item bg-white border border-slate-200 rounded-xl p-6 shadow-sm group" style="transition-delay: ${(idx % 3) * 80}ms;">
             <div class="w-12 h-12 rounded-lg bg-amber-50 text-[#d99b26] flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-[#d99b26] group-hover:text-white transition-colors">
               ${s.icon}
             </div>
@@ -2149,7 +2251,7 @@
           // Automatically focus the first erroneous input field.
           const errEl = document.getElementById(firstErr.id);
           if (errEl) errEl.focus();
-          // DO NOT disable the submit button—keep it interactive so user can correct errors immediately.
+          // DO NOT disable or lock button—keep interactive so user can correct errors immediately.
           return;
         }
 
@@ -2159,10 +2261,9 @@
         const submitIcon = document.getElementById('submit-icon');
 
         if (submitBtn) {
+          submitBtn.classList.add('btn-loading');
           submitBtn.disabled = true;
-          submitBtn.style.opacity = '0.7';
-          submitBtn.style.cursor = 'not-allowed';
-          if (submitIcon) submitIcon.textContent = '⏳';
+          if (submitIcon) submitIcon.style.display = 'none';
           if (submitText) {
             submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'bn')
               ? 'পাঠানো হচ্ছে...'
@@ -2183,15 +2284,14 @@
 
           ['name', 'phone', 'email', 'service', 'message'].forEach(f => {
             const el = document.getElementById('contact-' + f);
-            if (el) el.classList.remove('border-emerald-500', 'border-red-500');
+            if (el) el.classList.remove('border-emerald-500', 'border-red-500', 'bg-red-50/20');
           });
 
           // Restore submit button state
           if (submitBtn) {
+            submitBtn.classList.remove('btn-loading');
             submitBtn.disabled = false;
-            submitBtn.style.opacity = '1';
-            submitBtn.style.cursor = 'pointer';
-            if (submitIcon) submitIcon.textContent = '✉️';
+            if (submitIcon) submitIcon.style.display = 'inline-block';
             if (submitText) {
               submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
                 ? 'Send Message'
