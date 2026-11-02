@@ -8,6 +8,10 @@
     <meta property="og:title" content="BCSC - বিসিএসসি | বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার" />
     <meta property="og:description" content="প্রতিষ্ঠাতা শেখ মুহাম্মাদ সালিম এর নেতৃত্বে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, আরজেএসসি কোম্পানি গঠন ও ব্যবসায়িক আইনি সহায়তা।" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bcscbd.com/" />
+    <meta property="og:image" content="https://bcscbd.com/images/og-image.jpg" />
+    <link rel="canonical" href="https://bcscbd.com/" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <!-- Google Fonts: Inter, Playfair Display, Hind Siliguri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -214,7 +218,7 @@
       .floating-stats-wrapper {
         position: relative !important;
         z-index: 10 !important;
-        margin-top: -50px !important;
+        margin-top: 48px !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
       }
@@ -338,7 +342,7 @@
       footer.bcsc-footer {
         background-color: #07152b !important;
         color: #cbd5e1 !important;
-        padding: 36px 0 16px !important;
+        padding: 36px 24px 16px !important;
       }
 
       footer.bcsc-footer h3,
@@ -387,6 +391,25 @@
         color: #94a3b8 !important;
       }
     </style>
+
+    <!-- JSON-LD Organization Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Business Consulting & Solutions Center (BCSC)",
+      "url": "https://bcscbd.com/",
+      "logo": "https://bcscbd.com/images/bcsc-logo.webp",
+      "image": "https://bcscbd.com/images/founder.jpg",
+      "telephone": "+8801993306990",
+      "email": "bcscbd.com@gmail.com",
+      "parentOrganization": { "@type": "Organization", "name": "TrueMark" },
+      "address": [
+        { "@type": "PostalAddress", "streetAddress": "37/2 Pritom Jaman Tower, Culvert Road, Purana Paltan", "addressLocality": "Dhaka", "postalCode": "1000", "addressCountry": "BD" },
+        { "@type": "PostalAddress", "streetAddress": "26, Gollamari North Khal Bank Road, Azad Laundry Mor", "addressLocality": "Khulna", "postalCode": "9100", "addressCountry": "BD" }
+      ]
+    }
+    </script>
 
     <!-- JSON-LD FAQ Schema Markup for SEO -->
     <script type="application/ld+json">
@@ -446,17 +469,12 @@
         
         <!-- Logo & Brand -->
         <a href="#home" class="flex items-center gap-2.5 sm:gap-3 group shrink-0 focus:outline-none">
-          <div class="bg-[#d99b26] text-[#0b1d3a] font-extrabold text-xl w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center shadow-md group-hover:bg-[#b8821d] transition-colors">
-            B
-          </div>
-          <div class="flex flex-col">
-            <span class="text-white text-base sm:text-xl font-bold tracking-wide leading-tight group-hover:text-amber-300 transition-colors">
-              BCSC
-            </span>
-            <span class="text-slate-300 text-[10.5px] sm:text-[12px] tracking-wide whitespace-nowrap font-medium" data-i18n="nav.slogan">
-              পরামর্শ • সমাধান • সাফল্য
-            </span>
-          </div>
+          <span class="bg-white rounded-lg px-1.5 py-1 shadow-md block">
+            <img src="images/bcsc-mark.webp" alt="BCSC" width="480" height="163" class="h-7 sm:h-9 w-auto block" />
+          </span>
+          <span class="hidden sm:block text-slate-300 text-[12px] tracking-wide whitespace-nowrap font-medium" data-i18n="nav.slogan">
+            পরামর্শ • সমাধান • সাফল্য
+          </span>
         </a>
 
         <!-- Center Navigation Menu (Always visible on Desktop >= 900px) -->
@@ -469,10 +487,8 @@
             <li><a href="#industries" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="industries" data-i18n="nav.industries">শিল্পখাত</a></li>
             <li><a href="#credentials" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="credentials" data-i18n="nav.credentials">যোগ্যতা</a></li>
             <li><a href="#certificates" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="certificates" data-i18n="nav.certificates">সনদপত্র</a></li>
-            <li><a href="#case-studies" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="case-studies" data-i18n="nav.caseStudies">কেস স্টাডি</a></li>
             <li><a href="#faq" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="faq" data-i18n="nav.faq">এফএকিউ</a></li>
-            <li><a href="#insights" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="insights" data-i18n="nav.blog">ব্লগ</a></li>
-            <li><a href="#gallery" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="gallery" data-i18n="nav.gallery">গ্যালারি</a></li>
+            <li><a href="https://truemarkerp.com/" class="relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-semibold whitespace-nowrap text-amber-300 hover:text-amber-200 transition-colors block" data-i18n="nav.erp">TrueMark ERP</a></li>
             <li><a href="#contact" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="contact" data-i18n="nav.contact">যোগাযোগ</a></li>
           </ul>
         </nav>
@@ -508,10 +524,8 @@
           <a href="#industries" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.industries">শিল্পখাত</a>
           <a href="#credentials" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.credentials">যোগ্যতা</a>
           <a href="#certificates" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.certificates">সনদপত্র</a>
-          <a href="#case-studies" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.caseStudies">কেস স্টাডি</a>
           <a href="#faq" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.faq">এফএকিউ</a>
-          <a href="#insights" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.blog">ব্লগ</a>
-          <a href="#gallery" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.gallery">গ্যালারি</a>
+          <a href="https://truemarkerp.com/" class="text-amber-300 hover:text-amber-200 text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center font-semibold" data-i18n="nav.erp">TrueMark ERP</a>
           <a href="#contact" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center bg-white/5 font-semibold" data-i18n="nav.contact">যোগাযোগ</a>
         </div>
       </div>
@@ -575,7 +589,7 @@
               <!-- Photo Container -->
               <div class="founder-photo-container mb-5 shadow-inner">
                 <img 
-                  src="sms-photo.png" 
+                  src="images/founder.jpg" 
                   alt="Shaikh Muhammad Salim" 
                   class="founder-photo" 
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
@@ -615,19 +629,19 @@
               <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.expLabel">বছরের পেশাদার অভিজ্ঞতা</div>
             </div>
             <div class="text-center px-3 pb-4 md:pb-0">
-              <span class="gold-stat-icon">🏢</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.clientsNum">১০০+</div>
-              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.clientsLabel">ব্যবসায়িক ক্লায়েন্ট</div>
-            </div>
-            <div class="text-center px-3 pt-4 md:pt-0">
               <span class="gold-stat-icon">📋</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.projectsNum">৫০০+</div>
-              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.projectsLabel">সম্পন্ন প্রকল্প</div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.servicesNum">২০</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.servicesLabel">ধরনের পেশাদার সেবা</div>
             </div>
             <div class="text-center px-3 pt-4 md:pt-0">
-              <span class="gold-stat-icon">🎧</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.supportNum">২৪/৭</div>
-              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.supportLabel">ক্লায়েন্ট সাপোর্ট</div>
+              <span class="gold-stat-icon">🏢</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.officesNum">২</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.officesLabel">অফিস: ঢাকা ও খুলনা</div>
+            </div>
+            <div class="text-center px-3 pt-4 md:pt-0">
+              <span class="gold-stat-icon">🧩</span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.unitsNum">২</div>
+              <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.unitsLabel">ইউনিট: BCSC ও TrueMark ERP</div>
             </div>
           </div>
         </div>
@@ -688,15 +702,49 @@
         </div>
       </section>
 
+      <!-- 4B. TRUEMARK AND ITS UNITS -->
+      <section id="truemark" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0b1d3a] text-white">
+        <div class="max-w-[1000px] mx-auto">
+          <div class="text-center max-w-[750px] mx-auto mb-14">
+            <span class="block w-fit mx-auto bg-[#fdfcf8] rounded-xl p-3 mb-5 shadow-md">
+              <img src="images/truemark-logo.webp" alt="TrueMark" width="480" height="332" loading="lazy" class="h-20 sm:h-24 w-auto block" />
+            </span>
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="truemark.eyebrow">
+              আমাদের প্রতিষ্ঠান
+            </span>
+            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-3" data-i18n="truemark.title">
+              TrueMark ও এর দুটি ইউনিট
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base" data-i18n="truemark.subtitle">
+              TrueMark আমাদের মূল প্রতিষ্ঠান। এর অধীনে দুটি ইউনিট কাজ করে।
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-white mb-2 font-sans">BCSC</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-5 flex-1" data-i18n="truemark.bcscDesc">
+                হিসাবরক্ষণ, আয়কর, ভ্যাট, আরজেএসসি, অডিট সাপোর্ট ও ব্যবসায়িক পরামর্শ সেবা।
+              </p>
+              <a href="#services" class="text-sm font-bold text-amber-300 hover:text-amber-200" data-i18n="truemark.bcscLink">সেবাসমূহ দেখুন →</a>
+            </div>
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-white mb-2 font-sans">TrueMark ERP</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-5 flex-1" data-i18n="truemark.erpDesc">
+                ব্যবসার হিসাব, স্টক, বিক্রয় ও ডেলিভারি অর্ডার এক জায়গায় পরিচালনার সফটওয়্যার। শিগগিরই আসছে।
+              </p>
+              <a href="https://truemarkerp.com/" class="text-sm font-bold text-amber-300 hover:text-amber-200" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 5. FOUNDER PROFILE SECTION -->
       <section id="founder" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-y border-slate-200">
         <div class="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div class="lg:col-span-5 flex justify-center">
             <div class="relative w-full max-w-[380px]">
-              <div class="bg-gradient-to-br from-[#1d4ed8] to-[#0b1d3a] h-[380px] sm:h-[420px] rounded-2xl flex flex-col items-center justify-center text-white shadow-2xl relative overflow-hidden border border-slate-300/30">
-                <span class="text-6xl sm:text-7xl font-extrabold tracking-widest text-white/95">SMS</span>
-                <span class="text-xs uppercase tracking-widest text-blue-200 mt-3 font-semibold">LEAD CONSULTANT</span>
-              </div>
+              <img src="images/founder.jpg" alt="শেখ মুহাম্মাদ সালিম" loading="lazy" class="w-full h-[380px] sm:h-[420px] object-cover object-top rounded-2xl shadow-2xl" />
               <div class="absolute bottom-6 -right-3 sm:-right-5 bg-[#d99b26] text-[#0b1d3a] px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm shadow-xl flex items-center gap-1.5 border border-amber-300">
                 <span>🎖️</span>
                 <span data-i18n="founder.badge">RAT (ICAB)</span>
@@ -751,7 +799,7 @@
         </div>
       </section>
 
-      <!-- 6. WHAT WE DO (18 SERVICES GRID) -->
+      <!-- 6. WHAT WE DO (20 SERVICES GRID) -->
       <section id="services" class="py-20 sm:py-24 px-4 sm:px-6">
         <div class="max-w-[1240px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
@@ -762,7 +810,7 @@
               সম্পূর্ণ ব্যবসায়িক ও আইনি সহায়তা
             </h2>
             <p class="text-slate-600 text-base" data-i18n="services.subtitle">
-              কোম্পানি তৈরি থেকে শুরু করে রিভিশন, ট্যাক্স, ভ্যাট ও বার্ষিক আইনি নিয়ন্ত্রণের পরিপূর্ণ সেবা।
+              কোম্পানি তৈরি থেকে শুরু করে রিটার্ন, ট্যাক্স, ভ্যাট ও বার্ষিক আইনি নিয়ন্ত্রণের পরিপূর্ণ সেবা।
             </p>
           </div>
 
@@ -832,28 +880,6 @@
         </div>
       </section>
 
-      <!-- 10. CASE STUDIES -->
-      <section id="case-studies" class="py-20 sm:py-24 px-4 sm:px-6">
-        <div class="max-w-[1240px] mx-auto">
-          <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="caseStudies.eyebrow">
-              কেস স্টাডি
-            </span>
-            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="caseStudies.title">
-              বাস্তব সমস্যার সুনির্দিষ্ট সমাধান
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="case-studies-grid">
-            <!-- Dynamic JS render -->
-          </div>
-
-          <p class="text-center text-xs text-slate-400 italic" data-i18n="caseStudies.disclaimer">
-            কেস স্টাডিগুলো ক্লায়েন্টের গোপনীয়তা রক্ষা করে সাধারণ বিবরণ হিসেবে উপস্থাপন করা হয়েছে।
-          </p>
-        </div>
-      </section>
-
       <!-- 11. FAQ ACCORDION SECTION -->
       <section id="faq" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
         <div class="max-w-[1000px] mx-auto">
@@ -871,45 +897,6 @@
 
           <div class="space-y-4" id="faq-container">
             <!-- Rendered by Vanilla JS -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 11. BLOG / INSIGHTS -->
-      <section id="insights" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
-        <div class="max-w-[1240px] mx-auto">
-          <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="insights.eyebrow">
-              বিসিএসসি ইনসাইটস ও ব্লগ
-            </span>
-            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="insights.title">
-              উদ্যোক্তাদের জন্য প্রয়োজনীয় গাইড
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="insights-grid">
-            <!-- Dynamic JS render -->
-          </div>
-        </div>
-      </section>
-
-      <!-- 12. INSIDE BCSC (OFFICE GALLERY) -->
-      <section id="gallery" class="py-20 sm:py-24 px-4 sm:px-6">
-        <div class="max-w-[1240px] mx-auto">
-          <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="gallery.eyebrow">
-              অফিস গ্যালারি
-            </span>
-            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="gallery.title">
-              বিসিএসসি এর অভ্যন্তরীণ দৃশ্য
-            </h2>
-            <p class="text-slate-600 text-sm sm:text-base" data-i18n="gallery.subtitle">
-              গোপনীয়তা ও পেশাদার পরিবেশের সাথে ক্লায়েন্টদের পরামর্শ সেবা প্রদান।
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="gallery-grid">
-            <!-- Dynamic JS render -->
           </div>
         </div>
       </section>
@@ -944,31 +931,25 @@
               <span class="text-sm sm:text-base font-semibold text-slate-100">Bio Science International</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">TM</div>
-              <span class="text-sm sm:text-base font-semibold text-slate-100">TrueMark International</span>
-            </div>
-            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
               <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">FG</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Five Gems Ltd</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 14. TESTIMONIALS -->
-      <section class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
-        <div class="max-w-[1240px] mx-auto">
-          <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="testimonials.eyebrow">
-              ক্লায়েন্টদের মতামত
-            </span>
-            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="testimonials.title">
-              আমাদের সেবায় ক্লায়েন্টদের অনুভূতি
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6" id="testimonials-grid">
-            <!-- Dynamic JS render -->
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
+              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">GT</div>
+              <span class="text-sm sm:text-base font-semibold text-slate-100">Gazi Traders</span>
+            </div>
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
+              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">AM</div>
+              <span class="text-sm sm:text-base font-semibold text-slate-100">Al Mamun Hajj Kafela</span>
+            </div>
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
+              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">MH</div>
+              <span class="text-sm sm:text-base font-semibold text-slate-100">MASK Hajj Group</span>
+            </div>
+            <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
+              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">IAB</div>
+              <span class="text-sm sm:text-base font-semibold text-slate-100">IAB</span>
+            </div>
           </div>
         </div>
       </section>
@@ -983,16 +964,6 @@
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="contact.title">
               আপনার ব্যবসার প্রয়োজনে সরাসরি কথা বলুন
             </h2>
-            <!-- ESTIMATED RESPONSE TIME WIDGET (DIRECTLY BELOW TITLE) -->
-            <div class="mt-2.5 mb-4 flex items-center justify-center">
-              <div class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full shadow-xs">
-                <span class="relative flex h-2.5 w-2.5 shrink-0">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <span data-i18n="contact.responseTime">সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়</span>
-              </div>
-            </div>
             <p class="text-slate-600 text-base" data-i18n="contact.subtitle">
               অ্যাকাউন্টিং, আয়কর, ভ্যাট, কোম্পানি গঠন, রেজিস্ট্রেশন ও আইনি সেবার জন্য আমাদের সাথে যোগাযোগ করুন।
             </p>
@@ -1076,13 +1047,13 @@
                 ঢাকা অফিস
               </span>
               <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed mb-3" data-i18n="contact.dhakaAddr">
-                ৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০
+                ৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০
               </p>
               <div class="flex items-center gap-3 flex-wrap">
                 <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
                   📍 গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
                 </a>
-                <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
                   <span>📋</span>
                   <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                 </button>
@@ -1101,15 +1072,8 @@
                 অনলাইন অ্যাপয়েন্টমেন্ট ও তথ্য অনুসন্ধান
               </h3>
               <p class="text-slate-600 text-xs sm:text-sm mt-1" data-i18n="form.subtitle">
-                নিচের ফর্মে আপনার তথ্য প্রদান করুন। আমাদের প্রতিনিধি খুব দ্রুত যোগাযোগ করবে।
+                ফর্মটি পূরণ করে বোতাম চাপলে আপনার বার্তা WhatsApp-এ তৈরি হয়ে খুলবে। সেখানে Send চাপলে আমাদের কাছে পৌঁছাবে।
               </p>
-              <div class="mt-3 inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow-2xs">
-                <span class="relative flex h-2 w-2 shrink-0">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span data-i18n="form.responseTime">সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়</span>
-              </div>
             </div>
 
             <!-- SUCCESS CONFIRMATION BANNER (DISMISSIBLE) -->
@@ -1117,9 +1081,9 @@
               <div class="flex items-start gap-3">
                 <span class="text-xl">✅</span>
                 <div>
-                  <h5 class="font-bold text-emerald-950 mb-0.5" data-i18n="form.successTitle">বার্তাটি সফলভাবে পাঠানো হয়েছে!</h5>
+                  <h5 class="font-bold text-emerald-950 mb-0.5" data-i18n="form.successTitle">আর একটি ধাপ বাকি: WhatsApp-এ Send চাপুন</h5>
                   <p class="text-xs sm:text-sm text-emerald-800" data-i18n="form.successMsg">
-                    ধন্যবাদ! বিসিএসসি টিম দ্রুত আপনার সাথে কল বা ইমেইলের মাধ্যমে যোগাযোগ করবে।
+                    WhatsApp-এ Send না চাপলে বার্তাটি আমাদের কাছে পৌঁছাবে না। WhatsApp না খুললে +880 1993-306990 নম্বরে কল করুন।
                   </p>
                 </div>
               </div>
@@ -1135,7 +1099,7 @@
                   <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.nameLabel">
                     আপনার নাম <span class="text-red-500">*</span>
                   </label>
-                  <input type="text" id="contact-name" name="name" onblur="validateName()" oninput="clearError('name')" placeholder="যেমন: শেখ মুহাম্মাদ সালিম" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <input type="text" id="contact-name" name="name" onblur="validateName()" oninput="clearError('name')" placeholder="আপনার পুরো নাম" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
                   <p id="err-name"></p>
                 </div>
 
@@ -1144,7 +1108,7 @@
                   <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.phoneLabel">
                     মোবাইল নম্বর <span class="text-red-500">*</span>
                   </label>
-                  <input type="tel" id="contact-phone" name="phone" onblur="validatePhone()" oninput="clearError('phone')" placeholder="যেমন: 01993306990" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <input type="tel" id="contact-phone" name="phone" onblur="validatePhone()" oninput="clearError('phone')" placeholder="যেমন: 017XXXXXXXX" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
                   <p id="err-phone"></p>
                 </div>
               </div>
@@ -1155,7 +1119,7 @@
                   <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" data-i18n="form.emailLabel">
                     ইমেইল ঠিকানা <span class="text-red-500">*</span>
                   </label>
-                  <input type="email" id="contact-email" name="email" onblur="validateEmail()" oninput="clearError('email')" placeholder="যেমন: bcscbd.com@gmail.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
+                  <input type="email" id="contact-email" name="email" onblur="validateEmail()" oninput="clearError('email')" placeholder="যেমন: name@example.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm transition-all" />
                   <p id="err-email"></p>
                 </div>
 
@@ -1171,6 +1135,9 @@
                     <option value="VAT" data-i18n="form.sOpt3">ভ্যাট ও বিআইএন কনসালটেন্সি</option>
                     <option value="RJSC" data-i18n="form.sOpt4">আরজেএসসি কোম্পানি গঠন</option>
                     <option value="IRC_ERC" data-i18n="form.sOpt5">আইআরসি ও ইআরসি রেজিস্ট্রেশন</option>
+                    <option value="ERP" data-i18n="form.sOpt7">TrueMark ERP ডেমো</option>
+                    <option value="Travel_Visa" data-i18n="form.sOpt8">ট্রাভেল ও ভিসা সেবা</option>
+                    <option value="Product_Sourcing" data-i18n="form.sOpt9">প্রোডাক্ট সোর্সিং</option>
                     <option value="Other" data-i18n="form.sOpt6">অন্যান্য আইনি ও ব্যবসায়িক পরামর্শ</option>
                   </select>
                   <p id="err-service"></p>
@@ -1189,8 +1156,8 @@
               <!-- Submit Button -->
               <div class="pt-2 text-center">
                 <button type="submit" id="contact-submit-btn" class="w-full sm:w-auto bg-[#0b1d3a] hover:bg-[#153261] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
-                  <span id="submit-icon">✉️</span>
-                  <span id="submit-text" data-i18n="form.submitBtn">বার্তা পাঠান</span>
+                  <span id="submit-icon">💬</span>
+                  <span id="submit-text" data-i18n="form.submitBtn">WhatsApp-এ পাঠান</span>
                 </button>
               </div>
             </form>
@@ -1212,7 +1179,7 @@
                 <div>
                   <div class="p-3 bg-slate-100 font-semibold text-xs sm:text-sm text-slate-700 flex items-center justify-between border-b border-slate-200">
                     <span data-i18n="contact.dhakaTitle">ঢাকা অফিস</span>
-                    <span class="text-xs text-slate-500">প্রীতম জামান টাওয়ার, পুরানা পল্টন</span>
+                    <span class="text-xs text-slate-500">প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন</span>
                   </div>
                   <div class="map-skeleton-box w-full h-[260px]">
                     <iframe title="BCSC Dhaka Office Map" src="https://maps.google.com/maps?q=23.7327925,90.411991&hl=bn&z=17&output=embed" width="100%" height="260" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onload="this.parentElement.classList.add('loaded');"></iframe>
@@ -1220,13 +1187,13 @@
                 </div>
                 <div class="p-3.5 bg-slate-50 border-t border-slate-200 flex flex-col gap-2">
                   <p class="text-xs text-slate-700 font-medium leading-relaxed" data-i18n="contact.dhakaAddr">
-                    ৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা
+                    ৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা
                   </p>
                   <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
                     <a href="https://www.google.com/maps/place/Zaman+Tower/@23.7327925,90.411991,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
                       🏢 ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
                     </a>
-                    <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
+                    <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
                       <span>📋</span>
                       <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                     </button>
@@ -1274,13 +1241,13 @@
             </div>
             <div>
               <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider block mb-0.5" data-i18n="trust.eyebrow">
-                সরকারি ট্রেড লাইসেন্স ও পেশাগত সদস্যপদ
+                পেশাগত সদস্যপদ
               </span>
               <h3 class="text-xs sm:text-sm md:text-base font-bold text-white font-sans leading-tight" data-i18n="trust.title">
-                গভ. অ্যাপ্রুভড ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025 (ঢাকা দক্ষিণ সিটি কর্পোরেশন)
+                ICAB পেশাগত রেজিস্ট্রেশন: Reg No: 15409 | RAT No: 131
               </h3>
               <p class="text-xs text-slate-300 mt-0.5" data-i18n="trust.sub">
-                ICAB পেশাগত রেজিস্ট্রেশন: ICAB Reg No: 15409 | RAT No: 131
+                BCSC, TrueMark-এর একটি ইউনিট
               </p>
             </div>
           </div>
@@ -1300,15 +1267,9 @@
           
           <!-- Column 1: Brand Identity -->
           <div class="space-y-2.5">
-            <div class="flex items-center gap-2.5">
-              <div class="bg-[#dfb15b] text-[#07152b] font-extrabold text-lg w-8 h-8 rounded-md flex items-center justify-center shadow-md shrink-0">
-                B
-              </div>
-              <div>
-                <h2 class="text-white text-xl font-bold font-serif-heading tracking-wide leading-tight">BCSC</h2>
-                <span class="text-[#dfb15b] text-[11px] font-semibold block" data-i18n="nav.slogan">পরামর্শ • সমাধান • সাফল্য</span>
-              </div>
-            </div>
+            <span class="block w-fit bg-white rounded-lg p-2 shadow-md">
+              <img src="images/bcsc-logo.webp" alt="BCSC: Business Consulting & Solutions Center" width="800" height="412" loading="lazy" class="h-20 w-auto block" />
+            </span>
 
             <p class="text-[#cbd5e1] text-xs leading-relaxed" data-i18n="footer.aboutText">
               ২০০৯ সাল থেকে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।
@@ -1352,9 +1313,9 @@
                 </a>
               </li>
               <li>
-                <a href="#case-studies" class="footer-nav-link flex items-center gap-1.5 group">
+                <a href="https://truemarkerp.com/" class="footer-nav-link flex items-center gap-1.5 group">
                   <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
-                  <span data-i18n="nav.caseStudies">কেস স্টাডি</span>
+                  <span data-i18n="nav.erp">TrueMark ERP</span>
                 </a>
               </li>
               <li>
@@ -1420,6 +1381,12 @@
                   <span data-i18n="footer.s_project">প্রকল্প প্রোফাইল ও ফিজিবিলিটি রিপোর্ট</span>
                 </a>
               </li>
+              <li>
+                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.s_travel">ট্রাভেল ও ভিসা সেবা</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -1448,7 +1415,7 @@
               <div class="space-y-1.5 pt-0.5">
                 <div class="office-detail">
                   <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
-                  <p class="office-address-text" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, পুরানা পল্টন, ঢাকা</p>
+                  <p class="office-address-text" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা</p>
                 </div>
                 <div class="office-detail">
                   <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
@@ -1463,7 +1430,7 @@
         <!-- Sub-Footer Legal Bar (Clean 1-Row Minimalist Layout) -->
         <div class="sub-footer-legal-bar border-t border-white/[0.08] flex flex-col md:flex-row justify-between items-center gap-2">
           <p class="text-center md:text-left flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1">
-            <span data-i18n="footer.rights">© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।</span>
+            <span data-i18n="footer.rights">© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট। সর্বস্বত্ব সংরক্ষিত।</span>
             <span class="hidden md:inline text-[#dfb15b]">|</span>
             <span class="text-[#dfb15b] font-semibold" data-i18n="footer.leadConsultant">
               প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)
@@ -1492,6 +1459,28 @@
       // Strictly accurate spelling constraint: "শেখ মুহাম্মাদ সালিম"
       const translations = {
         bn: {
+          'nav.erp': 'TrueMark ERP',
+          'stats.servicesNum': '২০',
+          'stats.servicesLabel': 'ধরনের পেশাদার সেবা',
+          'stats.officesNum': '২',
+          'stats.officesLabel': 'অফিস: ঢাকা ও খুলনা',
+          'stats.unitsNum': '২',
+          'stats.unitsLabel': 'ইউনিট: BCSC ও TrueMark ERP',
+          'truemark.eyebrow': 'আমাদের প্রতিষ্ঠান',
+          'truemark.title': 'TrueMark ও এর দুটি ইউনিট',
+          'truemark.subtitle': 'TrueMark আমাদের মূল প্রতিষ্ঠান। এর অধীনে দুটি ইউনিট কাজ করে।',
+          'truemark.bcscDesc': 'হিসাবরক্ষণ, আয়কর, ভ্যাট, আরজেএসসি, অডিট সাপোর্ট ও ব্যবসায়িক পরামর্শ সেবা।',
+          'truemark.bcscLink': 'সেবাসমূহ দেখুন →',
+          'truemark.erpDesc': 'ব্যবসার হিসাব, স্টক, বিক্রয় ও ডেলিভারি অর্ডার এক জায়গায় পরিচালনার সফটওয়্যার। শিগগিরই আসছে।',
+          'truemark.erpLink': 'truemarkerp.com দেখুন →',
+          'trust.eyebrow': 'পেশাগত সদস্যপদ',
+          'trust.title': 'ICAB পেশাগত রেজিস্ট্রেশন: Reg No: 15409 | RAT No: 131',
+          'trust.sub': 'BCSC, TrueMark-এর একটি ইউনিট',
+          'trust.btn': 'পরামর্শ গ্রহণ করুন',
+          'form.sOpt7': 'TrueMark ERP ডেমো',
+          'form.sOpt8': 'ট্রাভেল ও ভিসা সেবা',
+          'form.sOpt9': 'প্রোডাক্ট সোর্সিং',
+          'footer.s_travel': 'ট্রাভেল ও ভিসা সেবা',
           'nav.slogan': 'পরামর্শ • সমাধান • সাফল্য',
           'nav.home': 'হোম',
           'nav.about': 'সম্পর্কে',
@@ -1500,9 +1489,6 @@
           'nav.industries': 'শিল্পখাত',
           'nav.credentials': 'যোগ্যতা',
           'nav.certificates': 'সনদপত্র',
-          'nav.caseStudies': 'কেস স্টাডি',
-          'nav.blog': 'ব্লগ',
-          'nav.gallery': 'গ্যালারি',
           'nav.contact': 'যোগাযোগ',
           'nav.consultation': 'পরামর্শ বুক করুন',
           'hero.eyebrow': 'সমগ্র বাংলাদেশে বিশ্বস্ত ব্যবসায়িক ও আইনি সহায়তা',
@@ -1517,15 +1503,9 @@
           'hero.featureSupport': 'দ্রুত ও দায়িত্বশীল সাপোর্ট',
           'hero.founderBadge': 'প্রতিষ্ঠাতা ও প্রধান পরামর্শক',
           'hero.founderName': 'শেখ মুহাম্মাদ সালিম',
-          'hero.founderTitle': 'RAT (ICAB) | MBA | M.Com | CMA (Inter)',
+          'hero.founderTitle': 'RAT (ICAB) | CA (PL) | MBA | M.Com | CMA (Inter)',
           'stats.expNum': '১৬+',
           'stats.expLabel': 'বছরের পেশাদার অভিজ্ঞতা',
-          'stats.clientsNum': '১০০+',
-          'stats.clientsLabel': 'ব্যবসায়িক ক্লায়েন্ট',
-          'stats.projectsNum': '৫০০+',
-          'stats.projectsLabel': 'সম্পন্ন প্রকল্প',
-          'stats.supportNum': '২৪/৭',
-          'stats.supportLabel': 'ক্লায়েন্ট সাপোর্ট',
           'about.eyebrow': 'বিসিএসসি সম্পর্কে',
           'about.title': 'ব্যবসার প্রতিটি ধাপে একজন বাস্তবমুখী অংশীদার',
           'about.p1': 'বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (বিসিএসসি) হলো সমগ্র বাংলাদেশের উদ্যোক্তা, কোম্পানি এবং বিভিন্ন প্রতিষ্ঠানের একটি নির্ভরযোগ্য পরামর্শক সংস্থা।',
@@ -1552,7 +1532,7 @@
           'founder.badge': 'RAT (ICAB)',
           'services.eyebrow': 'আমাদের সেবাসমূহ',
           'services.title': 'সম্পূর্ণ ব্যবসায়িক ও আইনি সহায়তা',
-          'services.subtitle': 'কোম্পানি তৈরি থেকে শুরু করে রিভিশন, ট্যাক্স, ভ্যাট ও বার্ষিক আইনি নিয়ন্ত্রণের পরিপূর্ণ সেবা।',
+          'services.subtitle': 'কোম্পানি তৈরি থেকে শুরু করে রিটার্ন, ট্যাক্স, ভ্যাট ও বার্ষিক আইনি নিয়ন্ত্রণের পরিপূর্ণ সেবা।',
           'industries.eyebrow': 'শিল্পখাতসমূহ',
           'industries.title': 'বিভিন্ন খাতের ব্যবসায় আমাদের অভিজ্ঞতা',
           'credentials.eyebrow': 'পেশাগত যোগ্যতা',
@@ -1561,18 +1541,8 @@
           'certificates.eyebrow': 'সনদপত্র ও স্বীকৃতি',
           'certificates.title': 'পেশাগত অভিজ্ঞতা ও প্রশিক্ষণ',
           'certificates.subtitle': 'হিসাবরক্ষণ, শ্রম আইন, আইএফআরএস এবং ব্যবসায়িক দক্ষতার স্বীকৃত সনদসমূহ।',
-          'caseStudies.eyebrow': 'কেস স্টাডি',
-          'caseStudies.title': 'বাস্তব সমস্যার সুনির্দিষ্ট সমাধান',
-          'caseStudies.disclaimer': 'কেস স্টাডিগুলো ক্লায়েন্টের গোপনীয়তা রক্ষা করে সাধারণ বিবরণ হিসেবে উপস্থাপন করা হয়েছে।',
-          'insights.eyebrow': 'বিসিএসসি ইনসাইটস ও ব্লগ',
-          'insights.title': 'উদ্যোক্তাদের জন্য প্রয়োজনীয় গাইড',
-          'gallery.eyebrow': 'অফিস গ্যালারি',
-          'gallery.title': 'বিসিএসসি এর অভ্যন্তরীণ দৃশ্য',
-          'gallery.subtitle': 'গোপনীয়তা ও পেশাদার পরিবেশের সাথে ক্লায়েন্টদের পরামর্শ সেবা প্রদান।',
           'clients.eyebrow': 'ক্লায়েন্ট শোকেস',
           'clients.title': 'আমাদের ওপর যাদের আস্থা',
-          'testimonials.eyebrow': 'ক্লায়েন্টদের মতামত',
-          'testimonials.title': 'আমাদের সেবায় ক্লায়েন্টদের অনুভূতি',
           'contact.eyebrow': 'যোগাযোগ বিসিএসসি',
           'contact.title': 'আপনার ব্যবসার প্রয়োজনে সরাসরি কথা বলুন',
           'contact.subtitle': 'অ্যাকাউন্টিং, আয়কর, ভ্যাট, কোম্পানি গঠন, রেজিস্ট্রেশন ও আইনি সেবার জন্য আমাদের সাথে যোগাযোগ করুন।',
@@ -1582,7 +1552,7 @@
           'contact.khulnaTitle': 'খুলনা অফিস',
           'contact.khulnaAddr': '২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০',
           'contact.dhakaTitle': 'ঢাকা অফিস',
-          'contact.dhakaAddr': '৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), পুরানা পল্টন, ঢাকা-১০০০',
+          'contact.dhakaAddr': '৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০',
           'contact.openMaps': 'গুগল ম্যাপে দেখুন ↗',
           'contact.copyBtn': 'কপি ঠিকানা',
           'contact.mapsEyebrow': 'অফিসের অবস্থান',
@@ -1592,7 +1562,7 @@
           'footer.corePillars': 'কৌশল • সমাধান • সাফল্য • অগ্রগতি',
           'footer.quickLinks': 'গুরুত্বপূর্ণ লিংক',
           'footer.coreServices': 'প্রধান সেবাসমূহ',
-          'footer.officesVerify': 'অফিস ও ভ্যালিডেশন',
+          'footer.officesVerify': 'অফিস ও যোগাযোগ',
           'footer.s1': 'হিসাবরক্ষণ ও বুককিপিং (MIS)',
           'footer.s2': 'আয়কর প্রস্তুতি ও পরিকল্পনা',
           'footer.s3': 'ভ্যাট ও বিআইএন কনসালটেন্সি (আইন ২০১২)',
@@ -1600,9 +1570,8 @@
           'footer.s_audit': 'সংবিধিবদ্ধ অডিট ও অ্যাসুরেন্স সাপোর্ট',
           'footer.s_license': 'ট্রেড, আইআরসি, ইআরসি ও বাণিজ্যিক লাইসেন্স',
           'footer.s_project': 'প্রকল্প প্রোফাইল ও ফিজিবিলিটি রিপোর্ট',
-          'footer.tradeLicense': 'ট্রেড লাইসেন্স: TRAD/DSCC/013070/2025',
           'footer.icabReg': 'ICAB রেজিস্ট্রেশন: Reg: 15409 | RAT: 131',
-          'footer.rights': '© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC)। সর্বস্বত্ব সংরক্ষিত।',
+          'footer.rights': '© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট। সর্বস্বত্ব সংরক্ষিত।',
           'footer.leadConsultant': 'প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)',
           'floating.whatsAppChat': 'হোয়াটসঅ্যাপ',
           'nav.faq': 'এফএকিউ',
@@ -1611,9 +1580,9 @@
           'faq.subtitle': 'ভ্যাট, ইনকাম ট্যাক্স, ট্রেড লাইসেন্স ও কোম্পানি গঠন সংক্রান্ত আপনার প্রয়োজনীয় প্রশ্নাবলীর উত্তর।',
           'form.eyebrow': 'পরামর্শ বার্তা পাঠান',
           'form.title': 'অনলাইন অ্যাপয়েন্টমেন্ট ও তথ্য অনুসন্ধান',
-          'form.subtitle': 'নিচের ফর্মে আপনার তথ্য প্রদান করুন। আমাদের প্রতিনিধি খুব দ্রুত যোগাযোগ করবে।',
-          'form.successTitle': 'বার্তাটি সফলভাবে পাঠানো হয়েছে!',
-          'form.successMsg': 'ধন্যবাদ! বিসিএসসি টিম দ্রুত আপনার সাথে কল বা ইমেইলের মাধ্যমে যোগাযোগ করবে।',
+          'form.subtitle': 'ফর্মটি পূরণ করে বোতাম চাপলে আপনার বার্তা WhatsApp-এ তৈরি হয়ে খুলবে। সেখানে Send চাপলে আমাদের কাছে পৌঁছাবে।',
+          'form.successTitle': 'আর একটি ধাপ বাকি: WhatsApp-এ Send চাপুন',
+          'form.successMsg': 'WhatsApp-এ Send না চাপলে বার্তাটি আমাদের কাছে পৌঁছাবে না। WhatsApp না খুললে +880 1993-306990 নম্বরে কল করুন।',
           'form.nameLabel': 'আপনার নাম',
           'form.phoneLabel': 'মোবাইল নম্বর',
           'form.emailLabel': 'ইমেইল ঠিকানা',
@@ -1626,16 +1595,37 @@
           'form.sOpt4': 'আরজেএসসি কোম্পানি গঠন',
           'form.sOpt5': 'আইআরসি ও ইআরসি রেজিস্ট্রেশন',
           'form.sOpt6': 'অন্যান্য আইনি ও ব্যবসায়িক পরামর্শ',
-          'form.submitBtn': 'বার্তা পাঠান',
+          'form.submitBtn': 'WhatsApp-এ পাঠান',
           'form.errName': 'অনুগ্রহ করে আপনার সঠিক নাম লিখুন (নূন্যতম ২ অক্ষর)।',
           'form.errPhone': '১১ ডিজিটের সঠিক বাংলাদেশী মোবাইল নম্বর লিখুন (যেমন: 01712345678 বা +8801993306990)।',
           'form.errEmail': 'সঠিক ইমেইল ঠিকানা প্রদান করুন (যেমন: name@example.com)।',
           'form.errService': 'অনুগ্রহ করে একটি সেবা নির্বাচন করুন।',
           'form.errMsg': 'অনুগ্রহ করে বার্তা লিখুন (নূন্যতম ১০ অক্ষর)।',
-          'contact.responseTime': 'সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়',
-          'form.responseTime': 'সাধারণত ২ ঘণ্টার মধ্যে উত্তর দেওয়া হয়'
         },
         en: {
+          'nav.erp': 'TrueMark ERP',
+          'stats.servicesNum': '20',
+          'stats.servicesLabel': 'Professional Services',
+          'stats.officesNum': '2',
+          'stats.officesLabel': 'Offices: Dhaka & Khulna',
+          'stats.unitsNum': '2',
+          'stats.unitsLabel': 'Units: BCSC & TrueMark ERP',
+          'truemark.eyebrow': 'OUR COMPANY',
+          'truemark.title': 'TrueMark and its two units',
+          'truemark.subtitle': 'TrueMark is our parent company. Two units operate under it.',
+          'truemark.bcscDesc': 'Accounting, income tax, VAT, RJSC, audit support and business advisory services.',
+          'truemark.bcscLink': 'Explore services →',
+          'truemark.erpDesc': 'Software for managing accounts, stock, sales and delivery orders in one place. Coming soon.',
+          'truemark.erpLink': 'Visit truemarkerp.com →',
+          'trust.eyebrow': 'PROFESSIONAL MEMBERSHIP',
+          'trust.title': 'ICAB Registration: Reg No: 15409 | RAT No: 131',
+          'trust.sub': 'BCSC is a unit of TrueMark',
+          'trust.btn': 'Get Consultation',
+          'form.sOpt7': 'TrueMark ERP Demo',
+          'form.sOpt8': 'Travel & Visa Services',
+          'form.sOpt9': 'Product Sourcing',
+          'footer.s_travel': 'Travel & Visa Services',
+          'contact.copyBtn': 'Copy Address',
           'nav.slogan': 'Consult. Solve. Succeed.',
           'nav.home': 'Home',
           'nav.about': 'About',
@@ -1644,9 +1634,6 @@
           'nav.industries': 'Industries',
           'nav.credentials': 'Credentials',
           'nav.certificates': 'Certificates',
-          'nav.caseStudies': 'Case Studies',
-          'nav.blog': 'Blog',
-          'nav.gallery': 'Gallery',
           'nav.contact': 'Contact',
           'nav.faq': 'FAQ',
           'faq.eyebrow': 'FREQUENTLY ASKED QUESTIONS',
@@ -1654,9 +1641,9 @@
           'faq.subtitle': 'Essential answers regarding VAT, income tax, trade license, and company formation.',
           'form.eyebrow': 'SEND CONSULTATION MESSAGE',
           'form.title': 'Online Appointment & Inquiry',
-          'form.subtitle': 'Please fill out the form below. Our representative will contact you promptly.',
-          'form.successTitle': 'Message Sent Successfully!',
-          'form.successMsg': 'Thank you! The BCSC team will reach out to you via phone or email shortly.',
+          'form.subtitle': 'Fill in the form and press the button. Your message opens in WhatsApp, and it reaches us when you press Send there.',
+          'form.successTitle': 'One step left: press Send in WhatsApp',
+          'form.successMsg': 'Your message reaches us only after you press Send in WhatsApp. If WhatsApp did not open, please call +880 1993-306990.',
           'form.nameLabel': 'YOUR NAME',
           'form.phoneLabel': 'MOBILE NUMBER',
           'form.emailLabel': 'EMAIL ADDRESS',
@@ -1669,14 +1656,12 @@
           'form.sOpt4': 'RJSC Company Formation',
           'form.sOpt5': 'IRC & ERC Registration',
           'form.sOpt6': 'Other Legal & Advisory Services',
-          'form.submitBtn': 'Send Message',
+          'form.submitBtn': 'Send via WhatsApp',
           'form.errName': 'Please enter a valid name (minimum 2 characters).',
           'form.errPhone': 'Please enter a valid 11-digit Bangladeshi mobile number (e.g., 01712345678 or +8801993306990).',
           'form.errEmail': 'Please enter a valid email address (e.g., name@example.com).',
           'form.errService': 'Please select a required service.',
           'form.errMsg': 'Please enter your message (minimum 10 characters).',
-          'contact.responseTime': 'Usually responds within 2 hours',
-          'form.responseTime': 'Usually responds within 2 hours',
           'nav.consultation': 'Book Consultation',
           'hero.eyebrow': 'TRUSTED BUSINESS SUPPORT ACROSS BANGLADESH',
           'hero.titleLine1': 'Business clarity.',
@@ -1690,15 +1675,9 @@
           'hero.featureSupport': 'Responsive support',
           'hero.founderBadge': 'FOUNDER & LEAD CONSULTANT',
           'hero.founderName': 'Shaikh Muhammad Salim',
-          'hero.founderTitle': 'RAT (ICAB) | MBA | M.Com | CMA (Inter)',
+          'hero.founderTitle': 'RAT (ICAB) | CA (PL) | MBA | M.Com | CMA (Inter)',
           'stats.expNum': '16+',
           'stats.expLabel': 'Years of Experience',
-          'stats.clientsNum': '100+',
-          'stats.clientsLabel': 'Business Clients',
-          'stats.projectsNum': '500+',
-          'stats.projectsLabel': 'Projects Completed',
-          'stats.supportNum': '24/7',
-          'stats.supportLabel': 'Client Support',
           'about.eyebrow': 'ABOUT BCSC',
           'about.title': 'A practical partner for every stage of business',
           'about.p1': 'Business Consulting & Solutions Center is a professional consultancy firm supporting entrepreneurs, companies and organizations throughout Bangladesh.',
@@ -1734,18 +1713,8 @@
           'certificates.eyebrow': 'CERTIFICATES GALLERY',
           'certificates.title': 'Professional Learning & Recognition',
           'certificates.subtitle': 'Verified certifications in accounting, labor law, IFRS, and skills development.',
-          'caseStudies.eyebrow': 'CASE STUDIES',
-          'caseStudies.title': 'How BCSC Creates Practical Value',
-          'caseStudies.disclaimer': 'Case studies are representative summaries and do not disclose confidential client information.',
-          'insights.eyebrow': 'BCSC INSIGHTS & BLOG',
-          'insights.title': 'Useful Guides for Business Owners',
-          'gallery.eyebrow': 'OFFICE GALLERY',
-          'gallery.title': 'Inside BCSC',
-          'gallery.subtitle': 'Professional environment dedicated to excellence and confidential client consulting.',
           'clients.eyebrow': 'CLIENT SHOWCASE',
           'clients.title': 'Trusted by Businesses',
-          'testimonials.eyebrow': 'TESTIMONIALS',
-          'testimonials.title': 'What Clients Value',
           'contact.eyebrow': 'CONTACT BCSC',
           'contact.title': 'Let’s discuss your business needs',
           'contact.subtitle': 'Contact us for accounting, tax, VAT, company formation, compliance or advisory support.',
@@ -1755,7 +1724,7 @@
           'contact.khulnaTitle': 'KHULNA OFFICE',
           'contact.khulnaAddr': '26, Gollamari North Khal Bank Road, Azad Laundry Mor, Khulna-9100',
           'contact.dhakaTitle': 'DHAKA OFFICE',
-          'contact.dhakaAddr': '37/2 Pritom Jaman Tower, Purana Paltan, Dhaka',
+          'contact.dhakaAddr': '37/2 Pritom Jaman Tower, Culvert Road, Purana Paltan, Dhaka-1000',
           'contact.openMaps': 'Open in Google Maps ↗',
           'contact.mapsEyebrow': 'FIND OUR OFFICES',
           'contact.mapsTitle': 'Google Maps Location',
@@ -1764,7 +1733,7 @@
           'footer.corePillars': 'Strategy • Solution • Success • Growth',
           'footer.quickLinks': 'Quick Links',
           'footer.coreServices': 'Core Services',
-          'footer.officesVerify': 'Offices & Verification',
+          'footer.officesVerify': 'Offices & Contact',
           'footer.s1': 'Accounting & Financial Statements (MIS)',
           'footer.s2': 'Income Tax Preparation & Planning',
           'footer.s3': 'VAT & BIN Consultancy (VAT Act 2012)',
@@ -1772,9 +1741,8 @@
           'footer.s_audit': 'Statutory Audit & Assurance Support',
           'footer.s_license': 'Trade, IRC, ERC & Commercial Licenses',
           'footer.s_project': 'Project Profile & Feasibility Reports',
-          'footer.tradeLicense': 'Trade License: TRAD/DSCC/013070/2025 (DSCC)',
           'footer.icabReg': 'ICAB Registration: Reg: 15409 | RAT: 131',
-          'footer.rights': '© 2026 Business Consulting and Solutions Center (BCSC). All Rights Reserved.',
+          'footer.rights': '© 2026 Business Consulting & Solutions Center (BCSC), a unit of TrueMark. All Rights Reserved.',
           'footer.leadConsultant': 'Lead Consultant: Shaikh Muhammad Salim, RAT (ICAB)',
           'floating.whatsAppChat': 'WhatsApp'
         }
@@ -1786,12 +1754,12 @@
         { icon: '📈', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
         { icon: '📝', bn: { t: 'আয়কর সেবা', d: 'ই-টিন, বার্ষিক আয়কর রিটার্ন প্রস্তুত ও এনবিআর ফাইলিং। ব্যক্তিগত ও কর্পোরেট ট্যাক্স ফাইল প্রসেসিং।' }, en: { t: 'Income Tax Services', d: 'e-TIN, annual tax return filing and NBR submission. Individual and corporate tax file processing.' } },
         { icon: '🏷️', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'মূসক নিবন্ধন, ৯.১ রিটার্ন ও ভিডিএস অডিট। ট্রেজারি চালান প্রসেসিং ও অনলাইন ভ্যাট পরামর্শ।' }, en: { t: 'VAT & BIN Consultancy', d: 'VAT registration, 9.1 return filing and VDS audits. Treasury challans and online VAT advisory.' } },
-        { icon: '🏢', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওএমসি এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
+        { icon: '🏢', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওপিসি (OPC) এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
         { icon: '📜', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার হস্তান্তর, বার্ষিক রিটার্ন ও ফর্ম ১২ ফাইলিং। মূলধন বৃদ্ধি ও পরিচালক পরিবর্তন সংক্রান্ত পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, annual returns and Form 12 filings. Capital increase and director changes.' } },
-        { icon: '🌐', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
+        { icon: '🌐', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রুত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
         { icon: '🏗️', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
-        { icon: '™️', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগো কপিরাইট সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট পেটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo copyright protection. Government trademark and patent applications.' } },
-        { icon: '⚖️', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র ও ফায়ার লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances.' } },
+        { icon: '™️', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগোর ট্রেডমার্ক সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo protection. Government trademark and patent applications.' } },
+        { icon: '⚖️', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স ও স্বাস্থ্য অধিদপ্তরের লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances, and health department licenses.' } },
         { icon: '🔍', bn: { t: 'অডিট সাপোর্ট', d: 'সংবিধিবদ্ধ নিরীক্ষার শিডিউল ফাইল ও অডিট ফেসিলিটেশন। ইন্টারনাল অডিট টিম প্রস্তুতি সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Statutory audit schedule file preparation and audit facilitation. Internal audit team support.' } },
         { icon: '🏛️', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
         { icon: '📁', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
@@ -1799,7 +1767,9 @@
         { icon: '🌐', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
         { icon: '👥', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },
         { icon: '💡', bn: { t: 'ব্যবসায়িক পরামর্শ', d: 'নতুন স্টার্টআপ গঠন ও কৌশলগত ব্যবসায়িক পরিকল্পনা। আইনি কাঠামো নির্ধারণ ও খরচ সাশ্রয়।' }, en: { t: 'Business Advisory & Startups', d: 'New startup formation and strategic business planning. Legal structuring and cost optimization.' } },
-        { icon: '🎓', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } }
+        { icon: '🎓', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } },
+        { icon: '✈️', bn: { t: 'ট্রাভেল ও ভিসা সেবা', d: 'ভ্রমণ ও ভিসা সংক্রান্ত কাগজপত্র প্রস্তুত ও পরামর্শ সহায়তা।' }, en: { t: 'Travel & Visa Services', d: 'Advice and document preparation for travel and visa applications.' } },
+        { icon: '📦', bn: { t: 'প্রোডাক্ট সোর্সিং', d: 'ব্যবসার প্রয়োজনীয় পণ্য খুঁজে বের করা ও সরবরাহকারী বাছাইয়ে সহায়তা।' }, en: { t: 'Product Sourcing', d: 'Help finding the products your business needs and choosing suppliers.' } }
       ];
 
       // 10 Industries Data
@@ -1822,94 +1792,15 @@
         { num: '02', bn: { t: 'সিএ আর্টিকেলশিপ সম্পন্ন', d: 'আইসিএবি অনুমোদিত চার্টার্ড অ্যাকাউন্ট্যান্টস ফার্ম থেকে ৩ বছরের সফল আর্টিকেলেড অভিজ্ঞতা।' }, en: { t: 'CA Articleship Completed', d: 'Successfully completed 3 years of rigorous articleship under ICAB firm.' } },
         { num: '03', bn: { t: 'সিএমএ (ইন্টার)', d: 'ইনস্টিটিউট অব কস্ট অ্যান্ড ম্যানেজমেন্ট অ্যাকাউন্ট্যান্টস অব বাংলাদেশ (ICMAB)।' }, en: { t: 'CMA (Inter)', d: 'Institute of Cost and Management Accountants of Bangladesh.' } },
         { num: '04', bn: { t: 'এমবিএ এবং এম.কম (হিসাববিজ্ঞান)', d: 'উচ্চতর প্রাতিষ্ঠানিক ডিগ্রি এবং ব্যবসায়িক ফিন্যান্সের ওপর গভীর তাত্ত্বিক ধারণা।' }, en: { t: 'MBA & M.Com in Accounting', d: 'Advanced academic degrees providing strong foundation in business finance.' } },
-        { num: '05', bn: { t: 'কুইকবুকস ও ভ্যাট অনলাইন বিশেষজ্ঞ', d: 'এনবিআর এনবিআর ট্যাক্স পোর্টাল ও ভ্যাট অনলাইন সিস্টেমে দীর্ঘদিনের বাস্তব দক্ষতা।' }, en: { t: 'QuickBooks & NBR Systems Expert', d: 'Extensive hands-on mastery in NBR tax portals, VAT Online, and QuickBooks.' } }
+        { num: '05', bn: { t: 'কুইকবুকস ও ভ্যাট অনলাইন বিশেষজ্ঞ', d: 'এনবিআর ট্যাক্স পোর্টাল ও ভ্যাট অনলাইন সিস্টেমে দীর্ঘদিনের বাস্তব দক্ষতা।' }, en: { t: 'QuickBooks & NBR Systems Expert', d: 'Extensive hands-on mastery in NBR tax portals, VAT Online, and QuickBooks.' } }
       ];
 
       // 4 Certificates
       const certificatesData = [
-        { icon: '📜', bn: { t: 'ICAB RAT পেশাগত সার্টিফিকেট', sub: 'ইনস্টিটিউট অব চার্টার্ড অ্যাকাউন্ট্যান্টস অব বাংলাদেশ (Reg: 15409, RAT: 131)' }, en: { t: 'ICAB RAT Professional Certificate', sub: 'Institute of Chartered Accountants of Bangladesh (Reg: 15409, RAT: 131)' } },
-        { icon: '🤖', bn: { t: 'AI Mastery Certificate Program', sub: 'কোর্সিভ সার্টিফাইড (ID: UCWE7QXB) - আধুনিক এআই টুলস ও বিজনেস অটোমেশন' }, en: { t: 'AI Mastery Certificate Program', sub: 'Coursiv Certified (ID: UCWE7QXB) - AI Tools & Business Automation' } },
+        { icon: '📜', img: 'images/cert-icab-rat.jpg', bn: { t: 'ICAB RAT পেশাগত সার্টিফিকেট', sub: 'ইনস্টিটিউট অব চার্টার্ড অ্যাকাউন্ট্যান্টস অব বাংলাদেশ (Reg: 15409, RAT: 131)' }, en: { t: 'ICAB RAT Professional Certificate', sub: 'Institute of Chartered Accountants of Bangladesh (Reg: 15409, RAT: 131)' } },
+        { icon: '🤖', img: 'images/cert-ai-mastery.jpg', bn: { t: 'AI Mastery Certificate Program', sub: 'কোর্সিভ সার্টিফাইড (ID: UCWE7QXB) - আধুনিক এআই টুলস ও বিজনেস অটোমেশন' }, en: { t: 'AI Mastery Certificate Program', sub: 'Coursiv Certified (ID: UCWE7QXB) - AI Tools & Business Automation' } },
         { icon: '⚖️', bn: { t: 'বাংলাদেশ শ্রম আইন প্রশিক্ষণ', sub: 'শ্রম আইন, বিএসআর ও ইন্ডাস্ট্রিয়াল রিলেশনস কমপ্লায়েন্স' }, en: { t: 'Bangladesh Labor Law Training', sub: 'Labor Act, BSR & Industrial Relations Compliance' } },
         { icon: '📊', bn: { t: 'IFRS & IAS ফিন্যান্সিয়াল রিপোর্টিং', sub: 'আন্তর্জাতিক অ্যাকাউন্টিং মানদণ্ড ও করপোরেট রিপোর্টিং' }, en: { t: 'IFRS & IAS Financial Reporting', sub: 'International Accounting Standards Certification' } }
-      ];
-
-      // 3 Detailed Case Studies
-      const caseStudiesData = [
-        {
-          bn: {
-            title: 'বিশৃঙ্খল হিসাবরক্ষণ পুনর্গঠন',
-            c: 'চ্যালেঞ্জ: ৫ বছরের ব্যাকলগ অ্যাকাউন্টস, জটিল হিসাবনিকাশ ও অসম্পূর্ণ লেজার।',
-            a: 'সমাধান: BCSC টিম ৫ বছরের ব্যাকলগ অ্যাকাউন্টস পুনর্গঠন করে ডিজিটাল বুককিপিং সিস্টেমে স্থানান্তর করে।',
-            o: 'ফলাফল: ৬ সপ্তাহে সম্পূর্ণ স্বচ্ছ রূপান্তর ও এনবিআরে যথাসময়ে ফাইলিং সম্পন্ন।'
-          },
-          en: {
-            title: 'Restructuring Disorganized Bookkeeping Backlog',
-            c: 'Challenge: 5 years of backlogged accounts, complex calculations, and incomplete ledgers.',
-            a: 'Approach: BCSC team reconstructed 5 years of backlog accounts and migrated to digital bookkeeping.',
-            o: 'Outcome: Transparent financial reports restored in 6 weeks and timely NBR filings completed.'
-          }
-        },
-        {
-          bn: {
-            title: 'ভ্যাট কমপ্লায়েন্স ও নিরীক্ষা শিডিউল',
-            c: 'চ্যালেঞ্জ: নতুন ভ্যাট আইন ২০১২ অনুযায়ী মূসক ৯.১ রিটার্ন ফাইলিং ও ভিডিএস অসঙ্গতি।',
-            a: 'সমাধান: স্বয়ংক্রিয় ভ্যাট হিসাবব্যবস্থা, মূসক ৬.১ ও ৬.২ রেজিস্টার এবং ট্রেজারি চালান প্রসেসিং।',
-            o: 'ফলাফল: মূসক নিরীক্ষার ঝুঁকি দূরীকরণ ও সঠিক ভ্যাট রেট নির্ধারণ।'
-          },
-          en: {
-            title: 'VAT Compliance & Audit Schedule File',
-            c: 'Challenge: Inconsistencies in VAT 9.1 returns and VDS deductions under VAT Act 2012.',
-            a: 'Approach: Implemented automated VAT accounting, Mushak 6.1 & 6.2 registers and treasury challans.',
-            o: 'Outcome: Complete mitigation of VAT audit risks and accurate tax rate determination.'
-          }
-        },
-        {
-          bn: {
-            title: 'নতুন প্রাইভেট লিমিটেড কোম্পানি স্থাপন',
-            c: 'চ্যালেঞ্জ: দ্রুত কোম্পানি গঠন, মেমোরেন্ডাম, টিআইএন, ট্রেড লাইসেন্স ও ব্যাংক অ্যাকাউন্ট খোলার জরুরি তাগিদ।',
-            a: 'সমাধান: আরজেএসসি নেম ক্লিয়ারেন্স, মেমোরেন্ডাম অব অ্যাসোসিয়েশন প্রস্তুত ও দ্রুত প্রসেসিং।',
-            o: 'ফলাফল: মেমোরেন্ডাম থেকে ব্যাংক অ্যাকাউন্ট পর্যন্ত মাত্র ৭ দিনে সম্পন্ন।'
-          },
-          en: {
-            title: 'Incorporation of New Private Limited Company',
-            c: 'Challenge: Urgent need for company registration, Memorandum, e-TIN, Trade License & Bank Account.',
-            a: 'Approach: Fast-track RJSC Name Clearance, drafting Memorandum of Association, and filing.',
-            o: 'Outcome: Complete incorporation from Memorandum to corporate bank account in 7 days.'
-          }
-        }
-      ];
-
-      // 3 Blog Insights
-      const blogData = [
-        {
-          bn: { t: 'বাংলাদেশে নতুন আয়কর আইন অনুযায়ী ট্যাক্স ছাড় পাওয়ার উপায়', d: 'ব্যক্তিগত ও ব্যবসায়িক বিনিয়োগের মাধ্যমে কীভাবে আইনসম্মতভাবে আয়কর সাশ্রয় করবেন।' },
-          en: { t: 'Maximizing Legal Tax Savings Under New Income Tax Act', d: 'How to leverage legitimate investments to reduce tax liabilities safely.' }
-        },
-        {
-          bn: { t: 'অনলাইন ভ্যাট ৯.১ ফাইলিংয়ে সাধারণ ভুল ও তার প্রতিকার', d: 'মাসিক ভ্যাট রিটার্ন জমাদানের সময় যে ৫টি ভুল এড়িয়ে চলা জরুরি।' },
-          en: { t: '5 Common Mistakes to Avoid in Online VAT 9.1 Returns', d: 'Crucial steps to ensure smooth monthly VAT submissions without penalties.' }
-        },
-        {
-          bn: { t: 'আরজেএসসি কোম্পানি বার্ষিক রিটার্ন জমা না দিলে কী ঝুঁকি থাকে?', d: 'কোম্পানি সচল রাখতে এবং জরিমানা এড়াতে বার্ষিক কাগজপত্রের গুরুত্ব।' },
-          en: { t: 'Risks of Delaying Annual RJSC Returns for Companies', d: 'Why timely annual secretarial filings protect your business entity.' }
-        }
-      ];
-
-      // 4 Gallery Cards
-      const galleryData = [
-        { icon: '🏢', bn: { t: 'প্রধান কনসালটেন্সি রুম', sub: 'খুলনা কার্যালয়' }, en: { t: 'Main Consulting Room', sub: 'Khulna Office' } },
-        { icon: '💻', bn: { t: 'অ্যাকাউন্টিং ডেস্কে কাজ', sub: 'বিসিএসসি ট্যাক্স টিম' }, en: { t: 'Accounting Workdesk', sub: 'BCSC Tax Team' } },
-        { icon: '📁', bn: { t: 'ক্লায়েন্ট ফাইল আর্কাইভ', sub: 'সম্পূর্ণ সুরক্ষিত রেকর্ড' }, en: { t: 'Secure Document Archive', sub: 'Confidential Client Records' } },
-        { icon: '🤝', bn: { t: 'ক্লায়েন্ট মিটিং এরিয়া', sub: 'ঢাকা অফিস' }, en: { t: 'Client Conference Lounge', sub: 'Dhaka Office' } }
-      ];
-
-      // 5 Testimonials
-      const testimonialsData = [
-        { bn: { q: '"বিসিএসসি আমাদের রিয়েল এস্টেট ব্যবসার ৪ বছরের বকেয়া ট্যাক্স জটিলতা অত্যন্ত দক্ষতার সাথে সমাধান করে দিয়েছে।"', n: 'ম্যানেজিং ডিরেক্টর', c: 'গ্রিনবাংলা হাউজিং' }, en: { q: '"BCSC resolved our 4-year backlogged tax complexities with exceptional professionalism."', n: 'Managing Director', c: 'Greenbangla Housing' } },
-        { bn: { q: '"শেখ মুহাম্মাদ সালিম ভাইয়ের ভ্যাট ও আয়কর বিষয়ক বাস্তবসম্মত নির্দেশনা আমাদের কোম্পানির অনেক অর্থ সাশ্রয় করেছে।"', n: 'অর্থ পরিচালক', c: 'ক্রিমসন রোজেলা লিঃ' }, en: { q: '"The practical VAT and tax guidance provided saved our firm significant operational costs."', n: 'Finance Director', c: 'Crimson Rosella Ltd' } },
-        { bn: { q: '"আরজেএসসি লিমিটেড কোম্পানি গঠন ও লাইসেন্স প্রসেসে বিসিএসসি এর সেবা অত্যন্ত দ্রুত ও বিশ্বাসযোগ্য।"', n: 'সিইও', c: 'সিএমসি হেলথকেয়ার' }, en: { q: '"Their RJSC company formation and licensing support was remarkably fast and transparent."', n: 'CEO', c: 'CMC Healthcare Ltd' } },
-        { bn: { q: '"কুইকবুকস সফটওয়্যার সেটআপ এবং স্টাফদের ট্রেনিং দেওয়ার পর আমাদের অ্যাকাউন্টিং এখন ১০০% নিখুঁত।"', n: 'অপারেশনস হেড', c: 'বায়ো সাইন্স ইন্টারন্যাশনাল' }, en: { q: '"After QuickBooks setup and staff training, our internal bookkeeping is completely seamless."', n: 'Head of Operations', c: 'Bio Science Int.' } },
-        { bn: { q: '"আমদানি সনদের (IRC) দ্রুত নবায়ন এবং কাস্টমস সংক্রান্ত যে কোনো জটিলতায় বিসিএসসি এক নির্ভরযোগ্য নাম।"', n: 'প্রোপাইটর', c: 'ট্রুমার্ক ইন্টারন্যাশনাল' }, en: { q: '"For rapid IRC renewals and customs documentation support, BCSC is our most trusted partner."', n: 'Proprietor', c: 'TrueMark International' } }
       ];
 
       // 5 Interactive FAQ Questions & Answers
@@ -2052,73 +1943,15 @@
         const certContainer = document.getElementById('certificates-grid');
         certContainer.innerHTML = certificatesData.map(cert => `
           <div class="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-4xl mb-3">${cert.icon}</div>
+            ${cert.img
+              ? `<a href="${cert.img}" target="_blank" rel="noopener" class="block mb-3"><img src="${cert.img}" alt="${cert[currentLang].t}" loading="lazy" class="w-full aspect-[4/3] object-contain bg-slate-50 rounded-lg border border-slate-200 hover:opacity-90 transition-opacity" /></a>`
+              : `<div class="text-4xl mb-3">${cert.icon}</div>`}
             <h4 class="text-base font-bold text-slate-900 mb-1 font-sans">
               ${cert[currentLang].t}
             </h4>
             <p class="text-xs text-slate-500">
               ${cert[currentLang].sub}
             </p>
-          </div>
-        `).join('');
-
-        // Case Studies
-        const csContainer = document.getElementById('case-studies-grid');
-        csContainer.innerHTML = caseStudiesData.map(cs => `
-          <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-            <h3 class="text-base font-bold text-slate-900 mb-4 font-sans border-b border-slate-100 pb-3">
-              ${cs[currentLang].title}
-            </h3>
-            <div class="space-y-2 text-xs sm:text-sm text-slate-600">
-              <p class="bg-red-50 text-red-900 p-2.5 rounded font-medium">${cs[currentLang].c}</p>
-              <p class="bg-blue-50 text-blue-900 p-2.5 rounded font-medium">${cs[currentLang].a}</p>
-              <p class="bg-emerald-50 text-emerald-900 p-2.5 rounded font-bold">${cs[currentLang].o}</p>
-            </div>
-          </div>
-        `).join('');
-
-        // Insights / Blog
-        const blogContainer = document.getElementById('insights-grid');
-        blogContainer.innerHTML = blogData.map(b => `
-          <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <span class="text-[11px] font-bold text-[#d99b26] uppercase tracking-wider block mb-2">BCSC GUIDE</span>
-            <h3 class="text-base font-bold text-slate-900 mb-3 font-sans hover:text-[#1d4ed8] cursor-pointer transition-colors">
-              ${b[currentLang].t}
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-              ${b[currentLang].d}
-            </p>
-            <a href="#contact" class="text-xs font-bold text-[#1d4ed8] hover:underline">
-              ${currentLang === 'bn' ? 'আরও পড়ুন →' : 'Read Article →'}
-            </a>
-          </div>
-        `).join('');
-
-        // Gallery
-        const gContainer = document.getElementById('gallery-grid');
-        gContainer.innerHTML = galleryData.map(g => `
-          <div class="bg-gradient-to-br from-[#0b1d3a] to-[#1d4ed8] text-white rounded-xl p-6 text-center shadow-md flex flex-col items-center justify-center min-h-[160px]">
-            <div class="text-4xl mb-2">${g.icon}</div>
-            <h4 class="text-sm font-bold text-white mb-1 font-sans">
-              ${g[currentLang].t}
-            </h4>
-            <span class="text-xs text-blue-200 font-medium">
-              ${g[currentLang].sub}
-            </span>
-          </div>
-        `).join('');
-
-        // Testimonials
-        const tContainer = document.getElementById('testimonials-grid');
-        tContainer.innerHTML = testimonialsData.map(t => `
-          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm flex flex-col justify-between">
-            <p class="text-xs sm:text-sm text-slate-600 italic leading-relaxed mb-4">
-              ${t[currentLang].q}
-            </p>
-            <div class="border-t border-slate-100 pt-3">
-              <h5 class="text-xs sm:text-sm font-bold text-slate-900">${t[currentLang].n}</h5>
-              <span class="text-[11px] text-[#d99b26] font-semibold">${t[currentLang].c}</span>
-            </div>
           </div>
         `).join('');
 
@@ -2256,49 +2089,35 @@
         }
 
         // Success Branch (Validation PASSES):
-        const submitBtn = document.getElementById('contact-submit-btn');
-        const submitText = document.getElementById('submit-text');
-        const submitIcon = document.getElementById('submit-icon');
+        // Open WhatsApp with the inquiry filled in. The visitor must press Send there.
+        const fieldValue = (f) => document.getElementById('contact-' + f).value.trim();
+        const serviceSelect = document.getElementById('contact-service');
+        const labels = currentLang === 'en'
+          ? ['New inquiry from bcscbd.com', 'Name', 'Mobile', 'Email', 'Service', 'Message']
+          : ['bcscbd.com থেকে নতুন অনুসন্ধান', 'নাম', 'মোবাইল', 'ইমেইল', 'সেবা', 'বার্তা'];
+        const whatsAppText = [
+          labels[0],
+          labels[1] + ': ' + fieldValue('name'),
+          labels[2] + ': ' + fieldValue('phone'),
+          labels[3] + ': ' + fieldValue('email'),
+          labels[4] + ': ' + serviceSelect.options[serviceSelect.selectedIndex].text,
+          labels[5] + ': ' + fieldValue('message')
+        ].join('\n');
+        const whatsAppUrl = 'https://wa.me/8801993306990?text=' + encodeURIComponent(whatsAppText);
 
-        if (submitBtn) {
-          submitBtn.classList.add('btn-loading');
-          submitBtn.disabled = true;
-          if (submitIcon) submitIcon.style.display = 'none';
-          if (submitText) {
-            submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'bn')
-              ? 'পাঠানো হচ্ছে...'
-              : 'Sending...';
-          }
+        const whatsAppWindow = window.open(whatsAppUrl, '_blank');
+        if (whatsAppWindow) {
+          whatsAppWindow.opener = null;
+        } else {
+          window.location.href = whatsAppUrl;
         }
 
-        // Simulate transmission with a 1.5-second timeout
-        setTimeout(() => {
-          const banner = document.getElementById('contact-success-banner');
-          if (banner) {
-            banner.classList.remove('hidden');
-            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-
-          const form = document.getElementById('bcsc-contact-form');
-          if (form) form.reset();
-
-          ['name', 'phone', 'email', 'service', 'message'].forEach(f => {
-            const el = document.getElementById('contact-' + f);
-            if (el) el.classList.remove('border-emerald-500', 'border-red-500', 'bg-red-50/20');
-          });
-
-          // Restore submit button state
-          if (submitBtn) {
-            submitBtn.classList.remove('btn-loading');
-            submitBtn.disabled = false;
-            if (submitIcon) submitIcon.style.display = 'inline-block';
-            if (submitText) {
-              submitText.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
-                ? 'Send Message'
-                : 'বার্তা পাঠান';
-            }
-          }
-        }, 1500);
+        // Keep the typed details in place in case the visitor needs to try again.
+        const banner = document.getElementById('contact-success-banner');
+        if (banner) {
+          banner.classList.remove('hidden');
+          banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       }
 
       function dismissSuccessBanner() {
