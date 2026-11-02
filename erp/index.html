@@ -16,6 +16,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Google Analytics 4: page views plus WhatsApp, call and email clicks; no names or numbers are sent -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVJ2KTJGYT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YVJ2KTJGYT');
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        var name = href.indexOf('https://wa.me/') === 0 ? 'whatsapp_click' : href.indexOf('tel:') === 0 ? 'call_click' : href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') === 0 ? 'email_click' : '';
+        if (name) gtag('event', name, { link_location: (link.closest('[id]') || {}).id || '' });
+      });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {

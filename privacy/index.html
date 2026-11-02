@@ -13,6 +13,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Google Analytics 4: page views plus WhatsApp, call and email clicks; no names or numbers are sent -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVJ2KTJGYT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YVJ2KTJGYT');
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        var name = href.indexOf('https://wa.me/') === 0 ? 'whatsapp_click' : href.indexOf('tel:') === 0 ? 'call_click' : href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') === 0 ? 'email_click' : '';
+        if (name) gtag('event', name, { link_location: (link.closest('[id]') || {}).id || '' });
+      });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -47,7 +62,7 @@
           <h2 class="text-xl font-bold text-slate-900" data-en="What we receive">আমরা কী তথ্য পাই</h2>
           <p data-en="The contact form asks for your name, mobile number, email address, the service you need and your message. The website does not save these details. When you submit the form, it opens WhatsApp with your message written out, and we receive it only if you press Send in WhatsApp.">যোগাযোগ ফর্মে আপনার নাম, মোবাইল নম্বর, ইমেইল, প্রয়োজনীয় সেবা ও বার্তা চাওয়া হয়। ওয়েবসাইট এই তথ্য নিজে সংরক্ষণ করে না। ফর্ম জমা দিলে আপনার বার্তাসহ WhatsApp খোলে, এবং আপনি WhatsApp-এ Send চাপলেই কেবল বার্তাটি আমাদের কাছে আসে।</p>
           <p data-en="If you call or email us, we receive your number or email address and what you tell us.">ফোন বা ইমেইল করলে আমরা আপনার নম্বর বা ইমেইল ঠিকানা এবং আপনি যা জানান, তা পাই।</p>
-          <p data-en="We use Cloudflare Web Analytics to count visits. It does not use cookies and does not identify individual visitors. The website itself sets no cookies.">ভিজিটের সংখ্যা জানতে আমরা Cloudflare Web Analytics ব্যবহার করি। এটি cookie ব্যবহার করে না এবং আলাদা করে কোনো ভিজিটরকে শনাক্ত করে না। ওয়েবসাইট নিজে কোনো cookie রাখে না।</p>
+          <p data-en="We use Google Analytics and Cloudflare Web Analytics to understand how the website is used: which pages are visited, the visitor's approximate area, device type, and clicks on WhatsApp, phone or email links. Google Analytics stores cookies in your browser for this. We do not send your name, number, email or message to these services. You can block these cookies in your browser settings or with Google's opt-out add-on (tools.google.com/dlpage/gaoptout).">ওয়েবসাইট কীভাবে ব্যবহার হচ্ছে তা বুঝতে আমরা Google Analytics ও Cloudflare Web Analytics ব্যবহার করি: কোন পাতা দেখা হচ্ছে, ভিজিটরের আনুমানিক এলাকা, ডিভাইসের ধরন, এবং WhatsApp, ফোন বা ইমেইল লিংকে ক্লিক। এজন্য Google Analytics আপনার ব্রাউজারে cookie রাখে। আপনার নাম, নম্বর, ইমেইল বা বার্তা আমরা এই সেবাগুলোতে পাঠাই না। ব্রাউজারের সেটিংস থেকে বা Google-এর opt-out add-on (tools.google.com/dlpage/gaoptout) দিয়ে এই cookie বন্ধ করতে পারেন।</p>
         </section>
 
         <section class="space-y-2">
