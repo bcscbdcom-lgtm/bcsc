@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a1730" />
     <title>BCSC - বিসিএসসি | বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার</title>
     <meta name="description" content="বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (বিসিএসসি) - প্রতিষ্ঠাতা শেখ মুহাম্মাদ সালিম। হিসাবরক্ষণ, আয়কর, ভ্যাট, আরজেএসসি কোম্পানি গঠন ও আইনি কমপ্লায়েন্স সেবা।" />
     <meta property="og:title" content="BCSC - বিসিএসসি | বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার" />
@@ -20,20 +21,21 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.546.0/dist/umd/lucide.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               navy: {
-                800: '#0f2c59',
-                900: '#0b1d3a',
-                950: '#07152b',
+                800: '#10244a',
+                900: '#0a1730',
+                950: '#060e1f',
               },
-              gold: {
-                400: '#f2a900',
-                500: '#d99b26',
-                600: '#b8821d',
+              accent: {
+                400: '#38bdf8',
+                500: '#1257d6',
+                600: '#0e46ad',
               },
             },
             fontFamily: {
@@ -67,9 +69,9 @@
         left: 0.35rem;
         right: 0.35rem;
         height: 2.5px;
-        background-color: #d99b26;
+        background-color: #38bdf8;
         border-radius: 9999px;
-        box-shadow: 0 0 8px rgba(217, 155, 38, 0.8);
+        box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
       }
       @media (min-width: 900px) {
         .desktop-nav-menu {
@@ -129,17 +131,17 @@
         box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.16), 0 10px 15px -5px rgba(29, 78, 216, 0.12) !important;
       }
 
-      /* Hero Vibrant Section - Royal Blue & Architectural Blueprint Grid */
+      /* Hero Section - Deep Ink & Subtle Grid */
       .hero-vibrant {
         position: relative !important;
         overflow: hidden !important;
         min-height: 85vh !important;
         padding: 120px 24px 80px !important;
-        background-color: #0c367d !important;
+        background-color: #0a1730 !important;
         background-image: 
-          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-          linear-gradient(135deg, #0c367d 0%, #1652ba 100%) !important;
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(135deg, #0a1730 0%, #10244a 100%) !important;
         background-size: 36px 36px, 36px 36px, 100% 100% !important;
       }
 
@@ -151,7 +153,7 @@
         left: -100px !important;
         width: 500px !important;
         height: 500px !important;
-        background: radial-gradient(circle, rgba(37, 99, 235, 0.45) 0%, rgba(37, 99, 235, 0) 70%) !important;
+        background: radial-gradient(circle, rgba(18, 87, 214, 0.45) 0%, rgba(18, 87, 214, 0) 70%) !important;
         filter: blur(100px) !important;
         pointer-events: none !important;
         z-index: 1 !important;
@@ -164,7 +166,7 @@
         right: -100px !important;
         width: 450px !important;
         height: 450px !important;
-        background: radial-gradient(circle, rgba(217, 155, 38, 0.25) 0%, rgba(217, 155, 38, 0) 70%) !important;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(56, 189, 248, 0) 70%) !important;
         filter: blur(90px) !important;
         pointer-events: none !important;
         z-index: 1 !important;
@@ -172,7 +174,7 @@
 
       /* Hero Content Typography */
       .hero-vibrant .hero-headline {
-        color: #dfb15b !important;
+        color: #ffffff !important;
         font-family: 'Playfair Display', Georgia, serif !important;
         font-size: clamp(2.5rem, 5vw, 4rem) !important;
         font-weight: 700 !important;
@@ -235,7 +237,6 @@
         font-size: 1.75rem !important;
         display: inline-block !important;
         margin-bottom: 6px !important;
-        filter: drop-shadow(0 2px 4px rgba(217, 155, 38, 0.3)) !important;
       }
 
       /* Google Map Skeleton Pulse Animation */
@@ -287,7 +288,7 @@
       #bcsc-contact-form select:focus,
       #bcsc-contact-form textarea:focus {
         background-color: #f8fafc !important;
-        border-color: #1d4ed8 !important;
+        border-color: #1257d6 !important;
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15) !important;
       }
 
@@ -340,7 +341,7 @@
       }
 
       footer.bcsc-footer {
-        background-color: #07152b !important;
+        background-color: #060e1f !important;
         color: #cbd5e1 !important;
         padding: 36px 24px 16px !important;
       }
@@ -361,7 +362,7 @@
       }
 
       footer.bcsc-footer a.footer-nav-link:hover {
-        color: #dfb15b !important;
+        color: #38bdf8 !important;
       }
 
       footer.bcsc-footer ul > li {
@@ -380,7 +381,7 @@
       }
 
       footer.bcsc-footer .footer-util-icon {
-        color: #dfb15b !important;
+        color: #38bdf8 !important;
         display: inline-block;
       }
 
@@ -461,10 +462,10 @@
     }
     </script>
   </head>
-  <body class="bg-white text-slate-900 antialiased selection:bg-amber-400 selection:text-slate-900">
+  <body class="bg-white text-slate-900 antialiased selection:bg-sky-400 selection:text-slate-900">
 
     <!-- 1. STICKY HEADER / NAVBAR -->
-    <header id="main-header" class="sticky top-0 z-50 bg-[#0b1d3a] border-b border-white/10 transition-all duration-300 py-3">
+    <header id="main-header" class="sticky top-0 z-50 bg-[#0a1730] border-b border-white/10 transition-all duration-300 py-3">
       <div class="max-w-[1400px] mx-auto px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-3">
         
         <!-- Logo & Brand -->
@@ -488,7 +489,7 @@
             <li><a href="#credentials" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="credentials" data-i18n="nav.credentials">যোগ্যতা</a></li>
             <li><a href="#certificates" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="certificates" data-i18n="nav.certificates">সনদপত্র</a></li>
             <li><a href="#faq" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="faq" data-i18n="nav.faq">এফএকিউ</a></li>
-            <li><a href="https://truemarkerp.com/" class="relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-semibold whitespace-nowrap text-amber-300 hover:text-amber-200 transition-colors block" data-i18n="nav.erp">TrueMark ERP</a></li>
+            <li><a href="https://truemarkerp.com/" class="relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-semibold whitespace-nowrap text-sky-300 hover:text-sky-200 transition-colors block" data-i18n="nav.erp">TrueMark ERP</a></li>
             <li><a href="#contact" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block" data-section="contact" data-i18n="nav.contact">যোগাযোগ</a></li>
           </ul>
         </nav>
@@ -496,26 +497,26 @@
         <!-- Right Header Action Buttons -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <!-- Language Switch Pill Button -->
-          <button type="button" id="lang-switch-btn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-amber-300 hover:text-amber-200 transition-all focus:outline-none focus:ring-2 focus:ring-[#d99b26]" title="ভাষা পরিবর্তন করুন">
-            <span>🌐</span>
+          <button type="button" id="lang-switch-btn" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-sky-300 hover:text-sky-200 transition-all focus:outline-none focus:ring-2 focus:ring-[#1257d6]" title="ভাষা পরিবর্তন করুন">
+            <span><i data-lucide="globe" class="w-4 h-4"></i></span>
             <span id="lang-switch-text">EN</span>
           </button>
 
           <!-- Consultation CTA Button -->
-          <a href="#contact" class="bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md transition-all shadow hover:shadow-amber-500/20 whitespace-nowrap" data-i18n="nav.consultation">
+          <a href="#contact" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md transition-all shadow hover:shadow-sky-500/20 whitespace-nowrap" data-i18n="nav.consultation">
             পরামর্শ বুক করুন
           </a>
 
           <!-- Mobile Hamburger Toggle Button -->
           <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="mobile-menu-toggle p-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none" aria-label="Toggle Navigation Menu">
             <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            <svg id="close-icon" class="w-6 h-6 hidden text-[#d99b26]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <svg id="close-icon" class="w-6 h-6 hidden text-[#1257d6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
       </div>
 
       <!-- Mobile Navigation Drawer -->
-      <div id="mobile-drawer" class="mobile-nav-drawer bg-[#07152b] border-b border-white/15 px-4 shadow-2xl">
+      <div id="mobile-drawer" class="mobile-nav-drawer bg-[#060e1f] border-b border-white/15 px-4 shadow-2xl">
         <div class="grid grid-cols-2 gap-2 mb-2">
           <a href="#home" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.home">হোম</a>
           <a href="#about" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.about">সম্পর্কে</a>
@@ -525,32 +526,32 @@
           <a href="#credentials" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.credentials">যোগ্যতা</a>
           <a href="#certificates" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.certificates">সনদপত্র</a>
           <a href="#faq" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10" data-i18n="nav.faq">এফএকিউ</a>
-          <a href="https://truemarkerp.com/" class="text-amber-300 hover:text-amber-200 text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center font-semibold" data-i18n="nav.erp">TrueMark ERP</a>
+          <a href="https://truemarkerp.com/" class="text-sky-300 hover:text-sky-200 text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center font-semibold" data-i18n="nav.erp">TrueMark ERP</a>
           <a href="#contact" onclick="closeMobileMenu()" class="text-slate-200 hover:text-white text-sm py-2 px-3 rounded hover:bg-white/10 col-span-2 text-center bg-white/5 font-semibold" data-i18n="nav.contact">যোগাযোগ</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- 2. HERO SECTION (Vibrant Royal Blue & Architectural Blueprint Grid) -->
+      <!-- 2. HERO SECTION (Deep Ink & Subtle Grid) -->
       <section id="home" class="hero-vibrant text-white">
         <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
           
           <!-- Hero Main Content (Left Column) -->
           <div class="lg:col-span-7">
             <!-- Trust Pill -->
-            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase text-[#dfb15b] mb-5 bg-[#dfb15b]/10 border border-[#dfb15b]/25 px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
-              <span>🛡️</span>
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold tracking-wide uppercase text-[#38bdf8] mb-5 bg-[#38bdf8]/10 border border-[#38bdf8]/25 px-4 py-1.5 rounded-full backdrop-blur-md shadow-sm">
+              <span><i data-lucide="shield-check" class="w-4 h-4"></i></span>
               <span data-i18n="hero.eyebrow">সমগ্র বাংলাদেশে বিশ্বস্ত ব্যবসায়িক ও আইনি সহায়তা</span>
             </div>
 
             <!-- Gold Serif Headline -->
             <h1 class="hero-headline">
               <span data-i18n="hero.titleLine1">ব্যবসায়ে স্বচ্ছতা।</span><br />
-              <span class="text-amber-300" data-i18n="hero.titleLine2">নিয়মানুবর্তিতা</span> <span data-i18n="hero.titleLine3">& আত্মবিশ্বাস।</span>
+              <span class="text-sky-300" data-i18n="hero.titleLine2">নিয়মানুবর্তিতা</span> <span data-i18n="hero.titleLine3">& আত্মবিশ্বাস।</span>
             </h1>
 
-            <div class="text-[#dfb15b] font-bold text-xs sm:text-sm tracking-widest uppercase mb-5 font-mono" data-i18n="hero.pillars">
+            <div class="text-[#38bdf8] font-bold text-xs sm:text-sm tracking-widest uppercase mb-5 font-mono" data-i18n="hero.pillars">
               STRATEGY • SOLUTION • SUCCESS • GROWTH
             </div>
 
@@ -561,7 +562,7 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-8">
-              <a href="#contact" class="bg-[#dfb15b] hover:bg-[#c99a45] text-[#0b1d3a] font-bold text-sm sm:text-base px-7 py-3.5 rounded-lg transition-all shadow-lg hover:shadow-amber-500/20 active:scale-95" data-i18n="hero.bookBtn">
+              <a href="#contact" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold text-sm sm:text-base px-7 py-3.5 rounded-lg transition-all shadow-lg hover:shadow-sky-500/20 active:scale-95" data-i18n="hero.bookBtn">
                 পরামর্শ বুক করুন
               </a>
               <a href="#services" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-lg transition-all backdrop-blur-sm active:scale-95" data-i18n="hero.exploreBtn">
@@ -572,13 +573,13 @@
             <!-- 3 Checkmark Badges -->
             <div class="flex flex-wrap items-center gap-5 sm:gap-6 text-xs sm:text-sm text-slate-200">
               <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
-                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureSince">২০০৯ সাল থেকে</span>
+                <span class="text-[#38bdf8] font-bold">✓</span> <span data-i18n="hero.featureSince">২০০৯ সাল থেকে</span>
               </span>
               <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
-                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureCountry">সারাদেশে নির্ভরযোগ্য সেবা</span>
+                <span class="text-[#38bdf8] font-bold">✓</span> <span data-i18n="hero.featureCountry">সারাদেশে নির্ভরযোগ্য সেবা</span>
               </span>
               <span class="flex items-center gap-2 font-medium bg-white/5 border border-white/10 px-3 py-1.5 rounded-md">
-                <span class="text-[#dfb15b] font-bold">✓</span> <span data-i18n="hero.featureSupport">দ্রুত ও দায়িত্বশীল সাপোর্ট</span>
+                <span class="text-[#38bdf8] font-bold">✓</span> <span data-i18n="hero.featureSupport">দ্রুত ও দায়িত্বশীল সাপোর্ট</span>
               </span>
             </div>
           </div>
@@ -594,8 +595,8 @@
                   class="founder-photo" 
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
                 />
-                <div class="hidden w-full h-full bg-gradient-to-br from-[#1d4ed8] to-[#0f2c59] flex-col items-center justify-center text-white p-6 text-center">
-                  <div class="w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-3xl font-extrabold text-[#dfb15b] mb-3 shadow-md">
+                <div class="hidden w-full h-full bg-gradient-to-br from-[#1257d6] to-[#10244a] flex-col items-center justify-center text-white p-6 text-center">
+                  <div class="w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-3xl font-extrabold text-[#38bdf8] mb-3 shadow-md">
                     SMS
                   </div>
                   <span class="text-lg font-bold text-white">শেখ মুহাম্মাদ সালিম</span>
@@ -611,7 +612,7 @@
                 <h3 class="text-xl sm:text-2xl font-bold font-sans text-white mb-1.5" data-i18n="hero.founderName">
                   শেখ মুহাম্মাদ সালিম
                 </h3>
-                <p class="text-xs sm:text-sm text-amber-300 font-semibold leading-relaxed" data-i18n="hero.founderTitle">
+                <p class="text-xs sm:text-sm text-sky-300 font-semibold leading-relaxed" data-i18n="hero.founderTitle">
                   RAT (ICAB) | CA (PL) | MBA | M.Com | CMA (Inter)
                 </p>
               </div>
@@ -624,23 +625,23 @@
         <div class="floating-stats-wrapper max-w-[1180px] mx-auto mt-12 sm:mt-16">
           <div class="floating-stats-card grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100 p-6 sm:p-8">
             <div class="text-center px-3 pb-4 md:pb-0">
-              <span class="gold-stat-icon">📅</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.expNum">১৬+</div>
+              <span class="gold-stat-icon"><i data-lucide="calendar-check" class="w-7 h-7 text-[#1257d6]"></i></span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#1257d6] leading-tight mb-1" data-i18n="stats.expNum">১৬+</div>
               <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.expLabel">বছরের পেশাদার অভিজ্ঞতা</div>
             </div>
             <div class="text-center px-3 pb-4 md:pb-0">
-              <span class="gold-stat-icon">📋</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.servicesNum">২০</div>
+              <span class="gold-stat-icon"><i data-lucide="layers" class="w-7 h-7 text-[#1257d6]"></i></span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#1257d6] leading-tight mb-1" data-i18n="stats.servicesNum">২০</div>
               <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.servicesLabel">ধরনের পেশাদার সেবা</div>
             </div>
             <div class="text-center px-3 pt-4 md:pt-0">
-              <span class="gold-stat-icon">🏢</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.officesNum">২</div>
+              <span class="gold-stat-icon"><i data-lucide="map-pinned" class="w-7 h-7 text-[#1257d6]"></i></span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#1257d6] leading-tight mb-1" data-i18n="stats.officesNum">২</div>
               <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.officesLabel">অফিস: ঢাকা ও খুলনা</div>
             </div>
             <div class="text-center px-3 pt-4 md:pt-0">
-              <span class="gold-stat-icon">🧩</span>
-              <div class="text-3xl sm:text-4xl font-extrabold text-[#0c367d] leading-tight mb-1" data-i18n="stats.unitsNum">২</div>
+              <span class="gold-stat-icon"><i data-lucide="network" class="w-7 h-7 text-[#1257d6]"></i></span>
+              <div class="text-3xl sm:text-4xl font-extrabold text-[#1257d6] leading-tight mb-1" data-i18n="stats.unitsNum">২</div>
               <div class="text-xs sm:text-sm text-slate-600 font-medium" data-i18n="stats.unitsLabel">ইউনিট: BCSC ও TrueMark ERP</div>
             </div>
           </div>
@@ -651,7 +652,7 @@
       <section id="about" class="py-20 sm:py-24 px-4 sm:px-6">
         <div class="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           <div class="lg:col-span-6">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="about.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="about.eyebrow">
               বিসিএসসি সম্পর্কে
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] leading-tight text-slate-900 font-bold mb-6" data-i18n="about.title">
@@ -668,7 +669,7 @@
           <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="bg-[#f8fafc] border border-slate-200 rounded-xl p-6 shadow-sm">
               <h4 class="text-base font-bold text-slate-900 mb-2 font-sans flex items-center gap-2">
-                <span>👁️</span> <span data-i18n="about.visionTitle">আমাদের ভিশন</span>
+                <span><i data-lucide="eye" class="w-5 h-5 text-[#1257d6]"></i></span> <span data-i18n="about.visionTitle">আমাদের ভিশন</span>
               </h4>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="about.visionDesc">
                 স্বচ্ছ, নৈতিক ও কার্যকর ব্যবসায়িক পরামর্শ সেবায় নির্ভরযোগ্য নাম হওয়া।
@@ -676,7 +677,7 @@
             </div>
             <div class="bg-[#f8fafc] border border-slate-200 rounded-xl p-6 shadow-sm">
               <h4 class="text-base font-bold text-slate-900 mb-2 font-sans flex items-center gap-2">
-                <span>🎯</span> <span data-i18n="about.missionTitle">আমাদের মিশন</span>
+                <span><i data-lucide="target" class="w-5 h-5 text-[#1257d6]"></i></span> <span data-i18n="about.missionTitle">আমাদের মিশন</span>
               </h4>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="about.missionDesc">
                 আইনি জটিলতা সহজ করে সঠিক আর্থিক সিদ্ধান্ত নিতে ব্যবসায়ীদের সাহায্য করা।
@@ -684,7 +685,7 @@
             </div>
             <div class="bg-[#f8fafc] border border-slate-200 rounded-xl p-6 shadow-sm">
               <h4 class="text-base font-bold text-slate-900 mb-2 font-sans flex items-center gap-2">
-                <span>🤝</span> <span data-i18n="about.promiseTitle">আমাদের অঙ্গীকার</span>
+                <span><i data-lucide="handshake" class="w-5 h-5 text-[#1257d6]"></i></span> <span data-i18n="about.promiseTitle">আমাদের অঙ্গীকার</span>
               </h4>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="about.promiseDesc">
                 পেশাদার সতর্কতা, দ্রুত প্রতিক্রিয়া এবং সমাধানমুখী দীর্ঘমেয়াদী সেবা।
@@ -692,7 +693,7 @@
             </div>
             <div class="bg-[#f8fafc] border border-slate-200 rounded-xl p-6 shadow-sm">
               <h4 class="text-base font-bold text-slate-900 mb-2 font-sans flex items-center gap-2">
-                <span>⚖️</span> <span data-i18n="about.valuesTitle">আমাদের মূল্যবোধ</span>
+                <span><i data-lucide="scale" class="w-5 h-5 text-[#1257d6]"></i></span> <span data-i18n="about.valuesTitle">আমাদের মূল্যবোধ</span>
               </h4>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="about.valuesDesc">
                 সততা, গোপনীয়তা, নিখুঁত হিসাব ও জবাবদিহিতা।
@@ -703,13 +704,13 @@
       </section>
 
       <!-- 4B. TRUEMARK AND ITS UNITS -->
-      <section id="truemark" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0b1d3a] text-white">
+      <section id="truemark" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0a1730] text-white">
         <div class="max-w-[1000px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
             <span class="block w-fit mx-auto bg-[#fdfcf8] rounded-xl p-3 mb-5 shadow-md">
               <img src="images/truemark-logo.webp" alt="TrueMark" width="480" height="332" loading="lazy" class="h-20 sm:h-24 w-auto block" />
             </span>
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="truemark.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#38bdf8] mb-3" data-i18n="truemark.eyebrow">
               আমাদের প্রতিষ্ঠান
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-3" data-i18n="truemark.title">
@@ -726,14 +727,14 @@
               <p class="text-sm text-slate-300 leading-relaxed mb-5 flex-1" data-i18n="truemark.bcscDesc">
                 হিসাবরক্ষণ, আয়কর, ভ্যাট, আরজেএসসি, অডিট সাপোর্ট ও ব্যবসায়িক পরামর্শ সেবা।
               </p>
-              <a href="#services" class="text-sm font-bold text-amber-300 hover:text-amber-200" data-i18n="truemark.bcscLink">সেবাসমূহ দেখুন →</a>
+              <a href="#services" class="text-sm font-bold text-sky-300 hover:text-sky-200" data-i18n="truemark.bcscLink">সেবাসমূহ দেখুন →</a>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-6 flex flex-col">
               <h3 class="text-xl font-bold text-white mb-2 font-sans">TrueMark ERP</h3>
               <p class="text-sm text-slate-300 leading-relaxed mb-5 flex-1" data-i18n="truemark.erpDesc">
                 ব্যবসার হিসাব, স্টক, বিক্রয় ও ডেলিভারি অর্ডার এক জায়গায় পরিচালনার সফটওয়্যার। শিগগিরই আসছে।
               </p>
-              <a href="https://truemarkerp.com/" class="text-sm font-bold text-amber-300 hover:text-amber-200" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
+              <a href="https://truemarkerp.com/" class="text-sm font-bold text-sky-300 hover:text-sky-200" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
             </div>
           </div>
         </div>
@@ -745,21 +746,21 @@
           <div class="lg:col-span-5 flex justify-center">
             <div class="relative w-full max-w-[380px]">
               <img src="images/founder.jpg" alt="শেখ মুহাম্মাদ সালিম" loading="lazy" class="w-full h-[380px] sm:h-[420px] object-cover object-top rounded-2xl shadow-2xl" />
-              <div class="absolute bottom-6 -right-3 sm:-right-5 bg-[#d99b26] text-[#0b1d3a] px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm shadow-xl flex items-center gap-1.5 border border-amber-300">
-                <span>🎖️</span>
+              <div class="absolute bottom-6 -right-3 sm:-right-5 bg-[#38bdf8] text-[#0a1730] px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm shadow-xl flex items-center gap-1.5 border border-sky-300">
+                <span><i data-lucide="award" class="w-4 h-4"></i></span>
                 <span data-i18n="founder.badge">RAT (ICAB)</span>
               </div>
             </div>
           </div>
 
           <div class="lg:col-span-7">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="founder.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="founder.eyebrow">
               প্রতিষ্ঠাতা পরিচিতি
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[38px] font-bold text-slate-900 mb-2 leading-tight" data-i18n="founder.name">
               শেখ মুহাম্মাদ সালিম, RAT (ICAB)
             </h2>
-            <div class="text-[#1d4ed8] font-semibold text-base sm:text-lg mb-5" data-i18n="founder.title">
+            <div class="text-[#1257d6] font-semibold text-base sm:text-lg mb-5" data-i18n="founder.title">
               বিজনেস কনসালটেন্ট, অ্যাকাউন্ট্যান্ট ও কমপ্লায়েন্স প্রফেশনাল
             </div>
             <p class="text-slate-600 text-base leading-relaxed mb-4" data-i18n="founder.p1">
@@ -771,28 +772,28 @@
 
             <ul class="space-y-3 mb-8">
               <li class="flex items-center gap-3 text-slate-800 font-medium text-sm sm:text-base">
-                <span class="w-5 h-5 rounded-full bg-amber-100 text-[#d99b26] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                <span class="w-5 h-5 rounded-full bg-sky-100 text-[#1257d6] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
                 <span data-i18n="founder.point1">রেজিস্টার্ড অ্যাকাউন্টিং টেকনিশিয়ান (RAT), ICAB [Reg: 15409, RAT: 131]</span>
               </li>
               <li class="flex items-center gap-3 text-slate-800 font-medium text-sm sm:text-base">
-                <span class="w-5 h-5 rounded-full bg-amber-100 text-[#d99b26] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                <span class="w-5 h-5 rounded-full bg-sky-100 text-[#1257d6] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
                 <span data-i18n="founder.point2">CA (PL) - প্রফেশনাল লেভেল ও আর্টিকেলশিপ সম্পন্ন (ICAB)</span>
               </li>
               <li class="flex items-center gap-3 text-slate-800 font-medium text-sm sm:text-base">
-                <span class="w-5 h-5 rounded-full bg-amber-100 text-[#d99b26] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                <span class="w-5 h-5 rounded-full bg-sky-100 text-[#1257d6] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
                 <span data-i18n="founder.point3">সিএমএ (ইন্টার), এমবিএ এবং এম.কম (হিসাববিজ্ঞান)</span>
               </li>
               <li class="flex items-center gap-3 text-slate-800 font-medium text-sm sm:text-base">
-                <span class="w-5 h-5 rounded-full bg-amber-100 text-[#d99b26] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                <span class="w-5 h-5 rounded-full bg-sky-100 text-[#1257d6] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
                 <span data-i18n="founder.point4">বি.কম (অনার্স), বি.এড ও বি.এস.এস</span>
               </li>
               <li class="flex items-center gap-3 text-slate-800 font-medium text-sm sm:text-base">
-                <span class="w-5 h-5 rounded-full bg-amber-100 text-[#d99b26] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
+                <span class="w-5 h-5 rounded-full bg-sky-100 text-[#1257d6] flex items-center justify-center text-xs font-bold shrink-0">✓</span>
                 <span data-i18n="founder.point5">AI Mastery Certified (Coursiv ID: UCWE7QXB) ও কুইকবুকস অনলাইন বিশেষজ্ঞ</span>
               </li>
             </ul>
 
-            <a href="#contact" class="inline-flex items-center gap-2 text-[#0b1d3a] hover:text-[#1d4ed8] font-bold text-sm sm:text-base group">
+            <a href="#contact" class="inline-flex items-center gap-2 text-[#0a1730] hover:text-[#1257d6] font-bold text-sm sm:text-base group">
               <span data-i18n="founder.cta">ব্যবসার বিষয়ে আলোচনা করতে যোগাযোগ করুন</span> →
             </a>
           </div>
@@ -803,7 +804,7 @@
       <section id="services" class="py-20 sm:py-24 px-4 sm:px-6">
         <div class="max-w-[1240px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="services.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="services.eyebrow">
               আমাদের সেবাসমূহ
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-4" data-i18n="services.title">
@@ -821,10 +822,10 @@
       </section>
 
       <!-- 7. INDUSTRIES SERVED (10 DARK NAVY CARDS) -->
-      <section id="industries" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0b1d3a] text-white">
+      <section id="industries" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0a1730] text-white">
         <div class="max-w-[1240px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="industries.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#38bdf8] mb-3" data-i18n="industries.eyebrow">
               শিল্পখাতসমূহ
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-3" data-i18n="industries.title">
@@ -842,7 +843,7 @@
       <section id="credentials" class="py-20 sm:py-24 px-4 sm:px-6">
         <div class="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div class="lg:col-span-5">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="credentials.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="credentials.eyebrow">
               পেশাগত যোগ্যতা
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-5 leading-tight" data-i18n="credentials.title">
@@ -863,7 +864,7 @@
       <section id="certificates" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
         <div class="max-w-[1240px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="certificates.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="certificates.eyebrow">
               সনদপত্র ও স্বীকৃতি
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="certificates.title">
@@ -880,11 +881,41 @@
         </div>
       </section>
 
+      <!-- 10. WORK SAMPLES (CLIENT DETAILS HIDDEN) -->
+      <section id="work-samples" class="py-20 sm:py-24 px-4 sm:px-6">
+        <div class="max-w-[900px] mx-auto">
+          <div class="text-center max-w-[750px] mx-auto mb-14">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="samples.eyebrow">
+              কাজের নমুনা
+            </span>
+            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="samples.title">
+              আমাদের করা নিবন্ধনের নমুনা
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base" data-i18n="samples.subtitle">
+              ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা ও QR কোড ঝাপসা করে দেখানো হয়েছে।
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <a href="images/sample-tin-certificate.jpg" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-tin-certificate.jpg" alt="TIN certificate sample with client details hidden" loading="lazy" class="w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.tinTitle">TIN সার্টিফিকেট</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.tinSub">আয়কর সেবা: ই-টিন নিবন্ধন</p>
+            </a>
+            <a href="images/sample-bin-certificate.jpg" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-bin-certificate.jpg" alt="BIN certificate sample with client details hidden" loading="lazy" class="w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.binTitle">BIN সার্টিফিকেট</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.binSub">ভ্যাট সেবা: বিআইএন নিবন্ধন (মূসক-২.৩)</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- 11. FAQ ACCORDION SECTION -->
       <section id="faq" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
         <div class="max-w-[1000px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="faq.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="faq.eyebrow">
               সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="faq.title">
@@ -902,10 +933,10 @@
       </section>
 
       <!-- 13. CLIENT SHOWCASE (NAVY) -->
-      <section id="clients" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0b1d3a] text-white">
+      <section id="clients" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#0a1730] text-white">
         <div class="max-w-[1240px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="clients.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#38bdf8] mb-3" data-i18n="clients.eyebrow">
               ক্লায়েন্ট শোকেস
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-white mb-3" data-i18n="clients.title">
@@ -915,39 +946,39 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">GH</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">GH</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Greenbangla Housing & Developer Ltd</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">CR</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">CR</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Crimson Rosella Ltd</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">CMC</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">CMC</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">CMC Healthcare Ltd</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">BSI</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">BSI</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Bio Science International</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">FG</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">FG</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Five Gems Ltd</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">GT</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">GT</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Gazi Traders</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">AM</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">AM</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">Al Mamun Hajj Kafela</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">MH</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">MH</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">MASK Hajj Group</span>
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:bg-white/[0.08] transition-colors">
-              <div class="bg-[#d99b26] text-[#0b1d3a] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">IAB</div>
+              <div class="bg-[#38bdf8] text-[#0a1730] w-11 h-11 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0 shadow">IAB</div>
               <span class="text-sm sm:text-base font-semibold text-slate-100">IAB</span>
             </div>
           </div>
@@ -958,7 +989,7 @@
       <section id="contact" class="py-20 sm:py-24 px-4 sm:px-6">
         <div class="max-w-[1320px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
-            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-3" data-i18n="contact.eyebrow">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="contact.eyebrow">
               যোগাযোগ বিসিএসসি
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="contact.title">
@@ -974,17 +1005,17 @@
             
             <!-- Card 1: CALL US -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1d4ed8] flex items-center justify-center mb-4 text-xl">
-                📞
+              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1257d6] flex items-center justify-center mb-4 text-xl">
+                <i data-lucide="phone" class="w-5 h-5"></i>
               </div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="contact.callLabel">
                 কল করুন
               </span>
               <div class="space-y-1">
-                <a href="tel:+8801993306990" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1d4ed8] block transition-colors">
+                <a href="tel:+8801993306990" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1257d6] block transition-colors">
                   +880 1993-306990
                 </a>
-                <a href="tel:+8801714545568" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1d4ed8] block transition-colors">
+                <a href="tel:+8801714545568" class="text-xs sm:text-[13.5px] font-bold text-slate-900 hover:text-[#1257d6] block transition-colors">
                   +880 1714-545568
                 </a>
               </div>
@@ -992,34 +1023,34 @@
 
             <!-- Card 2: EMAIL US -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#d99b26] flex items-center justify-center mb-4 text-xl">
-                ✉️
+              <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#1257d6] flex items-center justify-center mb-4 text-xl">
+                <i data-lucide="mail" class="w-5 h-5"></i>
               </div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="contact.emailLabel">
                 ইমেইল করুন
               </span>
-              <a href="mailto:bcscbd.com@gmail.com" class="text-xs sm:text-sm font-bold text-slate-900 hover:text-[#1d4ed8] break-all block transition-colors">
+              <a href="mailto:bcscbd.com@gmail.com" class="text-xs sm:text-sm font-bold text-slate-900 hover:text-[#1257d6] break-all block transition-colors">
                 bcscbd.com@gmail.com
               </a>
             </div>
 
             <!-- Card 3: WEBSITE -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1d4ed8] flex items-center justify-center mb-4 text-xl">
-                🌐
+              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1257d6] flex items-center justify-center mb-4 text-xl">
+                <i data-lucide="globe" class="w-5 h-5"></i>
               </div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="contact.webLabel">
                 ওয়েবসাইট
               </span>
-              <a href="https://www.bcscbd.com" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-900 hover:text-[#1d4ed8] block transition-colors">
+              <a href="https://www.bcscbd.com" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-slate-900 hover:text-[#1257d6] block transition-colors">
                 www.bcscbd.com
               </a>
             </div>
 
             <!-- Card 4: KHULNA OFFICE -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-lg bg-amber-50 text-[#d99b26] flex items-center justify-center mb-4 text-xl">
-                📍
+              <div class="w-10 h-10 rounded-lg bg-sky-50 text-[#1257d6] flex items-center justify-center mb-4 text-xl">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
               </div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="contact.khulnaTitle">
                 খুলনা অফিস
@@ -1028,11 +1059,11 @@
                 ২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০
               </p>
               <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
-                  📍 গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1257d6] hover:underline" data-i18n="contact.openMaps">
+                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
                 </a>
                 <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                  <span>📋</span>
+                  <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
                   <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                 </button>
               </div>
@@ -1040,8 +1071,8 @@
 
             <!-- Card 5: DHAKA OFFICE -->
             <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1d4ed8] flex items-center justify-center mb-4 text-xl">
-                🏢
+              <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1257d6] flex items-center justify-center mb-4 text-xl">
+                <i data-lucide="building-2" class="w-5 h-5"></i>
               </div>
               <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="contact.dhakaTitle">
                 ঢাকা অফিস
@@ -1050,11 +1081,11 @@
                 ৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০
               </p>
               <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:underline" data-i18n="contact.openMaps">
-                  📍 গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1257d6] hover:underline" data-i18n="contact.openMaps">
+                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
                 </a>
                 <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                  <span>📋</span>
+                  <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
                   <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                 </button>
               </div>
@@ -1065,7 +1096,7 @@
           <!-- INTERACTIVE CONTACT & CONSULTATION FORM WITH CLIENT-SIDE VALIDATION -->
           <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-lg mb-14 max-w-[900px] mx-auto">
             <div class="text-center mb-8">
-              <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#d99b26] mb-2" data-i18n="form.eyebrow">
+              <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-2" data-i18n="form.eyebrow">
                 পরামর্শ বার্তা পাঠান
               </span>
               <h3 class="font-serif-heading text-2xl sm:text-3xl font-bold text-slate-900" data-i18n="form.title">
@@ -1079,7 +1110,7 @@
             <!-- SUCCESS CONFIRMATION BANNER (DISMISSIBLE) -->
             <div id="contact-success-banner" class="hidden mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm flex items-start justify-between gap-3 shadow-sm">
               <div class="flex items-start gap-3">
-                <span class="text-xl">✅</span>
+                <span class="text-emerald-600"><i data-lucide="circle-check" class="w-6 h-6"></i></span>
                 <div>
                   <h5 class="font-bold text-emerald-950 mb-0.5" data-i18n="form.successTitle">আর একটি ধাপ বাকি: WhatsApp-এ Send চাপুন</h5>
                   <p class="text-xs sm:text-sm text-emerald-800" data-i18n="form.successMsg">
@@ -1155,8 +1186,8 @@
 
               <!-- Submit Button -->
               <div class="pt-2 text-center">
-                <button type="submit" id="contact-submit-btn" class="w-full sm:w-auto bg-[#0b1d3a] hover:bg-[#153261] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
-                  <span id="submit-icon">💬</span>
+                <button type="submit" id="contact-submit-btn" class="w-full sm:w-auto bg-[#0a1730] hover:bg-[#14305f] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mx-auto">
+                  <span id="submit-icon"><i data-lucide="message-circle" class="w-4 h-4"></i></span>
                   <span id="submit-text" data-i18n="form.submitBtn">WhatsApp-এ পাঠান</span>
                 </button>
               </div>
@@ -1166,7 +1197,7 @@
           <!-- 16. GOOGLE MAPS EMBED SECTION -->
           <div class="bg-[#f8fafc] border border-slate-200 rounded-2xl p-6 sm:p-8">
             <div class="text-center mb-6">
-              <span class="text-xs font-bold tracking-wider uppercase text-[#d99b26] block mb-1" data-i18n="contact.mapsEyebrow">
+              <span class="text-xs font-bold tracking-wider uppercase text-[#1257d6] block mb-1" data-i18n="contact.mapsEyebrow">
                 অফিসের অবস্থান
               </span>
               <h4 class="text-xl font-bold text-slate-900 font-serif-heading" data-i18n="contact.mapsTitle">
@@ -1190,11 +1221,11 @@
                     ৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা
                   </p>
                   <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
-                    <a href="https://www.google.com/maps/place/Zaman+Tower/@23.7327925,90.411991,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
-                      🏢 ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
+                    <a href="https://www.google.com/maps/place/Zaman+Tower/@23.7327925,90.411991,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1257d6] hover:text-[#1257d6] transition-colors">
+                      <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> ঢাকা অফিসের সঠিক পিন পয়েন্ট ↗
                     </a>
                     <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                      <span>📋</span>
+                      <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
                       <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                     </button>
                   </div>
@@ -1217,11 +1248,11 @@
                     ২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০
                   </p>
                   <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
-                    <a href="https://www.google.com/maps/place/Business+Consulting+%26+Solutions+Center+(BCSC)/@22.808632,89.5530796,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1d4ed8] hover:text-[#0c367d] transition-colors">
-                      📍 খুলনা অফিসের সঠিক পিন পয়েন্ট ↗
+                    <a href="https://www.google.com/maps/place/Business+Consulting+%26+Solutions+Center+(BCSC)/@22.808632,89.5530796,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1257d6] hover:text-[#1257d6] transition-colors">
+                      <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> খুলনা অফিসের সঠিক পিন পয়েন্ট ↗
                     </a>
                     <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-300 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
-                      <span>📋</span>
+                      <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
                       <span data-i18n="contact.copyBtn">কপি ঠিকানা</span>
                     </button>
                   </div>
@@ -1233,14 +1264,14 @@
       </section>
 
       <!-- 17. LEGAL COMPLIANCE & TRUST STRIP (ABOVE FOOTER) -->
-      <section class="py-2.5 px-4 sm:px-6 bg-[#07152b] text-white border-t border-amber-500/30">
-        <div class="max-w-[1400px] mx-auto bg-gradient-to-r from-[#0b1d3a] via-[#153261] to-[#0b1d3a] border border-[#d99b26]/40 rounded-xl trust-strip-compact shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
+      <section class="py-2.5 px-4 sm:px-6 bg-[#060e1f] text-white border-t border-sky-500/30">
+        <div class="max-w-[1400px] mx-auto bg-gradient-to-r from-[#0a1730] via-[#14305f] to-[#0a1730] border border-[#1257d6]/40 rounded-xl trust-strip-compact shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-[#dfb15b] text-[#07152b] flex items-center justify-center font-bold text-xl shrink-0 shadow-md">
-              🏛️
+            <div class="w-10 h-10 rounded-lg bg-[#38bdf8] text-[#060e1f] flex items-center justify-center font-bold text-xl shrink-0 shadow-md">
+              <i data-lucide="landmark" class="w-5 h-5"></i>
             </div>
             <div>
-              <span class="text-[11px] font-bold text-amber-300 uppercase tracking-wider block mb-0.5" data-i18n="trust.eyebrow">
+              <span class="text-[11px] font-bold text-sky-300 uppercase tracking-wider block mb-0.5" data-i18n="trust.eyebrow">
                 পেশাগত সদস্যপদ
               </span>
               <h3 class="text-xs sm:text-sm md:text-base font-bold text-white font-sans leading-tight" data-i18n="trust.title">
@@ -1251,7 +1282,7 @@
               </p>
             </div>
           </div>
-          <a href="#contact" class="bg-[#dfb15b] hover:bg-[#c99c48] text-[#07152b] font-bold trust-btn-compact rounded-lg transition-all whitespace-nowrap shadow-md shrink-0 active:scale-95" data-i18n="trust.btn">
+          <a href="#contact" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#060e1f] font-bold trust-btn-compact rounded-lg transition-all whitespace-nowrap shadow-md shrink-0 active:scale-95" data-i18n="trust.btn">
             পরামর্শ গ্রহণ করুন
           </a>
         </div>
@@ -1259,7 +1290,7 @@
     </main>
 
     <!-- 17. DEEP NAVY CORPORATE FOOTER (ULTRA-COMPACT) -->
-    <footer class="bcsc-footer bg-[#07152b] text-[#cbd5e1] px-4 sm:px-6 lg:px-8 border-t border-white/10 font-sans">
+    <footer class="bcsc-footer bg-[#060e1f] text-[#cbd5e1] px-4 sm:px-6 lg:px-8 border-t border-white/10 font-sans">
       <div class="max-w-[1400px] mx-auto">
         
         <!-- 4-Column Grid Structure -->
@@ -1276,7 +1307,7 @@
             </p>
 
             <div class="pt-0.5">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#dfb15b]/15 border border-[#dfb15b]/30 text-[#dfb15b] text-[11px] font-semibold tracking-wide" data-i18n="footer.corePillars">
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#38bdf8]/15 border border-[#38bdf8]/30 text-[#38bdf8] text-[11px] font-semibold tracking-wide" data-i18n="footer.corePillars">
                 কৌশল • সমাধান • সাফল্য • অগ্রগতি
               </span>
             </div>
@@ -1400,13 +1431,13 @@
               <!-- Direct Contact -->
               <div class="space-y-1">
                 <div class="flex items-center gap-1.5 text-[#e2e8f0] flex-wrap office-detail">
-                  <span class="footer-util-icon">📞</span>
+                  <span class="footer-util-icon"><i data-lucide="phone" class="w-4 h-4"></i></span>
                   <a href="tel:+8801993306990" class="footer-nav-link font-semibold">+880 1993-306990</a>
-                  <span class="text-[#dfb15b]/60">|</span>
+                  <span class="text-[#38bdf8]/60">|</span>
                   <a href="tel:+8801714545568" class="footer-nav-link font-semibold">+880 1714-545568</a>
                 </div>
                 <div class="flex items-center gap-1.5 text-[#e2e8f0] office-detail">
-                  <span class="footer-util-icon">✉️</span>
+                  <span class="footer-util-icon"><i data-lucide="mail" class="w-4 h-4"></i></span>
                   <a href="mailto:bcscbd.com@gmail.com" class="footer-nav-link">bcscbd.com@gmail.com</a>
                 </div>
               </div>
@@ -1414,11 +1445,11 @@
               <!-- Physical Offices -->
               <div class="space-y-1.5 pt-0.5">
                 <div class="office-detail">
-                  <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
+                  <span class="text-[#38bdf8] font-bold text-xs block mb-0.5" data-i18n="contact.dhakaTitle">ঢাকা অফিস:</span>
                   <p class="office-address-text" data-i18n="contact.dhakaAddr">৩৭/২ প্রীতম জামান টাওয়ার, কালভার্ট রোড, পুরানা পল্টন, ঢাকা</p>
                 </div>
                 <div class="office-detail">
-                  <span class="text-[#dfb15b] font-bold text-xs block mb-0.5" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
+                  <span class="text-[#38bdf8] font-bold text-xs block mb-0.5" data-i18n="contact.khulnaTitle">খুলনা অফিস:</span>
                   <p class="office-address-text" data-i18n="contact.khulnaAddr">২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০</p>
                 </div>
               </div>
@@ -1431,8 +1462,8 @@
         <div class="sub-footer-legal-bar border-t border-white/[0.08] flex flex-col md:flex-row justify-between items-center gap-2">
           <p class="text-center md:text-left flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1">
             <span data-i18n="footer.rights">© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট। সর্বস্বত্ব সংরক্ষিত।</span>
-            <span class="hidden md:inline text-[#dfb15b]">|</span>
-            <span class="text-[#dfb15b] font-semibold" data-i18n="footer.leadConsultant">
+            <span class="hidden md:inline text-[#38bdf8]">|</span>
+            <span class="text-[#38bdf8] font-semibold" data-i18n="footer.leadConsultant">
               প্রধান কনসালট্যান্ট: শেখ মুহাম্মাদ সালিম, RAT (ICAB)
             </span>
           </p>
@@ -1443,12 +1474,12 @@
     </footer>
 
     <!-- 18. FLOATING BUTTONS -->
-    <button type="button" id="back-to-top-btn" onclick="scrollToTop()" class="hidden fixed bottom-20 sm:bottom-24 right-5 sm:right-6 bg-[#d99b26] hover:bg-[#b8821d] text-[#0b1d3a] w-11 h-11 rounded-full items-center justify-center font-bold shadow-xl transition-all duration-200 z-40 hover:scale-110 border border-amber-300/40" title="উপরে যান">
+    <button type="button" id="back-to-top-btn" onclick="scrollToTop()" class="hidden fixed bottom-20 sm:bottom-24 right-5 sm:right-6 bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] w-11 h-11 rounded-full items-center justify-center font-bold shadow-xl transition-all duration-200 z-40 hover:scale-110 border border-sky-300/40" title="উপরে যান">
       ↑
     </button>
 
     <a href="https://wa.me/8801993306990?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20consult%20with%20BCSC%20regarding%20business%20and%20tax%20advisory%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-5 sm:bottom-6 right-5 sm:right-6 bg-[#25d366] hover:bg-[#20bd5a] text-white px-4 py-2.5 rounded-full flex items-center gap-2 font-semibold text-xs sm:text-sm shadow-xl transition-all duration-200 z-40 hover:scale-105 shadow-emerald-500/25" title="হোয়াটসঅ্যাপে চ্যাট করুন">
-      <span>💬</span>
+      <span><i data-lucide="message-circle" class="w-4 h-4"></i></span>
       <span data-i18n="floating.whatsAppChat">হোয়াটসঅ্যাপ</span>
     </a>
 
@@ -1460,6 +1491,13 @@
       const translations = {
         bn: {
           'nav.erp': 'TrueMark ERP',
+          'samples.eyebrow': 'কাজের নমুনা',
+          'samples.title': 'আমাদের করা নিবন্ধনের নমুনা',
+          'samples.subtitle': 'ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা ও QR কোড ঝাপসা করে দেখানো হয়েছে।',
+          'samples.tinTitle': 'TIN সার্টিফিকেট',
+          'samples.tinSub': 'আয়কর সেবা: ই-টিন নিবন্ধন',
+          'samples.binTitle': 'BIN সার্টিফিকেট',
+          'samples.binSub': 'ভ্যাট সেবা: বিআইএন নিবন্ধন (মূসক-২.৩)',
           'stats.servicesNum': '২০',
           'stats.servicesLabel': 'ধরনের পেশাদার সেবা',
           'stats.officesNum': '২',
@@ -1604,6 +1642,13 @@
         },
         en: {
           'nav.erp': 'TrueMark ERP',
+          'samples.eyebrow': 'WORK SAMPLES',
+          'samples.title': 'Samples of Registrations We Handle',
+          'samples.subtitle': 'Names, numbers, addresses and QR codes are blurred to protect client confidentiality.',
+          'samples.tinTitle': 'TIN Certificate',
+          'samples.tinSub': 'Income tax service: e-TIN registration',
+          'samples.binTitle': 'BIN Certificate',
+          'samples.binSub': 'VAT service: BIN registration (Mushak-2.3)',
           'stats.servicesNum': '20',
           'stats.servicesLabel': 'Professional Services',
           'stats.officesNum': '2',
@@ -1750,40 +1795,40 @@
 
       // 18 Services Data (Complete Data - Zero Truncation)
       const servicesData = [
-        { icon: '📊', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনিক লেনদেন লিপিবদ্ধকরণ ও লেজার সংরক্ষণ। অ্যাকাউন্টিং সিস্টেম স্থাপন ও ব্যাংক রিকনসিলিয়েশন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily transaction recording and ledger maintenance. Automated accounting setup and bank reconciliation.' } },
-        { icon: '📈', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
-        { icon: '📝', bn: { t: 'আয়কর সেবা', d: 'ই-টিন, বার্ষিক আয়কর রিটার্ন প্রস্তুত ও এনবিআর ফাইলিং। ব্যক্তিগত ও কর্পোরেট ট্যাক্স ফাইল প্রসেসিং।' }, en: { t: 'Income Tax Services', d: 'e-TIN, annual tax return filing and NBR submission. Individual and corporate tax file processing.' } },
-        { icon: '🏷️', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'মূসক নিবন্ধন, ৯.১ রিটার্ন ও ভিডিএস অডিট। ট্রেজারি চালান প্রসেসিং ও অনলাইন ভ্যাট পরামর্শ।' }, en: { t: 'VAT & BIN Consultancy', d: 'VAT registration, 9.1 return filing and VDS audits. Treasury challans and online VAT advisory.' } },
-        { icon: '🏢', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওপিসি (OPC) এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
-        { icon: '📜', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার হস্তান্তর, বার্ষিক রিটার্ন ও ফর্ম ১২ ফাইলিং। মূলধন বৃদ্ধি ও পরিচালক পরিবর্তন সংক্রান্ত পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, annual returns and Form 12 filings. Capital increase and director changes.' } },
-        { icon: '🌐', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রুত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
-        { icon: '🏗️', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
-        { icon: '™️', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগোর ট্রেডমার্ক সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo protection. Government trademark and patent applications.' } },
-        { icon: '⚖️', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স ও স্বাস্থ্য অধিদপ্তরের লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances, and health department licenses.' } },
-        { icon: '🔍', bn: { t: 'অডিট সাপোর্ট', d: 'সংবিধিবদ্ধ নিরীক্ষার শিডিউল ফাইল ও অডিট ফেসিলিটেশন। ইন্টারনাল অডিট টিম প্রস্তুতি সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Statutory audit schedule file preparation and audit facilitation. Internal audit team support.' } },
-        { icon: '🏛️', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
-        { icon: '📁', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
-        { icon: '💻', bn: { t: 'কুইকবুকস ও ট্যালি', d: 'ক্লাউড অ্যাকাউন্টিং সফটওয়্যার সেটআপ ও অটোমেশন। ক্লাউড মাইগ্রেশন ও অ্যাকাউন্টিং স্টাফ ট্রেনিং।' }, en: { t: 'QuickBooks & Tally Setup', d: 'Cloud accounting software setup and automation. Data migration and staff hands-on training.' } },
-        { icon: '🌐', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
-        { icon: '👥', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },
-        { icon: '💡', bn: { t: 'ব্যবসায়িক পরামর্শ', d: 'নতুন স্টার্টআপ গঠন ও কৌশলগত ব্যবসায়িক পরিকল্পনা। আইনি কাঠামো নির্ধারণ ও খরচ সাশ্রয়।' }, en: { t: 'Business Advisory & Startups', d: 'New startup formation and strategic business planning. Legal structuring and cost optimization.' } },
-        { icon: '🎓', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } },
-        { icon: '✈️', bn: { t: 'ট্রাভেল ও ভিসা সেবা', d: 'ভ্রমণ ও ভিসা সংক্রান্ত কাগজপত্র প্রস্তুত ও পরামর্শ সহায়তা।' }, en: { t: 'Travel & Visa Services', d: 'Advice and document preparation for travel and visa applications.' } },
-        { icon: '📦', bn: { t: 'প্রোডাক্ট সোর্সিং', d: 'ব্যবসার প্রয়োজনীয় পণ্য খুঁজে বের করা ও সরবরাহকারী বাছাইয়ে সহায়তা।' }, en: { t: 'Product Sourcing', d: 'Help finding the products your business needs and choosing suppliers.' } }
+        { icon: 'calculator', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনিক লেনদেন লিপিবদ্ধকরণ ও লেজার সংরক্ষণ। অ্যাকাউন্টিং সিস্টেম স্থাপন ও ব্যাংক রিকনসিলিয়েশন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily transaction recording and ledger maintenance. Automated accounting setup and bank reconciliation.' } },
+        { icon: 'chart-column', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
+        { icon: 'receipt-text', bn: { t: 'আয়কর সেবা', d: 'ই-টিন, বার্ষিক আয়কর রিটার্ন প্রস্তুত ও এনবিআর ফাইলিং। ব্যক্তিগত ও কর্পোরেট ট্যাক্স ফাইল প্রসেসিং।' }, en: { t: 'Income Tax Services', d: 'e-TIN, annual tax return filing and NBR submission. Individual and corporate tax file processing.' } },
+        { icon: 'percent', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'মূসক নিবন্ধন, ৯.১ রিটার্ন ও ভিডিএস অডিট। ট্রেজারি চালান প্রসেসিং ও অনলাইন ভ্যাট পরামর্শ।' }, en: { t: 'VAT & BIN Consultancy', d: 'VAT registration, 9.1 return filing and VDS audits. Treasury challans and online VAT advisory.' } },
+        { icon: 'building-2', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওপিসি (OPC) এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
+        { icon: 'file-pen-line', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার হস্তান্তর, বার্ষিক রিটার্ন ও ফর্ম ১২ ফাইলিং। মূলধন বৃদ্ধি ও পরিচালক পরিবর্তন সংক্রান্ত পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, annual returns and Form 12 filings. Capital increase and director changes.' } },
+        { icon: 'ship', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রুত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
+        { icon: 'landmark', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
+        { icon: 'stamp', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগোর ট্রেডমার্ক সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo protection. Government trademark and patent applications.' } },
+        { icon: 'scale', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স ও স্বাস্থ্য অধিদপ্তরের লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances, and health department licenses.' } },
+        { icon: 'search-check', bn: { t: 'অডিট সাপোর্ট', d: 'সংবিধিবদ্ধ নিরীক্ষার শিডিউল ফাইল ও অডিট ফেসিলিটেশন। ইন্টারনাল অডিট টিম প্রস্তুতি সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Statutory audit schedule file preparation and audit facilitation. Internal audit team support.' } },
+        { icon: 'gem', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
+        { icon: 'folder-kanban', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
+        { icon: 'laptop', bn: { t: 'কুইকবুকস ও ট্যালি', d: 'ক্লাউড অ্যাকাউন্টিং সফটওয়্যার সেটআপ ও অটোমেশন। ক্লাউড মাইগ্রেশন ও অ্যাকাউন্টিং স্টাফ ট্রেনিং।' }, en: { t: 'QuickBooks & Tally Setup', d: 'Cloud accounting software setup and automation. Data migration and staff hands-on training.' } },
+        { icon: 'globe', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
+        { icon: 'users', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },
+        { icon: 'lightbulb', bn: { t: 'ব্যবসায়িক পরামর্শ', d: 'নতুন স্টার্টআপ গঠন ও কৌশলগত ব্যবসায়িক পরিকল্পনা। আইনি কাঠামো নির্ধারণ ও খরচ সাশ্রয়।' }, en: { t: 'Business Advisory & Startups', d: 'New startup formation and strategic business planning. Legal structuring and cost optimization.' } },
+        { icon: 'graduation-cap', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } },
+        { icon: 'plane', bn: { t: 'ট্রাভেল ও ভিসা সেবা', d: 'ভ্রমণ ও ভিসা সংক্রান্ত কাগজপত্র প্রস্তুত ও পরামর্শ সহায়তা।' }, en: { t: 'Travel & Visa Services', d: 'Advice and document preparation for travel and visa applications.' } },
+        { icon: 'package-search', bn: { t: 'প্রোডাক্ট সোর্সিং', d: 'ব্যবসার প্রয়োজনীয় পণ্য খুঁজে বের করা ও সরবরাহকারী বাছাইয়ে সহায়তা।' }, en: { t: 'Product Sourcing', d: 'Help finding the products your business needs and choosing suppliers.' } }
       ];
 
       // 10 Industries Data
       const industriesData = [
-        { icon: '🏭', bn: 'ম্যানুফ্যাকচারিং', en: 'Manufacturing' },
-        { icon: '🏪', bn: 'ট্রেডিং ও পাইকারি', en: 'Trading & Wholesale' },
-        { icon: '🏢', bn: 'রিয়েল এস্টেট', en: 'Real Estate' },
-        { icon: '🏥', bn: 'হেলথকেয়ার ও ফার্মা', en: 'Healthcare & Pharma' },
-        { icon: '👕', bn: 'গার্মেন্টস ও টেক্সটাইল', en: 'Garments & Textile' },
-        { icon: '🌾', bn: 'এগ্রো ফার্মিং', en: 'Agro Farming' },
-        { icon: '🚢', bn: 'আমদানি-রপ্তানি', en: 'Import-Export' },
-        { icon: '💻', bn: 'তথ্যপ্রযুক্তি (IT)', en: 'Information Technology (IT)' },
-        { icon: '🤝', bn: 'এনজিও ও ট্রাস্ট', en: 'NGO & Trust' },
-        { icon: '💼', bn: 'প্রফেশনাল সার্ভিসেস', en: 'Professional Services' }
+        { icon: 'factory', bn: 'ম্যানুফ্যাকচারিং', en: 'Manufacturing' },
+        { icon: 'store', bn: 'ট্রেডিং ও পাইকারি', en: 'Trading & Wholesale' },
+        { icon: 'building', bn: 'রিয়েল এস্টেট', en: 'Real Estate' },
+        { icon: 'hospital', bn: 'হেলথকেয়ার ও ফার্মা', en: 'Healthcare & Pharma' },
+        { icon: 'shirt', bn: 'গার্মেন্টস ও টেক্সটাইল', en: 'Garments & Textile' },
+        { icon: 'wheat', bn: 'এগ্রো ফার্মিং', en: 'Agro Farming' },
+        { icon: 'ship', bn: 'আমদানি-রপ্তানি', en: 'Import-Export' },
+        { icon: 'monitor', bn: 'তথ্যপ্রযুক্তি (IT)', en: 'Information Technology (IT)' },
+        { icon: 'heart-handshake', bn: 'এনজিও ও ট্রাস্ট', en: 'NGO & Trust' },
+        { icon: 'briefcase-business', bn: 'প্রফেশনাল সার্ভিসেস', en: 'Professional Services' }
       ];
 
       // 5 Professional Credentials
@@ -1795,12 +1840,16 @@
         { num: '05', bn: { t: 'কুইকবুকস ও ভ্যাট অনলাইন বিশেষজ্ঞ', d: 'এনবিআর ট্যাক্স পোর্টাল ও ভ্যাট অনলাইন সিস্টেমে দীর্ঘদিনের বাস্তব দক্ষতা।' }, en: { t: 'QuickBooks & NBR Systems Expert', d: 'Extensive hands-on mastery in NBR tax portals, VAT Online, and QuickBooks.' } }
       ];
 
-      // 4 Certificates
+      // Certificates
       const certificatesData = [
-        { icon: '📜', img: 'images/cert-icab-rat.jpg', bn: { t: 'ICAB RAT পেশাগত সার্টিফিকেট', sub: 'ইনস্টিটিউট অব চার্টার্ড অ্যাকাউন্ট্যান্টস অব বাংলাদেশ (Reg: 15409, RAT: 131)' }, en: { t: 'ICAB RAT Professional Certificate', sub: 'Institute of Chartered Accountants of Bangladesh (Reg: 15409, RAT: 131)' } },
-        { icon: '🤖', img: 'images/cert-ai-mastery.jpg', bn: { t: 'AI Mastery Certificate Program', sub: 'কোর্সিভ সার্টিফাইড (ID: UCWE7QXB) - আধুনিক এআই টুলস ও বিজনেস অটোমেশন' }, en: { t: 'AI Mastery Certificate Program', sub: 'Coursiv Certified (ID: UCWE7QXB) - AI Tools & Business Automation' } },
-        { icon: '⚖️', bn: { t: 'বাংলাদেশ শ্রম আইন প্রশিক্ষণ', sub: 'শ্রম আইন, বিএসআর ও ইন্ডাস্ট্রিয়াল রিলেশনস কমপ্লায়েন্স' }, en: { t: 'Bangladesh Labor Law Training', sub: 'Labor Act, BSR & Industrial Relations Compliance' } },
-        { icon: '📊', bn: { t: 'IFRS & IAS ফিন্যান্সিয়াল রিপোর্টিং', sub: 'আন্তর্জাতিক অ্যাকাউন্টিং মানদণ্ড ও করপোরেট রিপোর্টিং' }, en: { t: 'IFRS & IAS Financial Reporting', sub: 'International Accounting Standards Certification' } }
+        { icon: 'award', img: 'images/cert-icab-rat.jpg', bn: { t: 'ICAB RAT পেশাগত সার্টিফিকেট', sub: 'ইনস্টিটিউট অব চার্টার্ড অ্যাকাউন্ট্যান্টস অব বাংলাদেশ (Reg: 15409, RAT: 131)' }, en: { t: 'ICAB RAT Professional Certificate', sub: 'Institute of Chartered Accountants of Bangladesh (Reg: 15409, RAT: 131)' } },
+        { icon: 'graduation-cap', img: 'images/cert-ca-articleship.jpg', bn: { t: 'সিএ আর্টিকেলশিপ সমাপনী সনদ', sub: 'এম. জে. আবেদীন অ্যান্ড কোং, চার্টার্ড অ্যাকাউন্ট্যান্টস (মার্চ ২০০৮ - ফেব্রুয়ারি ২০১১)' }, en: { t: 'CA Articleship Completion Certificate', sub: 'M. J. Abedin & Co., Chartered Accountants (March 2008 - February 2011)' } },
+        { icon: 'chart-column', img: 'images/cert-icmab-ias-40.jpg', bn: { t: 'IAS-40, 41 ও IFRS 2, 6, 14 প্রশিক্ষণ', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৮ দিন, সেপ্টেম্বর ২০২২' }, en: { t: 'IAS-40, 41 & IFRS 2, 6, 14 Training', sub: 'ICMAB Skill Development Program, 8 days, September 2022' } },
+        { icon: 'chart-column', img: 'images/cert-icmab-ias-32.jpg', bn: { t: 'IAS-32 ও IFRS 7, 9, 17 প্রশিক্ষণ', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৭ দিন, সেপ্টেম্বর ২০২২' }, en: { t: 'IAS-32 & IFRS 7, 9, 17 Training', sub: 'ICMAB Skill Development Program, 7 days, September 2022' } },
+        { icon: 'chart-column', img: 'images/cert-icmab-ias-36.jpg', bn: { t: 'IAS-36, 37, 38 ও IFRS-5 প্রশিক্ষণ', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৭ দিন, সেপ্টেম্বর ২০২২' }, en: { t: 'IAS-36, 37, 38 & IFRS-5 Training', sub: 'ICMAB Skill Development Program, 7 days, September 2022' } },
+        { icon: 'table', img: 'images/cert-icmab-excel.jpg', bn: { t: 'এক্সেল বুস্টার কোর্স (বেসিক থেকে অ্যাডভান্সড)', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৮ দিন, জুলাই ২০২২' }, en: { t: 'Booster Course in Excel (Basic to Advanced)', sub: 'ICMAB Skill Development Program, 8 days, July 2022' } },
+        { icon: 'sparkles', img: 'images/cert-ai-mastery.jpg', bn: { t: 'AI Mastery Certificate Program', sub: 'কোর্সিভ সার্টিফাইড (ID: UCWE7QXB) - আধুনিক এআই টুলস ও বিজনেস অটোমেশন' }, en: { t: 'AI Mastery Certificate Program', sub: 'Coursiv Certified (ID: UCWE7QXB) - AI Tools & Business Automation' } },
+        { icon: 'scale', bn: { t: 'বাংলাদেশ শ্রম আইন প্রশিক্ষণ', sub: 'শ্রম আইন, বিএসআর ও ইন্ডাস্ট্রিয়াল রিলেশনস কমপ্লায়েন্স' }, en: { t: 'Bangladesh Labor Law Training', sub: 'Labor Act, BSR & Industrial Relations Compliance' } }
       ];
 
       // 5 Interactive FAQ Questions & Answers
@@ -1870,10 +1919,10 @@
         container.innerHTML = faqData.map((item) => {
           const isOpen = activeFaqId === item.id;
           return `
-            <div class="bg-white border ${isOpen ? 'border-[#d99b26] ring-1 ring-[#d99b26]/30' : 'border-slate-200'} rounded-xl transition-all shadow-sm overflow-hidden">
-              <button type="button" onclick="toggleFaq('${item.id}')" class="w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-[#1d4ed8] focus:outline-none transition-colors">
+            <div class="bg-white border ${isOpen ? 'border-[#1257d6] ring-1 ring-[#1257d6]/30' : 'border-slate-200'} rounded-xl transition-all shadow-sm overflow-hidden">
+              <button type="button" onclick="toggleFaq('${item.id}')" class="w-full px-5 sm:px-6 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-[#1257d6] focus:outline-none transition-colors">
                 <span>${item[currentLang].q}</span>
-                <span class="w-7 h-7 rounded-full ${isOpen ? 'bg-[#d99b26] text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-extrabold text-base shrink-0 transition-all">
+                <span class="w-7 h-7 rounded-full ${isOpen ? 'bg-[#1257d6] text-white' : 'bg-slate-100 text-slate-600'} flex items-center justify-center font-extrabold text-base shrink-0 transition-all">
                   ${isOpen ? '−' : '+'}
                 </span>
               </button>
@@ -1896,8 +1945,8 @@
         const sContainer = document.getElementById('services-grid');
         sContainer.innerHTML = servicesData.map((s, idx) => `
           <div class="service-card-item bg-white border border-slate-200 rounded-xl p-6 shadow-sm group" style="transition-delay: ${(idx % 3) * 80}ms;">
-            <div class="w-12 h-12 rounded-lg bg-amber-50 text-[#d99b26] flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-[#d99b26] group-hover:text-white transition-colors">
-              ${s.icon}
+            <div class="w-12 h-12 rounded-lg bg-sky-50 text-[#1257d6] flex items-center justify-center font-bold text-2xl mb-4 group-hover:bg-[#1257d6] group-hover:text-white transition-colors">
+              <i data-lucide="${s.icon}" class="w-6 h-6"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-900 mb-2 font-sans">
               ${s[currentLang].t}
@@ -1914,7 +1963,7 @@
         const iContainer = document.getElementById('industries-grid');
         iContainer.innerHTML = industriesData.map(ind => `
           <div class="bg-white/[0.05] border border-white/10 rounded-xl p-5 text-center hover:bg-white/[0.1] transition-colors">
-            <div class="text-3xl mb-2">${ind.icon}</div>
+            <div class="mb-2 flex justify-center text-[#38bdf8]"><i data-lucide="${ind.icon}" class="w-8 h-8"></i></div>
             <span class="text-xs sm:text-sm font-semibold text-slate-200 block">
               ${ind[currentLang]}
             </span>
@@ -1925,7 +1974,7 @@
         const cContainer = document.getElementById('credentials-list');
         cContainer.innerHTML = credentialsData.map(c => `
           <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm flex items-start gap-4">
-            <div class="text-2xl sm:text-3xl font-extrabold text-[#d99b26] font-sans shrink-0">
+            <div class="text-2xl sm:text-3xl font-extrabold text-[#1257d6] font-sans shrink-0">
               ${c.num}
             </div>
             <div>
@@ -1945,7 +1994,7 @@
           <div class="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
             ${cert.img
               ? `<a href="${cert.img}" target="_blank" rel="noopener" class="block mb-3"><img src="${cert.img}" alt="${cert[currentLang].t}" loading="lazy" class="w-full aspect-[4/3] object-contain bg-slate-50 rounded-lg border border-slate-200 hover:opacity-90 transition-opacity" /></a>`
-              : `<div class="text-4xl mb-3">${cert.icon}</div>`}
+              : `<div class="mb-3 flex justify-center text-[#1257d6]"><i data-lucide="${cert.icon}" class="w-9 h-9"></i></div>`}
             <h4 class="text-base font-bold text-slate-900 mb-1 font-sans">
               ${cert[currentLang].t}
             </h4>
@@ -1957,6 +2006,9 @@
 
         // FAQ Accordion
         renderFaqAccordion();
+
+        // Line icons, for both static markup and the lists rendered above
+        if (window.lucide) lucide.createIcons();
       }
 
       // Client-side Form Validation Handlers

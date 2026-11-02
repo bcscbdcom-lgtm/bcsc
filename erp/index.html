@@ -27,23 +27,23 @@
   </head>
   <body class="antialiased">
 
-    <header class="bg-[#0b1d3a] border-b border-white/10 py-3">
+    <header class="bg-[#0a1730] border-b border-white/10 py-3">
       <div class="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-        <a href="/" class="text-white font-bold text-base sm:text-lg hover:text-amber-300 transition-colors" data-en="← BCSC Home">← BCSC হোম</a>
-        <button type="button" id="lang-btn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-amber-300">🌐 EN</button>
+        <a href="/" class="text-white font-bold text-base sm:text-lg hover:text-sky-300 transition-colors" data-en="← BCSC Home">← BCSC হোম</a>
+        <button type="button" id="lang-btn" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-sky-300">EN</button>
       </div>
     </header>
 
     <main>
-      <section class="bg-[#0b1d3a] text-white px-4 sm:px-6 py-16 sm:py-24">
+      <section class="bg-[#0a1730] text-white px-4 sm:px-6 py-16 sm:py-24">
         <div class="max-w-[800px] mx-auto text-center">
-          <span class="inline-block text-xs sm:text-sm font-bold text-[#dfb15b] bg-[#dfb15b]/10 border border-[#dfb15b]/25 px-4 py-1.5 rounded-full mb-5" data-en="Coming soon">শিগগিরই আসছে</span>
+          <span class="inline-block text-xs sm:text-sm font-bold text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/25 px-4 py-1.5 rounded-full mb-5" data-en="Coming soon">শিগগিরই আসছে</span>
           <h1 class="text-4xl sm:text-6xl font-extrabold mb-5">TrueMark ERP</h1>
           <p class="text-slate-200 text-base sm:text-lg leading-relaxed mb-8" data-en="Software for managing your accounts, stock, sales and delivery orders in one place.">
             ব্যবসার হিসাব, স্টক, বিক্রয় ও ডেলিভারি অর্ডার এক জায়গায় পরিচালনার সফটওয়্যার।
           </p>
           <div class="flex flex-wrap justify-center gap-3">
-            <a id="demo-btn" href="https://wa.me/8801993306990?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20TrueMark%20ERP%20%E0%A6%8F%E0%A6%B0%20%E0%A6%A1%E0%A7%87%E0%A6%AE%E0%A7%8B%20%E0%A6%A6%E0%A7%87%E0%A6%96%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener noreferrer" class="bg-[#dfb15b] hover:bg-[#c99a45] text-[#0b1d3a] font-bold text-sm sm:text-base px-7 py-3.5 rounded-lg transition-colors" data-en="Request a Demo">ডেমোর অনুরোধ করুন</a>
+            <a id="demo-btn" href="https://wa.me/8801993306990?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20TrueMark%20ERP%20%E0%A6%8F%E0%A6%B0%20%E0%A6%A1%E0%A7%87%E0%A6%AE%E0%A7%8B%20%E0%A6%A6%E0%A7%87%E0%A6%96%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener noreferrer" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold text-sm sm:text-base px-7 py-3.5 rounded-lg transition-colors" data-en="Request a Demo">ডেমোর অনুরোধ করুন</a>
             <span class="bg-white/5 border border-white/15 text-slate-400 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-lg" aria-disabled="true" data-en="Sign Up (coming soon)">সাইন আপ (শিগগিরই)</span>
             <span class="bg-white/5 border border-white/15 text-slate-400 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-lg" aria-disabled="true" data-en="Log In (coming soon)">লগইন (শিগগিরই)</span>
           </div>
@@ -84,7 +84,7 @@
       </section>
     </main>
 
-    <footer class="bg-[#07152b] text-slate-300 text-xs sm:text-sm text-center px-4 py-6">
+    <footer class="bg-[#060e1f] text-slate-300 text-xs sm:text-sm text-center px-4 py-6">
       <span data-en="© 2026 TrueMark ERP, a unit of TrueMark. All Rights Reserved.">© 2026 TrueMark ERP, TrueMark-এর একটি ইউনিট। সর্বস্বত্ব সংরক্ষিত।</span>
     </footer>
 
@@ -105,7 +105,7 @@
         document.documentElement.lang = currentLang;
         translated.forEach((item) => { item.el.textContent = item[currentLang]; });
         document.getElementById('demo-btn').href = demoHref[currentLang];
-        document.getElementById('lang-btn').textContent = currentLang === 'bn' ? '🌐 EN' : '🌐 বাং';
+        document.getElementById('lang-btn').textContent = currentLang === 'bn' ? 'EN' : 'বাং';
       }
     </script>
   </body>
