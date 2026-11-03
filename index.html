@@ -35,33 +35,7 @@
         if (name) gtag('event', name, { link_location: (link.closest('[id]') || {}).id || '' });
       });
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@0.546.0/dist/umd/lucide.min.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              navy: {
-                800: '#10244a',
-                900: '#0a1730',
-                950: '#060e1f',
-              },
-              accent: {
-                400: '#38bdf8',
-                500: '#1257d6',
-                600: '#0e46ad',
-              },
-            },
-            fontFamily: {
-              sans: ['Hind Siliguri', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-              bengali: ['Hind Siliguri', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
 
     <style>
       body {
@@ -488,6 +462,8 @@
       ]
     }
     </script>
+    <!-- Built from tailwind/ (see tailwind.config.js); kept last in <head> like the old CDN styles -->
+    <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body class="bg-white text-slate-900 antialiased selection:bg-sky-400 selection:text-slate-900">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-[#0a1730] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:shadow-xl" data-i18n="a11y.skip">মূল বিষয়বস্তুতে যান</a>

@@ -28,7 +28,6 @@
         if (name) gtag('event', name, { link_location: (link.closest('[id]') || {}).id || '' });
       });
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         font-family: 'Hind Siliguri', sans-serif;
@@ -36,6 +35,8 @@
         color: #0f172a;
       }
     </style>
+    <!-- Built from tailwind/ (see tailwind.config.js); kept last in <head> like the old CDN styles -->
+    <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body class="antialiased">
 
