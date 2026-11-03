@@ -1154,6 +1154,8 @@
             </div>
 
             <form id="bcsc-contact-form" class="space-y-5" novalidate onsubmit="handleFormSubmit(event)">
+              <!-- Left empty by people; bots that fill every field are ignored by the lead sheet -->
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <!-- Name Field -->
                 <div>
@@ -2200,6 +2202,26 @@
         ].join('\n');
         const whatsAppUrl = 'https://wa.me/8801993306990?text=' + encodeURIComponent(whatsAppText);
         if (window.gtag) gtag('event', 'lead_submit', { service: serviceSelect.value });
+
+        // Save the lead to the BCSC Leads Google Sheet, so it is kept even if WhatsApp is never sent.
+        try {
+          fetch('https://script.google.com/macros/s/AKfycbznm56GZEv0rIcA9Av8f9-x2hJpSSfqsWJf7ZYhBAAOwgDOY6ozeoPP_JpIiKq8fWkXEg/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            keepalive: true,
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              name: fieldValue('name'),
+              phone: fieldValue('phone'),
+              email: fieldValue('email'),
+              service: serviceSelect.options[serviceSelect.selectedIndex].text,
+              message: fieldValue('message'),
+              lang: currentLang,
+              page: location.pathname,
+              website: document.getElementById('contact-website').value
+            })
+          });
+        } catch (e) {}
 
         const whatsAppWindow = window.open(whatsAppUrl, '_blank');
         if (whatsAppWindow) {
