@@ -1987,7 +1987,7 @@
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               ${s[currentLang].d}
             </p>
-            ${s.url ? `<a href="${s.url}" class="inline-block mt-3 py-1 text-sm font-bold text-[#1257d6] hover:underline">${currentLang === 'en' ? 'Details (in Bangla) →' : 'বিস্তারিত দেখুন →'}</a>` : ''}
+            ${s.url ? `<a href="${currentLang === 'en' ? '/en' + s.url : s.url}" class="inline-block mt-3 py-1 text-sm font-bold text-[#1257d6] hover:underline">${currentLang === 'en' ? 'View details →' : 'বিস্তারিত দেখুন →'}</a>` : ''}
           </div>
         `).join('');
 

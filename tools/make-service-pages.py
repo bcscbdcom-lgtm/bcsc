@@ -421,26 +421,79 @@ LINKS_NOTE = ('এগুলো সংশ্লিষ্ট সরকারি �
               'লগইন বা টাকা পরিশোধের আগে ঠিকানার ঘরে সঠিক সরকারি ঠিকানা (যেমন .gov.bd) আছে কি না দেখে নিন।')
 
 
-def link_items(keys):
-    return '\n'.join(f'''            <li class="py-3 border-t border-slate-100 first:border-t-0">
-              <a href="{LINKS[k][1]}" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1257d6] hover:underline">{E(LINKS[k][0])} ↗</a>
-              <p class="text-sm text-slate-600">{E(LINKS[k][2])} <span class="text-slate-500 break-all">({E(LINKS[k][1].split('//')[1].rstrip('/'))})</span></p>
-            </li>''' for k in keys)
+# English text lives beside this file; loaded by path because the generator may run with python -I.
+import runpy
+EN_DATA = runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'service_pages_en.py'))
 
-
-STEPS = [
+BN_UI = {
+    'home': '← BCSC হোম', 'all_services': 'সব সেবা', 'crumb_home': 'হোম', 'crumb_services': 'সেবাসমূহ',
+    'cta_wa': 'WhatsApp-এ জানতে চাই', 'cta_call': 'কল করুন: 01993-306990',
+    'what_we_do': 'আমরা কী কী করি',
+    'what_we_do_sub': 'প্রতিটি কাজের প্রয়োজনীয় কাগজ, আনুমানিক সময় এবং কারা সাধারণত এই সেবা নেন।',
+    'general_box': '<strong>সাধারণ ধারণার জন্য:</strong> নিচের তথ্য ও সময় পরিস্থিতি, কাজের ধরন, সরকারি প্রক্রিয়া, আইন ও সময়ভেদে পরিবর্তনশীল। এগুলো চুক্তি বা নিশ্চয়তা নয়; চূড়ান্ত পরিসর, সময় ও ফি আলোচনার পর লিখিতভাবে ঠিক করা হয়।',
+    'docs_label': 'সাধারণত যে কাগজ লাগে', 'time_label': 'আনুমানিক সময় (পরিবর্তনশীল)', 'who_label': 'কারা নেন',
+    'time_note': '<strong class="text-slate-900">সময় নিয়ে একটি কথা:</strong> উপরের সময় হলো সম্পূর্ণ কাগজপত্র পাওয়ার পর আমাদের কাজ শেষ করার আনুমানিক হিসাব, নিশ্চিত সময় নয়। সরকারি নিবন্ধন, যাচাই, আপত্তি বা অনুমোদনে যে সময় লাগে, তা সংশ্লিষ্ট দপ্তরের ওপর নির্ভর করে, আলাদা এবং আমাদের নিয়ন্ত্রণের বাইরে।',
+    'docs_note': 'তালিকাটি সাধারণ ধারণার জন্য; কাজের ধরন ও সরকারি চাহিদা অনুযায়ী কম-বেশি বা অতিরিক্ত কাগজ লাগতে পারে।',
+    'good_to_know': 'জেনে রাখুন', 'you_get': 'আপনি যা পাবেন:', 'process': 'কাজের ধাপ', 'step': 'ধাপ',
+    'talk_title': '{name} নিয়ে কথা বলুন',
+    'talk_sub': 'আপনার কাগজপত্র ও অবস্থা দেখে কাজের পরিসর, খরচ ও সময় জানিয়ে দেব। খুলনা ও ঢাকা অফিস, প্রতিদিন সকাল ১০টা – রাত ১০টা।',
+    'talk_wa': 'WhatsApp-এ বার্তা দিন', 'talk_form': 'যোগাযোগ ফর্ম',
+    'related_sites': 'সংশ্লিষ্ট সরকারি সাইট', 'all_links': 'সব প্রয়োজনীয় সরকারি লিংক →',
+    'disclaimer': 'দায়মুক্তি', 'other_services': 'অন্যান্য সেবা',
+    'footer': '© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট।',
+    'privacy': 'গোপনীয়তা নীতি', 'switch': 'English',
+    'wa_text': 'আসসালামু আলাইকুম, আমি BCSC-এর "{name}" নিয়ে জানতে চাই।',
+    'help_service': 'এ কাজে সহায়তা লাগলে: {name} →', 'help_contact': 'এ কাজে সহায়তা লাগলে যোগাযোগ করুন →',
+}
+BN_STEPS = [
     ('পরামর্শ', 'ফোন বা WhatsApp-এ আপনার প্রয়োজন শুনি এবং কাজের পরিসর ঠিক করি।'),
     ('কাগজপত্র', 'প্রয়োজনীয় কাগজের তালিকা দিই এবং সংগ্রহ করি।'),
     ('যাচাই ও প্রস্তুতি', 'তথ্য যাচাই করে হিসাব, ফরম বা প্রতিবেদন প্রস্তুত করি।'),
     ('দাখিল ও হস্তান্তর', 'সংশ্লিষ্ট দপ্তরে দাখিল করি এবং কপি ও প্রমাণ আপনাকে বুঝিয়ে দিই।'),
 ]
+BN_RESOURCES = {
+    'title': 'প্রয়োজনীয় সরকারি লিংক: NBR, RJSC, BIDA, CCI&E, সিটি কর্পোরেশন | BCSC',
+    'description': 'আয়কর, ভ্যাট, কোম্পানি নিবন্ধন, আমদানি-রপ্তানি, ট্রেড লাইসেন্স ও ট্রেডমার্কের সরকারি ওয়েবসাইট ও অনলাইন পোর্টাল এক জায়গায়, যাচাই করা লিংকসহ।',
+    'h1': 'প্রয়োজনীয় সরকারি লিংক',
+    'lead': 'আয়কর, ভ্যাট, কোম্পানি, আমদানি-রপ্তানি, লাইসেন্স ও ট্রেডমার্কের কাজে যেসব সরকারি সাইট ও অনলাইন পোর্টাল লাগে, এক জায়গায়। সব লিংক নতুন ট্যাবে খোলে।',
+    'crumb': 'প্রয়োজনীয় সরকারি লিংক',
+    'checked': 'সরকারি সাইটের ঠিকানা মাঝে মাঝে বদলায়; কোনো লিংক কাজ না করলে আমাদের জানান। সর্বশেষ যাচাই: ৪ নভেম্বর ২০২৬।',
+}
 
 E = html.escape
+DIGITS = {'bn': '১২৩৪', 'en': '1234'}
 
 
-def wa_link(name):
+def L(lang):
+    """Everything that differs by language, in one place."""
+    if lang == 'bn':
+        return {'ui': BN_UI, 'steps': BN_STEPS, 'disclaimer': DISCLAIMER, 'links_note': LINKS_NOTE,
+                'link': lambda k: (LINKS[k][0], LINKS[k][2]), 'group': lambda g: g, 'resources': BN_RESOURCES,
+                'prefix': '', 'skip': 'মূল বিষয়বস্তুতে যান', 'full_stop': '।'}
+    return {'ui': EN_DATA['UI'], 'steps': EN_DATA['STEPS'], 'disclaimer': EN_DATA['DISCLAIMER'], 'links_note': EN_DATA['LINKS_NOTE'],
+            'link': lambda k: EN_DATA['LINKS'][k], 'group': lambda g: EN_DATA['LINK_GROUPS'][g], 'resources': EN_DATA['RESOURCES'],
+            'prefix': '/en', 'skip': 'Skip to main content', 'full_stop': '.'}
+
+
+def content(s, lang):
+    """A service's text in the given language; slug and link keys are shared."""
+    return s if lang == 'bn' else {**s, **EN_DATA['EN'][s['slug']]}
+
+
+def link_items(keys, lang):
+    out = []
+    for k in keys:
+        name, desc = L(lang)['link'](k)
+        out.append(f'''            <li class="py-3 border-t border-slate-100 first:border-t-0">
+              <a href="{LINKS[k][1]}" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1257d6] hover:underline">{E(name)} ↗</a>
+              <p class="text-sm text-slate-600">{E(desc)} <span class="text-slate-500 break-all">({E(LINKS[k][1].split('//')[1].rstrip('/'))})</span></p>
+            </li>''')
+    return '\n'.join(out)
+
+
+def wa_link(name, lang):
     from urllib.parse import quote
-    return f'https://wa.me/{WA}?text=' + quote(f'আসসালামু আলাইকুম, আমি BCSC-এর "{name}" নিয়ে জানতে চাই।')
+    return f'https://wa.me/{WA}?text=' + quote(L(lang)['ui']['wa_text'].format(name=name))
 
 
 GA_TAG = f'''    <script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script>
@@ -460,55 +513,30 @@ GA_TAG = f'''    <script async src="https://www.googletagmanager.com/gtag/js?id=
 '''
 
 
-def page(s):
-    url = f'{SITE}/services/{s["slug"]}/'
-    others = [o for o in SERVICES if o['slug'] != s['slug']]
-    ld = [
-        {
-            '@context': 'https://schema.org', '@type': 'Service', 'name': s['name'], 'serviceType': s['eyebrow'],
-            'description': s['description'], 'url': url, 'areaServed': {'@type': 'Country', 'name': 'Bangladesh'},
-            'provider': {'@type': 'ProfessionalService', 'name': 'Business Consulting & Solutions Center (BCSC)', 'url': SITE + '/', 'telephone': '+8801993306990'},
-        },
-        {
-            '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
-                {'@type': 'ListItem', 'position': 1, 'name': 'BCSC', 'item': SITE + '/'},
-                {'@type': 'ListItem', 'position': 2, 'name': 'সেবাসমূহ', 'item': SITE + '/#services'},
-                {'@type': 'ListItem', 'position': 3, 'name': s['name'], 'item': url},
-            ],
-        },
-    ]
-    cards = '\n'.join(f'''          <article class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm flex flex-col gap-3">
-            <h3 class="text-lg font-bold text-slate-900">{E(t)}</h3>
-            <p class="text-sm text-slate-700 leading-relaxed">{E(d)}</p>
-            <dl class="text-sm space-y-2 border-t border-slate-100 pt-3">
-              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">সাধারণত যে কাগজ লাগে</dt><dd class="text-slate-700 leading-relaxed">{E(docs)}</dd></div>
-              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">আনুমানিক সময় (পরিবর্তনশীল)</dt><dd class="text-slate-700">{E(time)}</dd></div>
-              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">কারা নেন</dt><dd class="text-slate-700">{E(who)}</dd></div>
-            </dl>
-          </article>''' for t, d, docs, time, who in s['items'])
-    rows = '\n'.join(f'                <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold text-slate-900 align-top">{E(a)}</td><td class="py-2.5 text-slate-700">{E(b)}</td></tr>' for a, b in s['docs'])
-    notes = '\n'.join(f'            <li>{E(n)}</li>' for n in s['notes'])
-    steps = '\n'.join(f'''          <li class="bg-white border border-slate-200 rounded-xl p-5">
-            <span class="block text-xs font-bold uppercase tracking-wider text-[#1257d6] mb-1">ধাপ {"১২৩৪"[i]}</span>
-            <h3 class="text-base font-bold text-slate-900 mb-1">{E(t)}</h3>
-            <p class="text-sm text-slate-700 leading-relaxed">{E(d)}</p>
-          </li>''' for i, (t, d) in enumerate(STEPS))
-    other_links = '\n'.join(f'          <a href="/services/{o["slug"]}/" class="inline-block bg-white border border-slate-200 hover:border-[#1257d6] hover:text-[#1257d6] rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-800">{E(o["name"])} →</a>' for o in others)
-    wa = wa_link(s['name'])
+def shell(lang, path, title, desc, ld, body):
+    """Page frame shared by every generated page. path is the language-neutral path, e.g. /services/vat-bin/."""
+    t = L(lang)
+    ui = t['ui']
+    url = SITE + t['prefix'] + path
+    other = 'en' if lang == 'bn' else 'bn'
+    other_href = L(other)['prefix'] + path
     return f'''<!doctype html>
-<html lang="bn">
+<html lang="{lang}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{E(s["title"])}</title>
-    <meta name="description" content="{E(s["description"])}" />
+    <title>{E(title)}</title>
+    <meta name="description" content="{E(desc)}" />
     <meta name="theme-color" content="#0a1730" />
-    <meta property="og:title" content="{E(s["title"])}" />
-    <meta property="og:description" content="{E(s["description"])}" />
+    <meta property="og:title" content="{E(title)}" />
+    <meta property="og:description" content="{E(desc)}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{url}" />
     <meta property="og:image" content="{SITE}/images/og-image.jpg" />
     <link rel="canonical" href="{url}" />
+    <link rel="alternate" hreflang="bn" href="{SITE}{path}" />
+    <link rel="alternate" hreflang="en" href="{SITE}/en{path}" />
+    <link rel="alternate" hreflang="x-default" href="{SITE}{path}" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -522,37 +550,93 @@ def page(s):
     <link rel="stylesheet" href="/assets/site.css" />
   </head>
   <body class="antialiased">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-[#0a1730] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">মূল বিষয়বস্তুতে যান</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-[#0a1730] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">{t['skip']}</a>
     <header class="bg-[#0a1730] border-b border-white/10 py-3">
       <div class="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-        <a href="/" class="text-white font-bold text-base sm:text-lg hover:text-sky-300">← BCSC হোম</a>
-        <a href="/#services" class="text-sm font-semibold text-sky-300 hover:text-white">সব সেবা</a>
+        <a href="/" class="text-white font-bold text-base sm:text-lg hover:text-sky-300">{ui['home']}</a>
+        <div class="flex items-center gap-4">
+          <a href="/#services" class="text-sm font-semibold text-sky-300 hover:text-white">{ui['all_services']}</a>
+          <a href="{other_href}" hreflang="{other}" lang="{other}" class="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-semibold text-sky-300">{ui['switch']}</a>
+        </div>
       </div>
     </header>
 
     <main id="main-content" tabindex="-1">
-      <section class="bg-[#0a1730] text-white px-4 sm:px-6 py-12 sm:py-16">
+{body}
+    </main>
+
+    <footer class="bg-[#060e1f] text-slate-300 text-xs sm:text-sm text-center px-4 py-6">
+      <span>{ui['footer']}</span>
+      <span class="mx-1 text-[#38bdf8]">|</span>
+      <a href="/privacy/" class="hover:text-sky-300 hover:underline">{ui['privacy']}</a>
+    </footer>
+  </body>
+</html>
+'''
+
+
+def page(s0, lang):
+    s = content(s0, lang)
+    t = L(lang)
+    ui = t['ui']
+    pre = t['prefix']
+    path = f'/services/{s["slug"]}/'
+    url = SITE + pre + path
+    others = [content(o, lang) for o in SERVICES if o['slug'] != s['slug']]
+    ld = [
+        {
+            '@context': 'https://schema.org', '@type': 'Service', 'name': s['name'], 'serviceType': s['eyebrow'],
+            'description': s['description'], 'url': url, 'inLanguage': lang, 'areaServed': {'@type': 'Country', 'name': 'Bangladesh'},
+            'provider': {'@type': 'ProfessionalService', 'name': 'Business Consulting & Solutions Center (BCSC)', 'url': SITE + '/', 'telephone': '+8801993306990'},
+        },
+        {
+            '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': 'BCSC', 'item': SITE + '/'},
+                {'@type': 'ListItem', 'position': 2, 'name': ui['crumb_services'], 'item': SITE + '/#services'},
+                {'@type': 'ListItem', 'position': 3, 'name': s['name'], 'item': url},
+            ],
+        },
+    ]
+    cards = '\n'.join(f'''          <article class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-sm flex flex-col gap-3">
+            <h3 class="text-lg font-bold text-slate-900">{E(tt)}</h3>
+            <p class="text-sm text-slate-700 leading-relaxed">{E(d)}</p>
+            <dl class="text-sm space-y-2 border-t border-slate-100 pt-3">
+              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">{ui['docs_label']}</dt><dd class="text-slate-700 leading-relaxed">{E(docs)}</dd></div>
+              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">{ui['time_label']}</dt><dd class="text-slate-700">{E(time)}</dd></div>
+              <div><dt class="text-xs font-bold uppercase tracking-wider text-[#1257d6]">{ui['who_label']}</dt><dd class="text-slate-700">{E(who)}</dd></div>
+            </dl>
+          </article>''' for tt, d, docs, time, who in s['items'])
+    rows = '\n'.join(f'                <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold text-slate-900 align-top">{E(a)}</td><td class="py-2.5 text-slate-700">{E(b)}</td></tr>' for a, b in s['docs'])
+    notes = '\n'.join(f'            <li>{E(n)}</li>' for n in s['notes'])
+    steps = '\n'.join(f'''          <li class="bg-white border border-slate-200 rounded-xl p-5">
+            <span class="block text-xs font-bold uppercase tracking-wider text-[#1257d6] mb-1">{ui['step']} {DIGITS[lang][i]}</span>
+            <h3 class="text-base font-bold text-slate-900 mb-1">{E(tt)}</h3>
+            <p class="text-sm text-slate-700 leading-relaxed">{E(d)}</p>
+          </li>''' for i, (tt, d) in enumerate(t['steps']))
+    other_links = '\n'.join(f'          <a href="{pre}/services/{o["slug"]}/" class="inline-block bg-white border border-slate-200 hover:border-[#1257d6] hover:text-[#1257d6] rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-800">{E(o["name"])} →</a>' for o in others)
+    wa = wa_link(s['name'], lang)
+    body = f'''      <section class="bg-[#0a1730] text-white px-4 sm:px-6 py-12 sm:py-16">
         <div class="max-w-[1100px] mx-auto">
-          <nav aria-label="Breadcrumb" class="text-xs text-slate-300 mb-4"><a href="/" class="hover:text-white">হোম</a> / <a href="/#services" class="hover:text-white">সেবাসমূহ</a> / <span class="text-sky-300">{E(s["name"])}</span></nav>
+          <nav aria-label="Breadcrumb" class="text-xs text-slate-300 mb-4"><a href="/" class="hover:text-white">{ui['crumb_home']}</a> / <a href="/#services" class="hover:text-white">{ui['crumb_services']}</a> / <span class="text-sky-300">{E(s["name"])}</span></nav>
           <span class="block text-xs sm:text-sm font-bold uppercase tracking-wider text-[#38bdf8] mb-2">{E(s["eyebrow"])}</span>
           <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-4">{E(s["name"])}</h1>
           <p class="text-base sm:text-lg text-slate-200 max-w-[760px] leading-relaxed mb-7">{E(s["lead"])}</p>
           <div class="flex flex-wrap gap-3">
-            <a href="{E(wa)}" target="_blank" rel="noopener noreferrer" data-where="service_hero" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold px-6 py-3 rounded-xl">WhatsApp-এ জানতে চাই</a>
-            <a href="tel:+8801993306990" data-where="service_hero" class="border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl">কল করুন: 01993-306990</a>
+            <a href="{E(wa)}" target="_blank" rel="noopener noreferrer" data-where="service_hero" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold px-6 py-3 rounded-xl">{ui['cta_wa']}</a>
+            <a href="tel:+8801993306990" data-where="service_hero" class="border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl">{ui['cta_call']}</a>
           </div>
         </div>
       </section>
 
       <section class="px-4 sm:px-6 py-12 sm:py-14">
         <div class="max-w-[1100px] mx-auto">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">আমরা কী কী করি</h2>
-          <p class="text-sm text-slate-600 mb-4 max-w-[760px]">প্রতিটি কাজের প্রয়োজনীয় কাগজ, আনুমানিক সময় এবং কারা সাধারণত এই সেবা নেন।</p>
-          <p class="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 max-w-[860px]"><strong>সাধারণ ধারণার জন্য:</strong> নিচের তথ্য ও সময় পরিস্থিতি, কাজের ধরন, সরকারি প্রক্রিয়া, আইন ও সময়ভেদে পরিবর্তনশীল। এগুলো চুক্তি বা নিশ্চয়তা নয়; চূড়ান্ত পরিসর, সময় ও ফি আলোচনার পর লিখিতভাবে ঠিক করা হয়।</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{ui['what_we_do']}</h2>
+          <p class="text-sm text-slate-600 mb-4 max-w-[760px]">{ui['what_we_do_sub']}</p>
+          <p class="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 max-w-[860px]">{ui['general_box']}</p>
           <div class="grid gap-5 md:grid-cols-2">
 {cards}
           </div>
-          <p class="mt-5 text-sm text-slate-600 bg-sky-50 border border-sky-100 rounded-lg p-4 max-w-[860px]"><strong class="text-slate-900">সময় নিয়ে একটি কথা:</strong> উপরের সময় হলো সম্পূর্ণ কাগজপত্র পাওয়ার পর আমাদের কাজ শেষ করার আনুমানিক হিসাব, নিশ্চিত সময় নয়। সরকারি নিবন্ধন, যাচাই, আপত্তি বা অনুমোদনে যে সময় লাগে, তা সংশ্লিষ্ট দপ্তরের ওপর নির্ভর করে, আলাদা এবং আমাদের নিয়ন্ত্রণের বাইরে।</p>
+          <p class="mt-5 text-sm text-slate-600 bg-sky-50 border border-sky-100 rounded-lg p-4 max-w-[860px]">{ui['time_note']}</p>
         </div>
       </section>
 
@@ -567,22 +651,22 @@ def page(s):
                 </tbody>
               </table>
             </div>
-            <p class="mt-3 text-xs text-slate-500">তালিকাটি সাধারণ ধারণার জন্য; কাজের ধরন ও সরকারি চাহিদা অনুযায়ী কম-বেশি বা অতিরিক্ত কাগজ লাগতে পারে।</p>
+            <p class="mt-3 text-xs text-slate-500">{ui['docs_note']}</p>
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 min-w-0">
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">জেনে রাখুন</h2>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">{ui['good_to_know']}</h2>
             <p class="text-sm text-slate-700 leading-relaxed mb-3">{E(s["basis"])}</p>
             <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700 leading-relaxed">
 {notes}
             </ul>
-            <p class="mt-4 text-sm text-slate-700"><strong class="text-slate-900">আপনি যা পাবেন:</strong> {E(s["deliverables"])}।</p>
+            <p class="mt-4 text-sm text-slate-700"><strong class="text-slate-900">{ui['you_get']}</strong> {E(s["deliverables"])}{t['full_stop']}</p>
           </div>
         </div>
       </section>
 
       <section class="px-4 sm:px-6 pb-12 sm:pb-14">
         <div class="max-w-[1100px] mx-auto">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-5">কাজের ধাপ</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-5">{ui['process']}</h2>
           <ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 {steps}
           </ol>
@@ -591,12 +675,12 @@ def page(s):
 
       <section class="px-4 sm:px-6 pb-14">
         <div class="max-w-[1100px] mx-auto bg-[#0a1730] text-white rounded-2xl p-6 sm:p-10">
-          <h2 class="text-2xl sm:text-3xl font-bold mb-2">{E(s["name"])} নিয়ে কথা বলুন</h2>
-          <p class="text-slate-200 mb-6 max-w-[700px]">আপনার কাগজপত্র ও অবস্থা দেখে কাজের পরিসর, খরচ ও সময় জানিয়ে দেব। খুলনা ও ঢাকা অফিস, প্রতিদিন সকাল ১০টা – রাত ১০টা।</p>
+          <h2 class="text-2xl sm:text-3xl font-bold mb-2">{E(ui['talk_title'].format(name=s["name"]))}</h2>
+          <p class="text-slate-200 mb-6 max-w-[700px]">{ui['talk_sub']}</p>
           <div class="flex flex-wrap gap-3">
-            <a href="{E(wa)}" target="_blank" rel="noopener noreferrer" data-where="service_footer" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold px-6 py-3 rounded-xl">WhatsApp-এ বার্তা দিন</a>
+            <a href="{E(wa)}" target="_blank" rel="noopener noreferrer" data-where="service_footer" class="bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] font-bold px-6 py-3 rounded-xl">{ui['talk_wa']}</a>
             <a href="tel:+8801993306990" data-where="service_footer" class="border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl">01993-306990</a>
-            <a href="/#contact" class="border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl">যোগাযোগ ফর্ম</a>
+            <a href="/#contact" class="border border-white/30 hover:bg-white/10 text-white font-bold px-6 py-3 rounded-xl">{ui['talk_form']}</a>
           </div>
         </div>
       </section>
@@ -604,129 +688,78 @@ def page(s):
       <section class="px-4 sm:px-6 pb-16">
         <div class="max-w-[1100px] mx-auto">
           <div class="bg-white border border-slate-200 rounded-xl p-5 mb-6 max-w-[900px]">
-            <h2 class="text-base font-bold text-slate-900 mb-1">সংশ্লিষ্ট সরকারি সাইট</h2>
+            <h2 class="text-base font-bold text-slate-900 mb-1">{ui['related_sites']}</h2>
             <ul>
-{link_items(s["links"])}
+{link_items(s["links"], lang)}
             </ul>
-            <p class="mt-2 text-xs text-slate-500">{E(LINKS_NOTE)} <a href="/resources/" class="font-semibold text-[#1257d6] hover:underline">সব প্রয়োজনীয় সরকারি লিংক →</a></p>
+            <p class="mt-2 text-xs text-slate-500">{E(t['links_note'])} <a href="{pre}/resources/" class="font-semibold text-[#1257d6] hover:underline">{ui['all_links']}</a></p>
           </div>
           <div class="bg-white border border-slate-200 rounded-xl p-5 mb-8 max-w-[900px]">
-            <h2 class="text-base font-bold text-slate-900 mb-1">দায়মুক্তি</h2>
-            <p class="text-sm text-slate-600 leading-relaxed">{E(DISCLAIMER)}</p>
+            <h2 class="text-base font-bold text-slate-900 mb-1">{ui['disclaimer']}</h2>
+            <p class="text-sm text-slate-600 leading-relaxed">{E(t['disclaimer'])}</p>
           </div>
-          <h2 class="text-xl font-bold text-slate-900 mb-4">অন্যান্য সেবা</h2>
+          <h2 class="text-xl font-bold text-slate-900 mb-4">{ui['other_services']}</h2>
           <div class="flex flex-wrap gap-3">
 {other_links}
           <a href="/erp/" class="inline-block bg-white border border-slate-200 hover:border-[#1257d6] hover:text-[#1257d6] rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-800">TrueMark ERP →</a>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="bg-[#060e1f] text-slate-300 text-xs sm:text-sm text-center px-4 py-6">
-      <span>© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট।</span>
-      <span class="mx-1 text-[#38bdf8]">|</span>
-      <a href="/privacy/" class="hover:text-sky-300 hover:underline">গোপনীয়তা নীতি</a>
-    </footer>
-  </body>
-</html>
-'''
+      </section>'''
+    return shell(lang, path, s['title'], s['description'], ld, body)
 
 
-def resources_page():
-    url = f'{SITE}/resources/'
-    title = 'প্রয়োজনীয় সরকারি লিংক: NBR, RJSC, BIDA, CCI&E, সিটি কর্পোরেশন | BCSC'
-    desc = 'আয়কর, ভ্যাট, কোম্পানি নিবন্ধন, আমদানি-রপ্তানি, ট্রেড লাইসেন্স ও ট্রেডমার্কের সরকারি ওয়েবসাইট ও অনলাইন পোর্টাল এক জায়গায়, যাচাই করা লিংকসহ।'
+def resources_page(lang):
+    t = L(lang)
+    ui = t['ui']
+    r = t['resources']
+    pre = t['prefix']
+    path = '/resources/'
     groups = []
     for name, slug, keys in LINK_GROUPS:
-        help_link = ''
         if slug:
-            sname = next(x['name'] for x in SERVICES if x['slug'] == slug)
-            help_link = f'<a href="/services/{slug}/" class="inline-block mt-3 text-sm font-bold text-[#1257d6] hover:underline">এ কাজে সহায়তা লাগলে: {E(sname)} →</a>'
+            sname = content(next(x for x in SERVICES if x['slug'] == slug), lang)['name']
+            help_link = f'<a href="{pre}/services/{slug}/" class="inline-block mt-3 text-sm font-bold text-[#1257d6] hover:underline">{E(ui["help_service"].format(name=sname))}</a>'
         else:
-            help_link = '<a href="/#contact" class="inline-block mt-3 text-sm font-bold text-[#1257d6] hover:underline">এ কাজে সহায়তা লাগলে যোগাযোগ করুন →</a>'
+            help_link = f'<a href="/#contact" class="inline-block mt-3 text-sm font-bold text-[#1257d6] hover:underline">{ui["help_contact"]}</a>'
         groups.append(f'''          <section class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 min-w-0">
-            <h2 class="text-xl font-bold text-slate-900 mb-2">{E(name)}</h2>
+            <h2 class="text-xl font-bold text-slate-900 mb-2">{E(t['group'](name))}</h2>
             <ul>
-{link_items(keys)}
+{link_items(keys, lang)}
             </ul>
             {help_link}
           </section>''')
-    body = '\n'.join(groups)
     ld = [{'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'BCSC', 'item': SITE + '/'},
-        {'@type': 'ListItem', 'position': 2, 'name': 'প্রয়োজনীয় সরকারি লিংক', 'item': url}]}]
-    return f'''<!doctype html>
-<html lang="bn">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{E(title)}</title>
-    <meta name="description" content="{E(desc)}" />
-    <meta name="theme-color" content="#0a1730" />
-    <meta property="og:title" content="{E(title)}" />
-    <meta property="og:description" content="{E(desc)}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{url}" />
-    <meta property="og:image" content="{SITE}/images/og-image.jpg" />
-    <link rel="canonical" href="{url}" />
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-{GA_TAG}    <script type="application/ld+json">
-{json.dumps(ld, ensure_ascii=False, indent=2)}
-    </script>
-    <style>
-      body {{ font-family: 'Hind Siliguri', sans-serif; background-color: #f8fafc; color: #0f172a; }}
-    </style>
-    <link rel="stylesheet" href="/assets/site.css" />
-  </head>
-  <body class="antialiased">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-[#0a1730] focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">মূল বিষয়বস্তুতে যান</a>
-    <header class="bg-[#0a1730] border-b border-white/10 py-3">
-      <div class="max-w-[1100px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-3">
-        <a href="/" class="text-white font-bold text-base sm:text-lg hover:text-sky-300">← BCSC হোম</a>
-        <a href="/#services" class="text-sm font-semibold text-sky-300 hover:text-white">সব সেবা</a>
-      </div>
-    </header>
-
-    <main id="main-content" tabindex="-1">
-      <section class="bg-[#0a1730] text-white px-4 sm:px-6 py-12 sm:py-14">
+        {'@type': 'ListItem', 'position': 2, 'name': r['crumb'], 'item': SITE + pre + path}]}]
+    body = f'''      <section class="bg-[#0a1730] text-white px-4 sm:px-6 py-12 sm:py-14">
         <div class="max-w-[1100px] mx-auto">
-          <nav aria-label="Breadcrumb" class="text-xs text-slate-300 mb-4"><a href="/" class="hover:text-white">হোম</a> / <span class="text-sky-300">প্রয়োজনীয় সরকারি লিংক</span></nav>
-          <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-4">প্রয়োজনীয় সরকারি লিংক</h1>
-          <p class="text-base sm:text-lg text-slate-200 max-w-[760px] leading-relaxed">আয়কর, ভ্যাট, কোম্পানি, আমদানি-রপ্তানি, লাইসেন্স ও ট্রেডমার্কের কাজে যেসব সরকারি সাইট ও অনলাইন পোর্টাল লাগে, এক জায়গায়। সব লিংক নতুন ট্যাবে খোলে।</p>
+          <nav aria-label="Breadcrumb" class="text-xs text-slate-300 mb-4"><a href="/" class="hover:text-white">{ui['crumb_home']}</a> / <span class="text-sky-300">{E(r['crumb'])}</span></nav>
+          <h1 class="text-3xl sm:text-5xl font-bold leading-tight mb-4">{E(r['h1'])}</h1>
+          <p class="text-base sm:text-lg text-slate-200 max-w-[760px] leading-relaxed">{E(r['lead'])}</p>
         </div>
       </section>
 
       <section class="px-4 sm:px-6 py-10 sm:py-12">
         <div class="max-w-[1100px] mx-auto">
-          <p class="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 max-w-[900px]">{E(LINKS_NOTE)} সরকারি সাইটের ঠিকানা মাঝে মাঝে বদলায়; কোনো লিংক কাজ না করলে আমাদের জানান। সর্বশেষ যাচাই: ৪ নভেম্বর ২০২৬।</p>
+          <p class="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 max-w-[900px]">{E(t['links_note'])} {E(r['checked'])}</p>
           <div class="grid gap-5 md:grid-cols-2">
-{body}
+{chr(10).join(groups)}
           </div>
         </div>
-      </section>
-    </main>
+      </section>'''
+    return shell(lang, path, r['title'], r['description'], ld, body)
 
-    <footer class="bg-[#060e1f] text-slate-300 text-xs sm:text-sm text-center px-4 py-6">
-      <span>© 2026 বিজনেস কনসালটিং অ্যান্ড সলিউশনস সেন্টার (BCSC), TrueMark-এর একটি ইউনিট।</span>
-      <span class="mx-1 text-[#38bdf8]">|</span>
-      <a href="/privacy/" class="hover:text-sky-300 hover:underline">গোপনীয়তা নীতি</a>
-    </footer>
-  </body>
-</html>
-'''
+
+def write(path, text):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(text)
+    print('wrote', path)
 
 
 if __name__ == '__main__':
-    os.makedirs('resources', exist_ok=True)
-    with open('resources/index.html', 'w', encoding='utf-8') as f:
-        f.write(resources_page())
-    print('wrote resources/index.html')
-    for s in SERVICES:
-        os.makedirs(f'services/{s["slug"]}', exist_ok=True)
-        with open(f'services/{s["slug"]}/index.html', 'w', encoding='utf-8') as f:
-            f.write(page(s))
-        print('wrote', f'services/{s["slug"]}/index.html')
+    for lang in ('bn', 'en'):
+        root = '' if lang == 'bn' else 'en/'
+        write(f'{root}resources/index.html', resources_page(lang))
+        for s in SERVICES:
+            write(f'{root}services/{s["slug"]}/index.html', page(s, lang))
