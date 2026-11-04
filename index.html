@@ -1367,6 +1367,12 @@
                 </a>
               </li>
               <li>
+                <a href="/resources/" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="footer.govLinks">প্রয়োজনীয় সরকারি লিংক</span>
+                </a>
+              </li>
+              <li>
                 <a href="#contact" class="footer-nav-link flex items-center gap-1.5 group">
                   <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.contact">যোগাযোগ</span>
@@ -1406,7 +1412,7 @@
                 </a>
               </li>
               <li>
-                <a href="#services" class="footer-nav-link flex items-center gap-1.5 group">
+                <a href="/services/accounting-mis/" class="footer-nav-link flex items-center gap-1.5 group">
                   <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="footer.s1">হিসাবরক্ষণ ও বুককিপিং (MIS)</span>
                 </a>
@@ -1614,6 +1620,7 @@
           'footer.aboutText': '২০০৯ সাল থেকে সমগ্র বাংলাদেশে পেশাদার অ্যাকাউন্টিং, আয়কর, ভ্যাট, কমপ্লায়েন্স ও আইনি পরামর্শ সহায়তা।',
           'footer.corePillars': 'কৌশল • সমাধান • সাফল্য • অগ্রগতি',
           'footer.quickLinks': 'গুরুত্বপূর্ণ লিংক',
+          'footer.govLinks': 'প্রয়োজনীয় সরকারি লিংক',
           'footer.coreServices': 'প্রধান সেবাসমূহ',
           'footer.officesVerify': 'অফিস ও যোগাযোগ',
           'footer.s1': 'হিসাবরক্ষণ ও বুককিপিং (MIS)',
@@ -1798,6 +1805,7 @@
           'footer.aboutText': 'Professional accounting, tax, VAT, compliance and business advisory support across Bangladesh since 2009.',
           'footer.corePillars': 'Strategy • Solution • Success • Growth',
           'footer.quickLinks': 'Quick Links',
+          'footer.govLinks': 'Government Links',
           'footer.coreServices': 'Core Services',
           'footer.officesVerify': 'Offices & Contact',
           'footer.s1': 'Accounting & Financial Statements (MIS)',
@@ -1820,19 +1828,19 @@
 
       // 18 Services Data (Complete Data - Zero Truncation)
       const servicesData = [
-        { icon: 'calculator', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনিক লেনদেন লিপিবদ্ধকরণ ও লেজার সংরক্ষণ। অ্যাকাউন্টিং সিস্টেম স্থাপন ও ব্যাংক রিকনসিলিয়েশন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily transaction recording and ledger maintenance. Automated accounting setup and bank reconciliation.' } },
-        { icon: 'chart-column', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
+        { url: '/services/accounting-mis/', icon: 'calculator', bn: { t: 'হিসাবরক্ষণ ও বুককিপিং', d: 'দৈনিক লেনদেন লিপিবদ্ধকরণ ও লেজার সংরক্ষণ। অ্যাকাউন্টিং সিস্টেম স্থাপন ও ব্যাংক রিকনসিলিয়েশন।' }, en: { t: 'Accounting & Bookkeeping', d: 'Daily transaction recording and ledger maintenance. Automated accounting setup and bank reconciliation.' } },
+        { url: '/services/accounting-mis/', icon: 'chart-column', bn: { t: 'আর্থিক বিবরণী ও এমআইএস', d: 'ব্যালেন্স শিট, প্রফিট-লস ও সিদ্ধান্তমূলক রিপোর্ট। আইএফআরএস মানদণ্ডে মাসিক ক্যাশ ফ্লো বিবরণী।' }, en: { t: 'Financial Statements & MIS', d: 'Balance sheet, profit-loss and decision reports. Monthly IFRS compliant cash flow statements.' } },
         { url: '/services/income-tax/', icon: 'receipt-text', bn: { t: 'আয়কর সেবা', d: 'ই-টিন, বার্ষিক আয়কর রিটার্ন প্রস্তুত ও এনবিআর ফাইলিং। ব্যক্তিগত ও কর্পোরেট ট্যাক্স ফাইল প্রসেসিং।' }, en: { t: 'Income Tax Services', d: 'e-TIN, annual tax return filing and NBR submission. Individual and corporate tax file processing.' } },
         { url: '/services/vat-bin/', icon: 'percent', bn: { t: 'ভ্যাট ও বিআইএন কনসালটেন্সি', d: 'মূসক নিবন্ধন, ৯.১ রিটার্ন ও ভিডিএস অডিট। ট্রেজারি চালান প্রসেসিং ও অনলাইন ভ্যাট পরামর্শ।' }, en: { t: 'VAT & BIN Consultancy', d: 'VAT registration, 9.1 return filing and VDS audits. Treasury challans and online VAT advisory.' } },
         { url: '/services/rjsc-company-registration/', icon: 'building-2', bn: { t: 'আরজেএসসি কোম্পানি গঠন', d: 'প্রাইভেট লিমিটেড কোম্পানি নিবন্ধন ও মেমোরেন্ডাম। ওপিসি (OPC) এবং পার্টনারশিপ ফার্ম গঠনে সহায়তা।' }, en: { t: 'RJSC Company Formation', d: 'Private Limited registration and Memorandum of Association. OPC and Partnership firm setup.' } },
         { url: '/services/rjsc-company-registration/', icon: 'file-pen-line', bn: { t: 'কোম্পানি অ্যাফেয়ার্স', d: 'শেয়ার হস্তান্তর, বার্ষিক রিটার্ন ও ফর্ম ১২ ফাইলিং। মূলধন বৃদ্ধি ও পরিচালক পরিবর্তন সংক্রান্ত পেপারস।' }, en: { t: 'Company Secretarial Affairs', d: 'Share transfers, annual returns and Form 12 filings. Capital increase and director changes.' } },
-        { icon: 'ship', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রুত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
-        { icon: 'landmark', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
+        { url: '/services/irc-erc/', icon: 'ship', bn: { t: 'আইআরসি ও ইআরসি', d: 'আমদানি ও রপ্তানি লাইসেন্স গ্রহণ ও নবায়ন। বাণিজ্য মন্ত্রণালয় ও সিসিআইএন্ডই হতে দ্রুত অনুমোদন।' }, en: { t: 'IRC & ERC Registration', d: 'Import & Export license issuance and renewal. Accelerated approvals from CCI&E.' } },
+        { url: '/services/bida-registration/', icon: 'landmark', bn: { t: 'বিডা রেজিস্ট্রেশন', d: 'বিনিয়োগ উন্নয়ন কর্তৃপক্ষের অনুমোদন ও অনুমতিপত্র। ওয়ার্ক পারমিট প্রসেসিং ও বিনিয়োগ সেবা।' }, en: { t: 'BIDA Registration', d: 'Bangladesh Investment Development Authority approval. Work permits and investment facilitation.' } },
         { url: '/services/trademark-registration/', icon: 'stamp', bn: { t: 'ট্রেডমার্ক রেজিস্ট্রেশন', d: 'ব্র্যান্ড নাম ও লোগোর ট্রেডমার্ক সুরক্ষা। সরকারি ট্রেডমার্ক আবেদন ও প্যাটেন্ট রেজিস্ট্রেশন।' }, en: { t: 'Trademark Registration', d: 'Brand name and logo protection. Government trademark and patent applications.' } },
-        { icon: 'scale', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স ও স্বাস্থ্য অধিদপ্তরের লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances, and health department licenses.' } },
+        { url: '/services/trade-license/', icon: 'scale', bn: { t: 'নিয়ন্ত্রক কমপ্লায়েন্স', d: 'সরকারি বিধিবিধান ও আইনি নিয়মানুবর্তিতা। ট্রেড লাইসেন্স, পরিবেশ ছাড়পত্র, ফায়ার লাইসেন্স ও স্বাস্থ্য অধিদপ্তরের লাইসেন্স।' }, en: { t: 'Regulatory Compliance', d: 'Statutory compliance and government regulations. Trade license, environment and fire clearances, and health department licenses.' } },
         { url: '/services/audit-support/', icon: 'search-check', bn: { t: 'অডিট সাপোর্ট', d: 'সংবিধিবদ্ধ নিরীক্ষার শিডিউল ফাইল ও অডিট ফেসিলিটেশন। ইন্টারনাল অডিট টিম প্রস্তুতি সহায়তা।' }, en: { t: 'Audit Support & Prep', d: 'Statutory audit schedule file preparation and audit facilitation. Internal audit team support.' } },
         { icon: 'gem', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
-        { icon: 'folder-kanban', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
+        { url: '/services/project-profile/', icon: 'folder-kanban', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
         { icon: 'laptop', bn: { t: 'কুইকবুকস ও ট্যালি', d: 'ক্লাউড অ্যাকাউন্টিং সফটওয়্যার সেটআপ ও অটোমেশন। ক্লাউড মাইগ্রেশন ও অ্যাকাউন্টিং স্টাফ ট্রেনিং।' }, en: { t: 'QuickBooks & Tally Setup', d: 'Cloud accounting software setup and automation. Data migration and staff hands-on training.' } },
         { icon: 'globe', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
         { icon: 'users', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },

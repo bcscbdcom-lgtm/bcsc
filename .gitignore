@@ -8,5 +8,5 @@ coverage/
 !.env.example
 
 # Browser profiles from local test runs; never part of the site
-*-profile/
-*-profile-*/
+/*-profile/
+/*-profile-*/
