@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bcscbd.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://bcscbd.com/erp/</loc>
@@ -11,5 +11,25 @@
   <url>
     <loc>https://bcscbd.com/privacy/</loc>
     <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bcscbd.com/services/income-tax/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bcscbd.com/services/vat-bin/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bcscbd.com/services/rjsc-company-registration/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bcscbd.com/services/audit-support/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bcscbd.com/services/trademark-registration/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>

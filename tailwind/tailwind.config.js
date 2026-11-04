@@ -1,7 +1,7 @@
 // Builds assets/site.css. Rebuild after changing classes in any page:
 //   npx tailwindcss@3.4.17 -c tailwind/tailwind.config.js -i tailwind/input.css -o assets/site.css --minify
 module.exports = {
-  content: ['./index.html', './erp/index.html', './privacy/index.html', './404.html'],
+  content: ['./index.html', './erp/index.html', './privacy/index.html', './404.html', './services/**/*.html'],
   theme: {
     extend: {
       colors: {
