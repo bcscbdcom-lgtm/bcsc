@@ -35,7 +35,8 @@
         if (name) gtag('event', name, { link_location: (link.closest('[id]') || {}).id || '' });
       });
     </script>
-    <script src="https://unpkg.com/lucide@0.546.0/dist/umd/lucide.min.js"></script>
+    <!-- Only the Lucide icons this page uses; regenerate when adding an icon -->
+    <script src="/assets/icons.js"></script>
 
     <style>
       body {
@@ -1064,8 +1065,8 @@
               </p>
               <p class="flex items-start gap-1.5 text-xs sm:text-[13px] text-slate-700 leading-relaxed mb-3"><i data-lucide="clock" class="w-4 h-4 shrink-0 mt-0.5 text-[#1257d6]"></i><span data-i18n="contact.hours">প্রতিদিন সকাল ১০টা – রাত ১০টা (বিকাল ৫টার পর মূলত ফোন ও অনলাইনে)</span></p>
               <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 py-1.5 text-xs font-bold text-[#1257d6] hover:underline" data-i18n="contact.openMaps">
-                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                <a href="https://www.google.com/maps/search/?api=1&query=22.806457,89.544747" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 py-1.5 text-xs font-bold text-[#1257d6] hover:underline">
+                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> <span data-i18n="contact.openMaps">গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗</span>
                 </a>
                 <button type="button" onclick="copyAddress('২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
                   <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
@@ -1087,8 +1088,8 @@
               </p>
               <p class="flex items-start gap-1.5 text-xs sm:text-[13px] text-slate-700 leading-relaxed mb-3"><i data-lucide="clock" class="w-4 h-4 shrink-0 mt-0.5 text-[#1257d6]"></i><span data-i18n="contact.hours">প্রতিদিন সকাল ১০টা – রাত ১০টা (বিকাল ৫টার পর মূলত ফোন ও অনলাইনে)</span></p>
               <div class="flex items-center gap-3 flex-wrap">
-                <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 py-1.5 text-xs font-bold text-[#1257d6] hover:underline" data-i18n="contact.openMaps">
-                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗
+                <a href="https://www.google.com/maps/search/?api=1&query=23.7314,90.4132" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 py-1.5 text-xs font-bold text-[#1257d6] hover:underline">
+                  <i data-lucide="map-pin" class="inline w-4 h-4 align-[-3px]"></i> <span data-i18n="contact.openMaps">গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗</span>
                 </a>
                 <button type="button" onclick="copyAddress('৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০', this)" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-2xs">
                   <span><i data-lucide="copy" class="w-3.5 h-3.5"></i></span>
@@ -1604,7 +1605,7 @@
           'contact.khulnaAddr': '২৬, গল্লামারী নর্থ খাল ব্যাংক রোড, আজাদ লন্ড্রি মোড়, খুলনা-৯১০০',
           'contact.dhakaTitle': 'ঢাকা অফিস',
           'contact.dhakaAddr': '৩৭/২ প্রীতম জামান টাওয়ার (৮ম তলা), কালভার্ট রোড, পুরানা পল্টন, ঢাকা-১০০০',
-          'contact.openMaps': 'গুগল ম্যাপে দেখুন ↗',
+          'contact.openMaps': 'গুগল ম্যাপে পিন পয়েন্ট দেখুন ↗',
           'contact.copyBtn': 'কপি ঠিকানা',
           'contact.mapsEyebrow': 'অফিসের অবস্থান',
           'contact.mapsTitle': 'গুগল ম্যাপস লোকেশন',
