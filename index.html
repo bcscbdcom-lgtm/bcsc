@@ -2416,6 +2416,8 @@
       // Initial Render on page load
       document.addEventListener('DOMContentLoaded', () => {
         renderDynamicContent();
+        // /en/ redirects here as /?lang=en, so open the page in English
+        if (new URLSearchParams(location.search).get('lang') === 'en') toggleLanguage();
       });
     </script>
 

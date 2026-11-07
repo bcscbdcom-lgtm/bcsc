@@ -1,3 +1,9 @@
 /erp       https://truemarkerp.com/  301
 /erp/      https://truemarkerp.com/  301
 /erp/*     https://truemarkerp.com/  301
+/en              /?lang=en            301
+/en/             /?lang=en            301
+/en/services     /?lang=en#services   301
+/en/services/    /?lang=en#services   301
+/services        /#services           301
+/services/       /#services           301
