@@ -97,6 +97,13 @@
           padding-bottom: 1rem !important;
         }
       }
+      /* Work samples: same-size boxes for documents of different shapes, top-aligned */
+      .sample-thumb {
+        aspect-ratio: 3 / 4;
+        object-fit: contain;
+        object-position: top;
+        background: #ffffff;
+      }
       /* Below 1320px the full menu only fits without the slogan next to the logo */
       @media (min-width: 1140px) and (max-width: 1319px) {
         [data-i18n="nav.slogan"] {
@@ -898,29 +905,65 @@
 
       <!-- 10. WORK SAMPLES (CLIENT DETAILS HIDDEN) -->
       <section id="work-samples" class="py-20 sm:py-24 px-4 sm:px-6">
-        <div class="max-w-[900px] mx-auto">
+        <div class="max-w-[1100px] mx-auto">
           <div class="text-center max-w-[750px] mx-auto mb-14">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="samples.eyebrow">
               কাজের নমুনা
             </span>
             <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="samples.title">
-              আমাদের করা নিবন্ধনের নমুনা
+              আমাদের করা নিবন্ধন ও সনদের নমুনা
             </h2>
             <p class="text-slate-600 text-sm sm:text-base" data-i18n="samples.subtitle">
-              ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা ও QR কোড ঝাপসা করে দেখানো হয়েছে।
+              ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা, ছবি, স্বাক্ষর ও QR কোড ঝাপসা করে দেখানো হয়েছে। বড় করে দেখতে নমুনায় চাপ দিন।
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Thumbnails are 600px WebP; each card opens the 1200px version (TIN and turnover-tax samples open the original JPEG) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="images/sample-company-incorporation.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-company-incorporation-thumb.webp" width="600" height="799" alt="Certificate of incorporation sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.incTitle">কোম্পানি নিবন্ধন সনদ</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.incSub">আরজেএসসি: প্রাইভেট লিমিটেড কোম্পানি গঠন</p>
+            </a>
+            <a href="images/sample-trade-license.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-trade-license-thumb.webp" width="600" height="819" alt="Trade license sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.tradeTitle">ট্রেড লাইসেন্স</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.tradeSub">সিটি কর্পোরেশন: ই-ট্রেড লাইসেন্স নবায়ন</p>
+            </a>
             <a href="images/sample-tin-certificate.jpg" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-              <img src="images/sample-tin-certificate.jpg" alt="TIN certificate sample with client details hidden" loading="lazy" class="w-full rounded-lg border border-slate-200 mb-4" />
+              <img src="images/sample-tin-certificate-thumb.webp" width="600" height="799" alt="TIN certificate sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
               <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.tinTitle">TIN সার্টিফিকেট</h3>
               <p class="text-xs text-slate-500" data-i18n="samples.tinSub">আয়কর সেবা: ই-টিন নিবন্ধন</p>
             </a>
+            <a href="images/sample-tax-return-certificate.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-tax-return-certificate-thumb.webp" width="600" height="564" alt="Income tax certificate sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.taxTitle">আয়কর সনদ (রিটার্ন জমা)</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.taxSub">আয়কর সেবা: অনলাইনে রিটার্ন দাখিল</p>
+            </a>
+            <a href="images/sample-vat-registration.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-vat-registration-thumb.webp" width="600" height="861" alt="VAT registration certificate sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.vatTitle">ভ্যাট নিবন্ধন সনদ (BIN)</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.vatSub">ভ্যাট সেবা: মূসক নিবন্ধন (মূসক-২.৩)</p>
+            </a>
             <a href="images/sample-bin-certificate.jpg" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-              <img src="images/sample-bin-certificate.jpg" alt="BIN certificate sample with client details hidden" loading="lazy" class="w-full rounded-lg border border-slate-200 mb-4" />
-              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.binTitle">BIN সার্টিফিকেট</h3>
-              <p class="text-xs text-slate-500" data-i18n="samples.binSub">ভ্যাট সেবা: বিআইএন নিবন্ধন (মূসক-২.৩)</p>
+              <img src="images/sample-bin-certificate-thumb.webp" width="600" height="866" alt="Turnover tax enlistment certificate sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.binTitle">টার্নওভার কর তালিকাভুক্তি সনদ</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.binSub">ভ্যাট সেবা: টার্নওভার কর তালিকাভুক্তি (মূসক-২.৩)</p>
+            </a>
+            <a href="images/sample-irc-certificate.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-irc-certificate-thumb.webp" width="600" height="867" alt="Import registration certificate (IRC) sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.ircTitle">আমদানি নিবন্ধন সনদ (IRC)</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.ircSub">আইআরসি সেবা: বাণিজ্যিক আমদানিকারক নিবন্ধন</p>
+            </a>
+            <a href="images/sample-erc-certificate.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-erc-certificate-thumb.webp" width="600" height="864" alt="Export registration certificate (ERC) sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.ercTitle">রপ্তানি নিবন্ধন সনদ (ERC)</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.ercSub">ইআরসি সেবা: রপ্তানিকারক নিবন্ধন</p>
+            </a>
+            <a href="images/sample-trademark-application.webp" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+              <img src="images/sample-trademark-application-thumb.webp" width="600" height="895" alt="Trademark application (TM-1) sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
+              <h3 class="text-base font-bold text-slate-900 mb-1 font-sans" data-i18n="samples.tmTitle">ট্রেডমার্ক নিবন্ধনের আবেদন</h3>
+              <p class="text-xs text-slate-500" data-i18n="samples.tmSub">ট্রেডমার্ক সেবা: টিএম-১ আবেদন দাখিল</p>
             </a>
           </div>
         </div>
@@ -1523,12 +1566,26 @@
         bn: {
           'nav.erp': 'TrueMark ERP',
           'samples.eyebrow': 'কাজের নমুনা',
-          'samples.title': 'আমাদের করা নিবন্ধনের নমুনা',
-          'samples.subtitle': 'ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা ও QR কোড ঝাপসা করে দেখানো হয়েছে।',
+          'samples.title': 'আমাদের করা নিবন্ধন ও সনদের নমুনা',
+          'samples.subtitle': 'ক্লায়েন্টের গোপনীয়তা রক্ষায় নাম, নম্বর, ঠিকানা, ছবি, স্বাক্ষর ও QR কোড ঝাপসা করে দেখানো হয়েছে। বড় করে দেখতে নমুনায় চাপ দিন।',
+          'samples.incTitle': 'কোম্পানি নিবন্ধন সনদ',
+          'samples.incSub': 'আরজেএসসি: প্রাইভেট লিমিটেড কোম্পানি গঠন',
+          'samples.tradeTitle': 'ট্রেড লাইসেন্স',
+          'samples.tradeSub': 'সিটি কর্পোরেশন: ই-ট্রেড লাইসেন্স নবায়ন',
           'samples.tinTitle': 'TIN সার্টিফিকেট',
           'samples.tinSub': 'আয়কর সেবা: ই-টিন নিবন্ধন',
-          'samples.binTitle': 'BIN সার্টিফিকেট',
-          'samples.binSub': 'ভ্যাট সেবা: বিআইএন নিবন্ধন (মূসক-২.৩)',
+          'samples.taxTitle': 'আয়কর সনদ (রিটার্ন জমা)',
+          'samples.taxSub': 'আয়কর সেবা: অনলাইনে রিটার্ন দাখিল',
+          'samples.vatTitle': 'ভ্যাট নিবন্ধন সনদ (BIN)',
+          'samples.vatSub': 'ভ্যাট সেবা: মূসক নিবন্ধন (মূসক-২.৩)',
+          'samples.binTitle': 'টার্নওভার কর তালিকাভুক্তি সনদ',
+          'samples.binSub': 'ভ্যাট সেবা: টার্নওভার কর তালিকাভুক্তি (মূসক-২.৩)',
+          'samples.ircTitle': 'আমদানি নিবন্ধন সনদ (IRC)',
+          'samples.ircSub': 'আইআরসি সেবা: বাণিজ্যিক আমদানিকারক নিবন্ধন',
+          'samples.ercTitle': 'রপ্তানি নিবন্ধন সনদ (ERC)',
+          'samples.ercSub': 'ইআরসি সেবা: রপ্তানিকারক নিবন্ধন',
+          'samples.tmTitle': 'ট্রেডমার্ক নিবন্ধনের আবেদন',
+          'samples.tmSub': 'ট্রেডমার্ক সেবা: টিএম-১ আবেদন দাখিল',
           'stats.servicesNum': '২০',
           'stats.servicesLabel': 'ধরনের পেশাদার সেবা',
           'stats.officesNum': '২',
@@ -1681,12 +1738,26 @@
         en: {
           'nav.erp': 'TrueMark ERP',
           'samples.eyebrow': 'WORK SAMPLES',
-          'samples.title': 'Samples of Registrations We Handle',
-          'samples.subtitle': 'Names, numbers, addresses and QR codes are blurred to protect client confidentiality.',
+          'samples.title': 'Samples of Registrations and Certificates We Handle',
+          'samples.subtitle': 'Names, numbers, addresses, photos, signatures and QR codes are blurred to protect client confidentiality. Tap a sample to see it larger.',
+          'samples.incTitle': 'Certificate of Incorporation',
+          'samples.incSub': 'RJSC: private limited company formation',
+          'samples.tradeTitle': 'Trade License',
+          'samples.tradeSub': 'City corporation: e-trade license renewal',
           'samples.tinTitle': 'TIN Certificate',
           'samples.tinSub': 'Income tax service: e-TIN registration',
-          'samples.binTitle': 'BIN Certificate',
-          'samples.binSub': 'VAT service: BIN registration (Mushak-2.3)',
+          'samples.taxTitle': 'Income Tax Certificate (Return Filed)',
+          'samples.taxSub': 'Income tax service: online return filing',
+          'samples.vatTitle': 'VAT Registration Certificate (BIN)',
+          'samples.vatSub': 'VAT service: VAT registration (Mushak-2.3)',
+          'samples.binTitle': 'Turnover Tax Enlistment Certificate',
+          'samples.binSub': 'VAT service: turnover tax enlistment (Mushak-2.3)',
+          'samples.ircTitle': 'Import Registration Certificate (IRC)',
+          'samples.ircSub': 'IRC service: commercial importer registration',
+          'samples.ercTitle': 'Export Registration Certificate (ERC)',
+          'samples.ercSub': 'ERC service: exporter registration',
+          'samples.tmTitle': 'Trademark Application',
+          'samples.tmSub': 'Trademark service: TM-1 application filed',
           'stats.servicesNum': '20',
           'stats.servicesLabel': 'Professional Services',
           'stats.officesNum': '2',

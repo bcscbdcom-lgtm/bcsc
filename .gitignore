@@ -7,6 +7,10 @@ coverage/
 .env*
 !.env.example
 
+# Clients' original documents dropped in the root to make blurred work samples; never published
+/*.pdf
+/*.jpeg
+
 # Browser profiles from local test runs; never part of the site
 /*-profile/
 /*-profile-*/
