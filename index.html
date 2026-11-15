@@ -63,7 +63,8 @@
         border-radius: 9999px;
         box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
       }
-      @media (min-width: 900px) {
+      /* The full menu needs about 1120px in English, so narrower screens get the menu button */
+      @media (min-width: 1140px) {
         .desktop-nav-menu {
           display: flex !important;
         }
@@ -74,7 +75,7 @@
           display: none !important;
         }
       }
-      @media (max-width: 899px) {
+      @media (max-width: 1139px) {
         .desktop-nav-menu {
           display: none !important;
         }
@@ -94,6 +95,12 @@
           opacity: 1;
           padding-top: 1rem !important;
           padding-bottom: 1rem !important;
+        }
+      }
+      /* Below 1320px the full menu only fits without the slogan next to the logo */
+      @media (min-width: 1140px) and (max-width: 1319px) {
+        [data-i18n="nav.slogan"] {
+          display: none !important;
         }
       }
 
@@ -483,7 +490,7 @@
           </span>
         </a>
 
-        <!-- Center Navigation Menu (Always visible on Desktop >= 900px) -->
+        <!-- Center Navigation Menu (Always visible on Desktop >= 1140px) -->
         <nav class="desktop-nav-menu items-center" aria-label="Desktop Navigation">
           <ul class="flex items-center gap-0.5 min-[1000px]:gap-1 min-[1200px]:gap-2 list-none m-0 p-0">
             <li><a href="#home" class="nav-link relative px-1.5 py-1 min-[1100px]:px-2.5 min-[1100px]:py-1.5 text-[12.5px] font-medium whitespace-nowrap text-slate-200 hover:text-white transition-colors block active-nav-item" data-section="home" data-i18n="nav.home">হোম</a></li>
