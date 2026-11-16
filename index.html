@@ -97,25 +97,26 @@
           padding-bottom: 1rem !important;
         }
       }
-      /* Work samples grid: small equal cards so all samples show at once */
-      .samples-grid {
+      /* Work samples and certificates: small equal cards so everything shows at once */
+      .samples-grid, .certs-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
       @media (min-width: 640px) {
-        .samples-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .samples-grid, .certs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
       }
       @media (min-width: 1024px) {
-        .samples-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .samples-grid, .certs-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       }
       @media (min-width: 1280px) {
-        .samples-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        .samples-grid, .certs-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
       }
-      .samples-grid > a { padding: 10px; border-radius: 10px; }
+      .samples-grid > a, .certs-grid > div { padding: 10px; border-radius: 10px; }
       .samples-grid img { margin-bottom: 10px; }
-      .samples-grid h3 { font-size: 13px; line-height: 1.35; }
-      .samples-grid p { font-size: 11px; line-height: 1.4; }
+      .certs-grid > div > a, .certs-grid > div > div { margin-bottom: 10px; }
+      .samples-grid h3, .certs-grid h3 { font-size: 13px; line-height: 1.35; }
+      .samples-grid p, .certs-grid p { font-size: 11px; line-height: 1.4; }
       /* Work samples: same-size boxes for documents of different shapes, top-aligned */
       .sample-thumb {
         aspect-ratio: 3 / 4;
@@ -912,11 +913,12 @@
               পেশাগত অভিজ্ঞতা ও প্রশিক্ষণ
             </h2>
             <p class="text-slate-600 text-sm sm:text-base" data-i18n="certificates.subtitle">
-              হিসাবরক্ষণ, শ্রম আইন, আইএফআরএস এবং ব্যবসায়িক দক্ষতার স্বীকৃত সনদসমূহ।
+              হিসাবরক্ষণ, আইএফআরএস, শ্রম আইন, আমদানি-রপ্তানি, সাইবার নিরাপত্তা ও ব্যবসায়িক দক্ষতার স্বীকৃত সনদসমূহ।
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="certificates-grid">
+          <!-- Small equal cards like the work samples: 2/3/4/5 per row (.certs-grid in the <style> block) -->
+          <div class="certs-grid" id="certificates-grid">
             <!-- Dynamic JS render -->
           </div>
         </div>
@@ -1688,7 +1690,7 @@
           'credentials.subtitle': 'বিসিএসসি উচ্চতর প্রাতিষ্ঠানিক ডিগ্রি এবং আইসিএবি প্রশিক্ষণের সমন্বয়ে ক্লায়েন্টদের নিখুঁত সেবা নিশ্চিত করে।',
           'certificates.eyebrow': 'সনদপত্র ও স্বীকৃতি',
           'certificates.title': 'পেশাগত অভিজ্ঞতা ও প্রশিক্ষণ',
-          'certificates.subtitle': 'হিসাবরক্ষণ, শ্রম আইন, আইএফআরএস এবং ব্যবসায়িক দক্ষতার স্বীকৃত সনদসমূহ।',
+          'certificates.subtitle': 'হিসাবরক্ষণ, আইএফআরএস, শ্রম আইন, আমদানি-রপ্তানি, সাইবার নিরাপত্তা ও ব্যবসায়িক দক্ষতার স্বীকৃত সনদসমূহ।',
           'clients.eyebrow': 'ক্লায়েন্ট শোকেস',
           'clients.title': 'আমাদের ওপর যাদের আস্থা',
           'contact.eyebrow': 'যোগাযোগ বিসিএসসি',
@@ -1889,7 +1891,7 @@
           'credentials.subtitle': 'BCSC combines formal education, ICAB training and hands-on client service.',
           'certificates.eyebrow': 'CERTIFICATES GALLERY',
           'certificates.title': 'Professional Learning & Recognition',
-          'certificates.subtitle': 'Verified certifications in accounting, labor law, IFRS, and skills development.',
+          'certificates.subtitle': 'Verified certifications in accounting, IFRS, labor law, import-export, cybersecurity and business skills.',
           'clients.eyebrow': 'CLIENT SHOWCASE',
           'clients.title': 'Trusted by Businesses',
           'contact.eyebrow': 'CONTACT BCSC',
@@ -1986,7 +1988,18 @@
         { icon: 'chart-column', img: 'images/cert-icmab-ias-36.jpg', bn: { t: 'IAS-36, 37, 38 ও IFRS-5 প্রশিক্ষণ', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৭ দিন, সেপ্টেম্বর ২০২২' }, en: { t: 'IAS-36, 37, 38 & IFRS-5 Training', sub: 'ICMAB Skill Development Program, 7 days, September 2022' } },
         { icon: 'table', img: 'images/cert-icmab-excel.jpg', bn: { t: 'এক্সেল বুস্টার কোর্স (বেসিক থেকে অ্যাডভান্সড)', sub: 'ICMAB স্কিল ডেভেলপমেন্ট প্রোগ্রাম, ৮ দিন, জুলাই ২০২২' }, en: { t: 'Booster Course in Excel (Basic to Advanced)', sub: 'ICMAB Skill Development Program, 8 days, July 2022' } },
         { icon: 'sparkles', img: 'images/cert-ai-mastery.jpg', bn: { t: 'AI Mastery Certificate Program', sub: 'কোর্সিভ সার্টিফাইড (ID: UCWE7QXB) - আধুনিক এআই টুলস ও বিজনেস অটোমেশন' }, en: { t: 'AI Mastery Certificate Program', sub: 'Coursiv Certified (ID: UCWE7QXB) - AI Tools & Business Automation' } },
-        { icon: 'scale', bn: { t: 'বাংলাদেশ শ্রম আইন প্রশিক্ষণ', sub: 'শ্রম আইন, বিএসআর ও ইন্ডাস্ট্রিয়াল রিলেশনস কমপ্লায়েন্স' }, en: { t: 'Bangladesh Labor Law Training', sub: 'Labor Act, BSR & Industrial Relations Compliance' } }
+        { icon: 'scale', bn: { t: 'বাংলাদেশ শ্রম আইন প্রশিক্ষণ', sub: 'শ্রম আইন, বিএসআর ও ইন্ডাস্ট্রিয়াল রিলেশনস কমপ্লায়েন্স' }, en: { t: 'Bangladesh Labor Law Training', sub: 'Labor Act, BSR & Industrial Relations Compliance' } },
+        // Added 2026-11-16, newest first; thumb = 600px card image, img = larger image opened on click
+        { icon: 'ship', img: 'images/cert-smef-import-export.webp', thumb: 'images/cert-smef-import-export-thumb.webp', bn: { t: 'আমদানি ও রপ্তানি প্রক্রিয়া প্রশিক্ষণ', sub: 'এসএমই ফাউন্ডেশন, ৩ দিন, সেপ্টেম্বর ২০২৬, ঢাকা' }, en: { t: 'Import & Export Procedure Training', sub: 'SME Foundation, 3 days, September 2026, Dhaka' } },
+        { icon: 'laptop', img: 'images/cert-smef-freelancer.webp', thumb: 'images/cert-smef-freelancer-thumb.webp', bn: { t: 'ফ্রিল্যান্সার হওয়ার প্রশিক্ষণ', sub: 'এসএমই ফাউন্ডেশন, ৫ দিন, জুন ২০২৬, ঢাকা' }, en: { t: 'How to Become a Freelancer', sub: 'SME Foundation, 5 days, June 2026, Dhaka' } },
+        { icon: 'briefcase-business', img: 'images/cert-smef-office-management.webp', thumb: 'images/cert-smef-office-management-thumb.webp', bn: { t: 'এসএমই-র অফিস ব্যবস্থাপনা', sub: 'এসএমই ফাউন্ডেশন, ২ দিন, মে ২০২৬, ঢাকা' }, en: { t: 'Office Management for SMEs', sub: 'SME Foundation, 2 days, May 2026, Dhaka' } },
+        { icon: 'globe', img: 'images/cert-smef-international-market.webp', thumb: 'images/cert-smef-international-market-thumb.webp', bn: { t: 'এসএমই পণ্যের আন্তর্জাতিক বাজার বিশ্লেষণ', sub: 'এসএমই ফাউন্ডেশন, ২ দিন, মে ২০২৬, ঢাকা' }, en: { t: 'Analyze International Market of SME Products', sub: 'SME Foundation, 2 days, May 2026, Dhaka' } },
+        { icon: 'shield-check', img: 'images/cert-smef-cybersecurity.webp', thumb: 'images/cert-smef-cybersecurity-thumb.webp', bn: { t: 'এসএমই-র জন্য সাইবার নিরাপত্তা সচেতনতা', sub: 'এসএমই ফাউন্ডেশন, ৩ দিন, এপ্রিল ২০২৬, ঢাকা' }, en: { t: 'Cybersecurity Awareness for SMEs', sub: 'SME Foundation, 3 days, April 2026, Dhaka' } },
+        { icon: 'sparkles', img: 'images/cert-smef-ai-growth.webp', thumb: 'images/cert-smef-ai-growth-thumb.webp', bn: { t: 'এআই দিয়ে এসএমই ব্যবসার প্রবৃদ্ধি', sub: 'এসএমই ফাউন্ডেশন, ২ দিন, এপ্রিল ২০২৬, খুলনা' }, en: { t: 'Accelerating SME Business Growth with AI', sub: 'SME Foundation, 2 days, April 2026, Khulna' } },
+        { icon: 'shield-check', img: 'images/cert-asia-foundation-cybersecurity.webp', thumb: 'images/cert-asia-foundation-cybersecurity-thumb.webp', bn: { t: 'ডিজিটাল হাইজিন ও সাইবার নিরাপত্তা সচেতনতা', sub: 'দি এশিয়া ফাউন্ডেশন ও এনএসইউ সাইবারসিকিউরিটি সেন্টার, ২০২৬' }, en: { t: 'Digital Hygiene & Cybersecurity Awareness', sub: 'The Asia Foundation & NSU Cybersecurity Center, 2026' } },
+        { icon: 'award', img: 'images/cert-wemastertrade-2026.webp', thumb: 'images/cert-wemastertrade-2026-thumb.webp', bn: { t: 'উইমাস্টারট্রেড বাংলাদেশ গ্র্যান্ড ইভেন্ট ২০২৬', sub: 'অংশগ্রহণ সনদ, ২৪ জানুয়ারি ২০২৬' }, en: { t: 'WeMasterTrade Bangladesh Grand Event 2026', sub: 'Certificate of participation, 24 January 2026' } },
+        { icon: 'laptop', img: 'images/cert-bdjobs-tally.webp', thumb: 'images/cert-bdjobs-tally-thumb.webp', bn: { t: 'Tally.ERP 9 প্রশিক্ষণ', sub: 'বিডিজবস ই-লার্নিং, অনলাইন, ৩ সেশন, এপ্রিল ২০২২' }, en: { t: 'Tally.ERP 9 Training', sub: 'Bdjobs eLearning, online, 3 sessions, April 2022' } },
+        { icon: 'ship', img: 'images/cert-bdjobs-export-import.webp', thumb: 'images/cert-bdjobs-export-import-thumb.webp', bn: { t: 'রপ্তানি-আমদানির ব্যাংকিং, এলসি, কাস্টমস ও শিপিং কর্মশালা', sub: 'বিডিজবস ট্রেনিং, ৫ মে ২০১৮' }, en: { t: 'Banking, L/C, Customs & Shipping for Export-Import', sub: 'Bdjobs Training workshop, 5 May 2018' } }
       ];
 
       // 5 Interactive FAQ Questions & Answers
@@ -2131,8 +2144,8 @@
         certContainer.innerHTML = certificatesData.map(cert => `
           <div class="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
             ${cert.img
-              ? `<a href="${cert.img}" target="_blank" rel="noopener" class="block mb-3"><img src="${cert.img}" alt="${cert[currentLang].t}" loading="lazy" class="w-full aspect-[4/3] object-contain bg-slate-50 rounded-lg border border-slate-200 hover:opacity-90 transition-opacity" /></a>`
-              : `<div class="mb-3 flex justify-center text-[#1257d6]"><i data-lucide="${cert.icon}" class="w-9 h-9"></i></div>`}
+              ? `<a href="${cert.img}" target="_blank" rel="noopener" class="block mb-3"><img src="${cert.thumb || cert.img}" alt="${cert[currentLang].t}" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-contain bg-slate-50 rounded-lg border border-slate-200 hover:opacity-90 transition-opacity" /></a>`
+              : `<div class="mb-3 aspect-[4/3] flex items-center justify-center bg-slate-50 rounded-lg border border-slate-200 text-[#1257d6]"><i data-lucide="${cert.icon}" class="w-9 h-9"></i></div>`}
             <h3 class="text-base font-bold text-slate-900 mb-1 font-sans">
               ${cert[currentLang].t}
             </h3>
