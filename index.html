@@ -115,6 +115,18 @@
       .samples-grid > a, .certs-grid > div { padding: 10px; border-radius: 10px; }
       .samples-grid img { margin-bottom: 10px; }
       .certs-grid > div > a, .certs-grid > div > div { margin-bottom: 10px; }
+      /* Our software and websites: one wide TrueMark ERP card, then site cards (1/2/3 per row) */
+      .work-featured { display: grid; }
+      .work-featured-img { border-bottom: 1px solid #e2e8f0; }
+      @media (min-width: 1024px) {
+        .work-featured { grid-template-columns: 1.15fr 1fr; align-items: center; }
+        .work-featured-img { border-bottom: 0; border-right: 1px solid #e2e8f0; }
+      }
+      .work-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+      @media (min-width: 640px) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (min-width: 1024px) { .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      .work-grid img, .work-featured img { display: block; width: 100%; height: auto; }
+      .work-grid img { border-bottom: 1px solid #e2e8f0; }
       .samples-grid h3, .certs-grid h3 { font-size: 13px; line-height: 1.35; }
       .samples-grid p, .certs-grid p { font-size: 11px; line-height: 1.4; }
       /* Work samples: same-size boxes for documents of different shapes, top-aligned */
@@ -444,6 +456,32 @@
       "address": [
         { "@type": "PostalAddress", "streetAddress": "37/2 Pritom Jaman Tower, Culvert Road, Purana Paltan", "addressLocality": "Dhaka", "postalCode": "1000", "addressCountry": "BD" },
         { "@type": "PostalAddress", "streetAddress": "26, Gollamari North Khal Bank Road, Azad Laundry Mor", "addressLocality": "Khulna", "postalCode": "9100", "addressCountry": "BD" }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: software and websites built by TrueMark / BCSC (the #portfolio section) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Software and websites built by TrueMark and BCSC",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": {
+          "@type": "SoftwareApplication", "name": "TrueMark ERP", "url": "https://truemarkerp.com/",
+          "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": ["bn", "en"],
+          "description": "Accounts, sales, purchases and stock software in Bangla, with books kept to IFRS and workflows for eleven types of business.",
+          "image": "https://bcscbd.com/images/work-truemark-erp.webp",
+          "creator": { "@type": "Organization", "name": "TrueMark", "url": "https://truemarkerp.com/" } } },
+        { "@type": "ListItem", "position": 2, "item": {
+          "@type": "WebSite", "name": "MASK Hajj Group", "url": "https://maskintbd.com/", "inLanguage": ["bn", "en"],
+          "creator": { "@type": "Organization", "name": "Business Consulting & Solutions Center (BCSC)", "url": "https://bcscbd.com/" } } },
+        { "@type": "ListItem", "position": 3, "item": {
+          "@type": "WebSite", "name": "Al Mamun Hajj Kafela", "url": "https://almamunhajjkafela.com/", "inLanguage": ["bn", "en"],
+          "creator": { "@type": "Organization", "name": "Business Consulting & Solutions Center (BCSC)", "url": "https://bcscbd.com/" } } },
+        { "@type": "ListItem", "position": 4, "item": {
+          "@type": "WebSite", "name": "TrueMark ERP website", "url": "https://truemarkerp.com/", "inLanguage": ["bn", "en"],
+          "creator": { "@type": "Organization", "name": "TrueMark", "url": "https://truemarkerp.com/" } } }
       ]
     }
     </script>
@@ -992,6 +1030,69 @@
         </div>
       </section>
 
+      <!-- 10B. OUR SOFTWARE AND WEBSITES (PORTFOLIO). Site images are screenshots of the live home pages;
+           the TrueMark ERP image is the sample company (SAMPLE-0001) from truemarkerp.com, no real data. -->
+      <section id="portfolio" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-slate-200">
+        <div class="max-w-[1100px] mx-auto">
+          <div class="text-center max-w-[750px] mx-auto mb-14">
+            <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6] mb-3" data-i18n="portfolio.eyebrow">ডিজিটাল কাজ</span>
+            <h2 class="font-serif-heading text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-3" data-i18n="portfolio.title">আমাদের তৈরি সফটওয়্যার ও ওয়েবসাইট</h2>
+            <p class="text-slate-600 text-sm sm:text-base" data-i18n="portfolio.subtitle">নিজেদের সফটওয়্যার আর গ্রাহকদের জন্য তৈরি ওয়েবসাইট: বাংলা ও ইংরেজি দুই ভাষায়, মোবাইলেও মানানসই।</p>
+          </div>
+
+          <article class="work-featured bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden mb-6">
+            <a href="https://truemarkerp.com/" class="work-featured-img block bg-slate-50">
+              <img src="images/work-truemark-erp-thumb.webp" srcset="images/work-truemark-erp-thumb.webp 600w, images/work-truemark-erp.webp 1200w" sizes="(min-width: 1024px) 590px, 100vw" width="1200" height="750" alt="TrueMark ERP dashboard showing a sample company" loading="lazy" decoding="async" />
+            </a>
+            <div class="p-6 sm:p-8">
+              <span class="inline-block text-xs font-bold tracking-wider uppercase text-[#1257d6]" data-i18n="portfolio.erpTag">আমাদের নিজস্ব সফটওয়্যার</span>
+              <h3 class="text-2xl font-bold text-slate-900 mt-2 mb-2 font-sans">TrueMark ERP</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4" data-i18n="portfolio.erpDesc">বাংলায় হিসাব, বিক্রি, ক্রয় আর মজুদের সফটওয়্যার, হিসাব রাখা হয় IFRS মেনে। এগারো ধরনের ব্যবসার নিজের কাজ আছে, ট্রাভেল-হজ, হোটেল ও ম্যানপাওয়ারসহ। ইন্টারনেটে চলে, কিছু ইনস্টল করতে হয় না।</p>
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="https://app.truemarkerp.com/signup" class="inline-block bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] rounded-lg px-4 py-2.5 text-sm font-bold transition-colors" data-i18n="truemark.erpSignup">৩০ দিন ফ্রি শুরু করুন</a>
+                <a href="https://truemarkerp.com/" class="text-sm font-bold text-[#1257d6] hover:underline" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="work-grid">
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+              <a href="https://maskintbd.com/" target="_blank" rel="noopener" class="block bg-slate-50">
+                <img src="images/site-maskintbd-thumb.webp" width="600" height="375" alt="maskintbd.com home page" loading="lazy" decoding="async" />
+              </a>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="text-base font-bold text-slate-900 font-sans" data-i18n="portfolio.maskTitle">মাস্ক হজ গ্রুপ</h3>
+                <p class="text-xs text-slate-500 mt-0.5 mb-2" data-i18n="portfolio.maskType">সরকার অনুমোদিত হজ ও ওমরাহ এজেন্সি, ঢাকা</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-3 flex-1" data-i18n="portfolio.maskDid">বাংলা ও ইংরেজি দুই ভাষার সাইট: হজ-ওমরাহ প্যাকেজ, অনলাইনে আবেদন আর হোয়াটসঅ্যাপে যোগাযোগ।</p>
+                <a href="https://maskintbd.com/" target="_blank" rel="noopener" class="text-sm font-bold text-[#1257d6] hover:underline">maskintbd.com ↗</a>
+              </div>
+            </article>
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+              <a href="https://almamunhajjkafela.com/" target="_blank" rel="noopener" class="block bg-slate-50">
+                <img src="images/site-almamunhajjkafela-thumb.webp" width="600" height="375" alt="almamunhajjkafela.com home page" loading="lazy" decoding="async" />
+              </a>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="text-base font-bold text-slate-900 font-sans" data-i18n="portfolio.almamunTitle">আল মামুন হজ কাফেলা</h3>
+                <p class="text-xs text-slate-500 mt-0.5 mb-2" data-i18n="portfolio.almamunType">হজ ও ওমরাহ কাফেলা, খুলনা</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-3 flex-1" data-i18n="portfolio.almamunDid">বাংলা ও ইংরেজি দুই ভাষার সাইট: হজ-ওমরাহ প্যাকেজ, মক্কার সময়, গ্যালারি আর হোয়াটসঅ্যাপে যোগাযোগ।</p>
+                <a href="https://almamunhajjkafela.com/" target="_blank" rel="noopener" class="text-sm font-bold text-[#1257d6] hover:underline">almamunhajjkafela.com ↗</a>
+              </div>
+            </article>
+            <article class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+              <a href="#home" class="block bg-slate-50">
+                <img src="images/site-bcscbd-thumb.webp" width="600" height="375" alt="bcscbd.com home page" loading="lazy" decoding="async" />
+              </a>
+              <div class="p-4 flex flex-col flex-1">
+                <h3 class="text-base font-bold text-slate-900 font-sans" data-i18n="portfolio.bcscTitle">বিসিএসসি (এই সাইট)</h3>
+                <p class="text-xs text-slate-500 mt-0.5 mb-2" data-i18n="portfolio.bcscType">ব্যবসায়িক পরামর্শ ও হিসাব সেবা, ঢাকা ও খুলনা</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-3 flex-1" data-i18n="portfolio.bcscDid">বাংলা ও ইংরেজি দুই ভাষার সাইট: সেবার বিবরণ, কাজ ও সনদের নমুনা আর অনলাইনে পরামর্শের অনুরোধ।</p>
+                <a href="https://bcscbd.com/" class="text-sm font-bold text-[#1257d6] hover:underline">bcscbd.com</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- 11. FAQ ACCORDION SECTION -->
       <section id="faq" class="py-20 sm:py-24 px-4 sm:px-6 bg-[#f8fafc] border-t border-slate-200">
         <div class="max-w-[1000px] mx-auto">
@@ -1437,6 +1538,12 @@
                 </a>
               </li>
               <li>
+                <a href="#portfolio" class="footer-nav-link flex items-center gap-1.5 group">
+                  <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
+                  <span data-i18n="nav.portfolio">আমাদের তৈরি সফটওয়্যার ও সাইট</span>
+                </a>
+              </li>
+              <li>
                 <a href="#faq" class="footer-nav-link flex items-center gap-1.5 group">
                   <span class="footer-util-icon text-[10px] opacity-80 group-hover:translate-x-1 transition-transform">▸</span>
                   <span data-i18n="nav.faq">এফএকিউ</span>
@@ -1623,6 +1730,21 @@
           'truemark.erpDesc': 'ব্যবসার হিসাব, বিক্রি, ক্রয় আর মজুদ এক জায়গায় চালানোর সফটওয়্যার। সাথে আছে এগারো ধরনের ব্যবসার নিজের কাজ, ট্রাভেল-হজ, হোটেল ও ম্যানপাওয়ারসহ। এখন চালু আছে, বিস্তারিত তথ্য truemarkerp.com-এ।',
           'truemark.erpSignup': '৩০ দিন ফ্রি শুরু করুন',
           'truemark.erpLink': 'truemarkerp.com দেখুন →',
+          'portfolio.eyebrow': 'ডিজিটাল কাজ',
+          'portfolio.title': 'আমাদের তৈরি সফটওয়্যার ও ওয়েবসাইট',
+          'portfolio.subtitle': 'নিজেদের সফটওয়্যার আর গ্রাহকদের জন্য তৈরি ওয়েবসাইট: বাংলা ও ইংরেজি দুই ভাষায়, মোবাইলেও মানানসই।',
+          'portfolio.erpTag': 'আমাদের নিজস্ব সফটওয়্যার',
+          'portfolio.erpDesc': 'বাংলায় হিসাব, বিক্রি, ক্রয় আর মজুদের সফটওয়্যার, হিসাব রাখা হয় IFRS মেনে। এগারো ধরনের ব্যবসার নিজের কাজ আছে, ট্রাভেল-হজ, হোটেল ও ম্যানপাওয়ারসহ। ইন্টারনেটে চলে, কিছু ইনস্টল করতে হয় না।',
+          'portfolio.maskTitle': 'মাস্ক হজ গ্রুপ',
+          'portfolio.maskType': 'সরকার অনুমোদিত হজ ও ওমরাহ এজেন্সি, ঢাকা',
+          'portfolio.maskDid': 'বাংলা ও ইংরেজি দুই ভাষার সাইট: হজ-ওমরাহ প্যাকেজ, অনলাইনে আবেদন আর হোয়াটসঅ্যাপে যোগাযোগ।',
+          'portfolio.almamunTitle': 'আল মামুন হজ কাফেলা',
+          'portfolio.almamunType': 'হজ ও ওমরাহ কাফেলা, খুলনা',
+          'portfolio.almamunDid': 'বাংলা ও ইংরেজি দুই ভাষার সাইট: হজ-ওমরাহ প্যাকেজ, মক্কার সময়, গ্যালারি আর হোয়াটসঅ্যাপে যোগাযোগ।',
+          'portfolio.bcscTitle': 'বিসিএসসি (এই সাইট)',
+          'portfolio.bcscType': 'ব্যবসায়িক পরামর্শ ও হিসাব সেবা, ঢাকা ও খুলনা',
+          'portfolio.bcscDid': 'বাংলা ও ইংরেজি দুই ভাষার সাইট: সেবার বিবরণ, কাজ ও সনদের নমুনা আর অনলাইনে পরামর্শের অনুরোধ।',
+          'nav.portfolio': 'আমাদের তৈরি সফটওয়্যার ও সাইট',
           'trust.eyebrow': 'পেশাগত সদস্যপদ',
           'trust.title': 'ICAB পেশাগত রেজিস্ট্রেশন: Reg No: 15409 | RAT No: 131',
           'trust.sub': 'BCSC, TrueMark-এর একটি ইউনিট',
@@ -1795,6 +1917,21 @@
           'truemark.erpDesc': 'Software for running your accounts, sales, purchases and stock in one place, with ready workflows for eleven types of business, including travel and Hajj, hotels and manpower recruitment. Now available, with full details on truemarkerp.com.',
           'truemark.erpSignup': 'Start free for 30 days',
           'truemark.erpLink': 'Visit truemarkerp.com →',
+          'portfolio.eyebrow': 'DIGITAL WORK',
+          'portfolio.title': 'Software and Websites We Built',
+          'portfolio.subtitle': 'Our own software and websites built for clients: in Bangla and English, and easy to use on a phone.',
+          'portfolio.erpTag': 'OUR OWN SOFTWARE',
+          'portfolio.erpDesc': 'Accounts, sales, purchases and stock software in Bangla, with books kept to IFRS. Ready workflows for eleven types of business, including travel and Hajj, hotels and manpower recruitment. Runs online, nothing to install.',
+          'portfolio.maskTitle': 'MASK Hajj Group',
+          'portfolio.maskType': 'Government-approved Hajj and Umrah agency, Dhaka',
+          'portfolio.maskDid': 'Bangla and English site: Hajj and Umrah packages, online application and WhatsApp contact.',
+          'portfolio.almamunTitle': 'Al Mamun Hajj Kafela',
+          'portfolio.almamunType': 'Hajj and Umrah group, Khulna',
+          'portfolio.almamunDid': 'Bangla and English site: Hajj and Umrah packages, Makkah time, gallery and WhatsApp contact.',
+          'portfolio.bcscTitle': 'BCSC (this site)',
+          'portfolio.bcscType': 'Business consulting and accounting services, Dhaka and Khulna',
+          'portfolio.bcscDid': 'Bangla and English site: service details, work and certificate samples, and online consultation requests.',
+          'nav.portfolio': 'Our software and sites',
           'trust.eyebrow': 'PROFESSIONAL MEMBERSHIP',
           'trust.title': 'ICAB Registration: Reg No: 15409 | RAT No: 131',
           'trust.sub': 'BCSC is a unit of TrueMark',
@@ -1948,7 +2085,7 @@
         { icon: 'gem', bn: { t: 'সম্পদ মূল্যায়ন', d: 'স্থাবর-অস্থাবর সম্পত্তির পেশাদার ভ্যালুয়েশন রিপোর্ট। পুনর্গঠন ও ব্যাংক লোনের জন্য সম্পদ মূল্যায়ন।' }, en: { t: 'Asset Valuation', d: 'Professional valuation report for tangible and intangible assets. Corporate restructuring support.' } },
         { url: '/services/project-profile/', icon: 'folder-kanban', bn: { t: 'প্রকল্প প্রোফাইল', d: 'ব্যাংক লোন ও বিনিয়োগের জন্য সম্ভাব্যতা যাচাই ও রিপোর্ট। বিস্তারিত আর্থিক প্রক্ষেপণ ফাইল তৈরি।' }, en: { t: 'Project Feasibility Profile', d: 'Feasibility studies and project reports for bank loans. Detailed financial projection files.' } },
         { icon: 'laptop', bn: { t: 'কুইকবুকস ও ট্যালি', d: 'ক্লাউড অ্যাকাউন্টিং সফটওয়্যার সেটআপ ও অটোমেশন। ক্লাউড মাইগ্রেশন ও অ্যাকাউন্টিং স্টাফ ট্রেনিং।' }, en: { t: 'QuickBooks & Tally Setup', d: 'Cloud accounting software setup and automation. Data migration and staff hands-on training.' } },
-        { icon: 'globe', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
+        { icon: 'globe', anchor: '#portfolio', bn: { t: 'ওয়েবসাইট ও ডিজিটাল সলিউশন', d: 'করপোরেট পোর্টাল ও ডিজিটাল উপস্থিতি। আধুনিক রেসপনসিভ ওয়েবসাইট তৈরি ও ব্র্যান্ডিং।' }, en: { t: 'Website & Digital Solutions', d: 'Corporate web portals and digital presence. Modern responsive website design & branding.' } },
         { icon: 'users', bn: { t: 'পেরোল সহায়তা', d: 'কর্মকর্তা-কর্মচারীদের বেতন, ট্যাক্স কর্তন ও কমপ্লায়েন্স। পে-স্লিপ তৈরি ও টিডিএস রিটার্ন প্রস্তুতি।' }, en: { t: 'Payroll Support & Compliance', d: 'Employee salary management, tax deductions and compliance. Pay-slips and TDS return filing.' } },
         { icon: 'lightbulb', bn: { t: 'ব্যবসায়িক পরামর্শ', d: 'নতুন স্টার্টআপ গঠন ও কৌশলগত ব্যবসায়িক পরিকল্পনা। আইনি কাঠামো নির্ধারণ ও খরচ সাশ্রয়।' }, en: { t: 'Business Advisory & Startups', d: 'New startup formation and strategic business planning. Legal structuring and cost optimization.' } },
         { icon: 'graduation-cap', bn: { t: 'প্রশিক্ষণ ও কর্মশালা', d: 'ভ্যাট, ট্যাক্স ও এআই টুলস বিষয়ক ব্যবহারিক প্রশিক্ষণ। অ্যাকাউন্টিং সফটওয়্যার ও দক্ষতা বৃদ্ধি।' }, en: { t: 'Training & Workshops', d: 'Practical training on VAT, Income Tax and AI tools. Accounting software skill building.' } },
@@ -2103,7 +2240,7 @@
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               ${s[currentLang].d}
             </p>
-            ${s.url ? `<a href="${currentLang === 'en' ? '/en' + s.url : s.url}" class="inline-block mt-3 py-1 text-sm font-bold text-[#1257d6] hover:underline">${currentLang === 'en' ? 'View details →' : 'বিস্তারিত দেখুন →'}</a>` : ''}
+            ${s.url ? `<a href="${currentLang === 'en' ? '/en' + s.url : s.url}" class="inline-block mt-3 py-1 text-sm font-bold text-[#1257d6] hover:underline">${currentLang === 'en' ? 'View details →' : 'বিস্তারিত দেখুন →'}</a>` : s.anchor ? `<a href="${s.anchor}" class="inline-block mt-3 py-1 text-sm font-bold text-[#1257d6] hover:underline">${currentLang === 'en' ? 'See our work →' : 'আমাদের কাজ দেখুন →'}</a>` : ''}
           </div>
         `).join('');
 
