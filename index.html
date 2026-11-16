@@ -97,6 +97,25 @@
           padding-bottom: 1rem !important;
         }
       }
+      /* Work samples grid: small equal cards so all samples show at once */
+      .samples-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      @media (min-width: 640px) {
+        .samples-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      }
+      @media (min-width: 1024px) {
+        .samples-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      }
+      @media (min-width: 1280px) {
+        .samples-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      }
+      .samples-grid > a { padding: 10px; border-radius: 10px; }
+      .samples-grid img { margin-bottom: 10px; }
+      .samples-grid h3 { font-size: 13px; line-height: 1.35; }
+      .samples-grid p { font-size: 11px; line-height: 1.4; }
       /* Work samples: same-size boxes for documents of different shapes, top-aligned */
       .sample-thumb {
         aspect-ratio: 3 / 4;
@@ -918,8 +937,9 @@
             </p>
           </div>
 
-          <!-- Thumbnails are 600px WebP; each card opens the 1200px version (TIN and turnover-tax samples open the original JPEG) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Thumbnails are 600px WebP; each card opens the 1200px version (TIN and turnover-tax samples open the original JPEG).
+               Small equal cards: 2 per row on phones, 3 on tablets, 4 on laptops, 5 on wide screens (.samples-grid in the <style> block) -->
+          <div class="samples-grid">
             <!-- ?v=2: the logo was blurred after the first upload; the new query makes caches fetch the new image -->
             <a href="images/sample-company-incorporation.webp?v=2" target="_blank" rel="noopener" class="block bg-white border border-slate-200 rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
               <img src="images/sample-company-incorporation-thumb.webp?v=2" width="600" height="799" alt="Certificate of incorporation sample with client details hidden" loading="lazy" decoding="async" class="sample-thumb w-full rounded-lg border border-slate-200 mb-4" />
