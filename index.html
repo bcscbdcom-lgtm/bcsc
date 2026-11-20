@@ -121,6 +121,7 @@
       .erp-feats { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
       @media (min-width: 640px) { .erp-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (min-width: 1024px) { .erp-feats-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+      @media (min-width: 768px) { .erp-feats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
       .erp-feat { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px 16px; }
       .erp-feat h4 { color: #ffffff; font-weight: 700; font-size: 15px; line-height: 1.35; margin: 0 0 4px; }
       .erp-feat p { color: #cbd5e1; font-size: 13px; line-height: 1.6; margin: 0; }
@@ -864,6 +865,22 @@
               <li data-i18n="erpMore.k10">আবাসিক হোটেল</li>
               <li data-i18n="erpMore.k11">ম্যানপাওয়ার (বিদেশে কর্মী পাঠানো)</li>
             </ul>
+
+            <p class="erp-sub" data-i18n="erpMore.specialTitle">কয়েক ধরনের ব্যবসার বিশেষ কাজ</p>
+            <div class="erp-feats erp-feats-3">
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.k6">ডায়াগনস্টিক সেন্টার</h4>
+                <p data-i18n="erpMore.diagText">ল্যাব মেশিনের ফাইল থেকে ফল নিজে থেকে বসে। দেখে রিপোর্ট ছাড়েন ল্যাবের মানুষ, মেশিন নিজে নয়।</p>
+              </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.k7">হাসপাতাল ও ক্লিনিক</h4>
+                <p data-i18n="erpMore.hospText">প্রেসক্রিপশন আর ছাড়পত্রের সারাংশ। রোগীর সম্মতি নিয়ে লেখা হয়; ডাক্তার দেখেন নিজের রোগী, নার্স নিজের ওয়ার্ডের।</p>
+              </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.k8">শিক্ষা প্রতিষ্ঠান</h4>
+                <p data-i18n="erpMore.eduText">রোজের হাজিরা, পরীক্ষার নম্বর, জিপিএ আর মার্কশিট।</p>
+              </div>
+            </div>
 
             <p class="erp-sub" data-i18n="erpMore.moreTitle">আরও যা আছে</p>
             <div class="erp-feats">
@@ -1825,6 +1842,10 @@
           'erpMore.k9': 'ট্রাভেল ও হজ-ওমরাহ',
           'erpMore.k10': 'আবাসিক হোটেল',
           'erpMore.k11': 'ম্যানপাওয়ার (বিদেশে কর্মী পাঠানো)',
+          'erpMore.specialTitle': 'কয়েক ধরনের ব্যবসার বিশেষ কাজ',
+          'erpMore.diagText': 'ল্যাব মেশিনের ফাইল থেকে ফল নিজে থেকে বসে। দেখে রিপোর্ট ছাড়েন ল্যাবের মানুষ, মেশিন নিজে নয়।',
+          'erpMore.hospText': 'প্রেসক্রিপশন আর ছাড়পত্রের সারাংশ। রোগীর সম্মতি নিয়ে লেখা হয়; ডাক্তার দেখেন নিজের রোগী, নার্স নিজের ওয়ার্ডের।',
+          'erpMore.eduText': 'রোজের হাজিরা, পরীক্ষার নম্বর, জিপিএ আর মার্কশিট।',
           'erpMore.moreTitle': 'আরও যা আছে',
           'erpMore.tradeTitle': 'আমদানি-রপ্তানি',
           'erpMore.tradeText': 'এলসি ফাইল, এলসির খরচ আর শুল্ক মিলিয়ে মালের আসল দাম, রপ্তানির টাকা আদায়। সব হিসাব টাকায়।',
@@ -2042,6 +2063,10 @@
           'erpMore.k9': 'Travel, Hajj and Umrah',
           'erpMore.k10': 'Residential hotel',
           'erpMore.k11': 'Manpower (overseas recruitment)',
+          'erpMore.specialTitle': 'Special tools for some businesses',
+          'erpMore.diagText': 'Results fill in from the lab machine\'s file. A lab person checks and releases the report, not the machine.',
+          'erpMore.hospText': 'Prescriptions and discharge summaries. Written with the patient\'s consent; doctors see their own patients, nurses their own ward.',
+          'erpMore.eduText': 'Daily attendance, exam marks, GPA and mark sheets.',
           'erpMore.moreTitle': 'Also included',
           'erpMore.tradeTitle': 'Import and export',
           'erpMore.tradeText': 'LC files, the true cost of goods with LC charges and duty, and export receipts. All accounts kept in taka.',
