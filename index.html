@@ -115,6 +115,18 @@
       .samples-grid > a, .certs-grid > div { padding: 10px; border-radius: 10px; }
       .samples-grid img { margin-bottom: 10px; }
       .certs-grid > div > a, .certs-grid > div > div { margin-bottom: 10px; }
+      /* TrueMark ERP in more detail (#truemark): feature boxes and business-type chips */
+      #truemark-erp { margin-top: 24px; }
+      .erp-start { margin-top: 24px; }
+      .erp-feats { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+      @media (min-width: 640px) { .erp-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (min-width: 1024px) { .erp-feats-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+      .erp-feat { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px 16px; }
+      .erp-feat h4 { color: #ffffff; font-weight: 700; font-size: 15px; line-height: 1.35; margin: 0 0 4px; }
+      .erp-feat p { color: #cbd5e1; font-size: 13px; line-height: 1.6; margin: 0; }
+      .erp-sub { color: #38bdf8; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 24px 0 10px; }
+      .erp-kinds { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+      .erp-kinds li { border: 1px solid rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.08); color: #e0f2fe; border-radius: 999px; padding: 4px 12px; font-size: 13px; line-height: 1.5; }
       /* Our software and websites: one wide TrueMark ERP card, then site cards (1/2/3 per row) */
       .work-featured { display: grid; }
       .work-featured-img { border-bottom: 1px solid #e2e8f0; }
@@ -808,13 +820,67 @@
             </div>
             <div class="bg-white/[0.05] border border-white/10 rounded-xl p-6 flex flex-col">
               <h3 class="text-xl font-bold text-white mb-2 font-sans">TrueMark ERP</h3>
-              <p class="text-sm text-slate-300 leading-relaxed mb-5 flex-1" data-i18n="truemark.erpDesc">
+              <p class="text-sm text-slate-300 leading-relaxed flex-1" data-i18n="truemark.erpDesc">
                 ব্যবসার হিসাব, বিক্রি, ক্রয় আর মজুদ এক জায়গায় চালানোর সফটওয়্যার। সাথে আছে এগারো ধরনের ব্যবসার নিজের কাজ, ট্রাভেল-হজ, হোটেল ও ম্যানপাওয়ারসহ। এখন চালু আছে, বিস্তারিত তথ্য truemarkerp.com-এ।
               </p>
-              <div class="flex flex-wrap items-center gap-4">
-                <a href="https://app.truemarkerp.com/signup" class="inline-block bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] rounded-lg px-4 py-2.5 text-sm font-bold transition-colors" data-i18n="truemark.erpSignup">৩০ দিন ফ্রি শুরু করুন</a>
-                <a href="https://truemarkerp.com/" class="text-sm font-bold text-sky-300 hover:text-sky-200" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
+            </div>
+          </div>
+
+          <!-- TrueMark ERP in more detail: only features that are live in the software -->
+          <div id="truemark-erp" class="bg-white/[0.05] border border-white/10 rounded-xl p-6 sm:p-8">
+            <h3 class="text-xl font-bold text-white mb-2 font-sans" data-i18n="erpMore.title">TrueMark ERP-এ যা যা পাবেন</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-5" data-i18n="erpMore.intro">বাংলা আর ইংরেজিতে চলে। ইন্টারনেটে খুলে কাজ করবেন, কিছু ইনস্টল করতে হয় না। হিসাব রাখা হয় IFRS মেনে।</p>
+
+            <div class="erp-feats erp-feats-4">
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.accTitle">হিসাব</h4>
+                <p data-i18n="erpMore.accText">ভাউচার দিলেই খতিয়ান, লাভ-ক্ষতি আর আর্থিক অবস্থার বিবরণী নিজে থেকে তৈরি হয়।</p>
               </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.salesTitle">বিক্রি</h4>
+                <p data-i18n="erpMore.salesText">বিল, ডেলিভারি, কোন গ্রাহকের কাছে কত বাকি আর টাকা আদায়।</p>
+              </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.buyTitle">ক্রয়</h4>
+                <p data-i18n="erpMore.buyText">সরবরাহকারীর বিল, টাকা পরিশোধ আর কার কাছে কত দেনা।</p>
+              </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.stockTitle">মজুদ</h4>
+                <p data-i18n="erpMore.stockText">কোন মাল কত আছে, কত ঢুকল আর কত বের হলো, মালের দাম কত।</p>
+              </div>
+            </div>
+
+            <p class="erp-sub" data-i18n="erpMore.kindsTitle">এগারো ধরনের ব্যবসার নিজের কাজ</p>
+            <ul class="erp-kinds">
+              <li data-i18n="erpMore.k1">ট্রেডার (কেনা-বেচা)</li>
+              <li data-i18n="erpMore.k2">ডিলার</li>
+              <li data-i18n="erpMore.k3">ডিপো</li>
+              <li data-i18n="erpMore.k4">সেবা প্রতিষ্ঠান</li>
+              <li data-i18n="erpMore.k5">জমি-ফ্ল্যাট ডেভেলপার</li>
+              <li data-i18n="erpMore.k6">ডায়াগনস্টিক সেন্টার</li>
+              <li data-i18n="erpMore.k7">হাসপাতাল ও ক্লিনিক</li>
+              <li data-i18n="erpMore.k8">শিক্ষা প্রতিষ্ঠান</li>
+              <li data-i18n="erpMore.k9">ট্রাভেল ও হজ-ওমরাহ</li>
+              <li data-i18n="erpMore.k10">আবাসিক হোটেল</li>
+              <li data-i18n="erpMore.k11">ম্যানপাওয়ার (বিদেশে কর্মী পাঠানো)</li>
+            </ul>
+
+            <p class="erp-sub" data-i18n="erpMore.moreTitle">আরও যা আছে</p>
+            <div class="erp-feats">
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.tradeTitle">আমদানি-রপ্তানি</h4>
+                <p data-i18n="erpMore.tradeText">এলসি ফাইল, এলসির খরচ আর শুল্ক মিলিয়ে মালের আসল দাম, রপ্তানির টাকা আদায়। সব হিসাব টাকায়।</p>
+              </div>
+              <div class="erp-feat">
+                <h4 data-i18n="erpMore.msgTitle">এসএমএস ও ইমেইলে তাগাদা</h4>
+                <p data-i18n="erpMore.msgText">বাকি থাকা গ্রাহককে তাগাদা, আর বিল ও মাসের হিসাব ইমেইলে পাঠানো যায়। এসএমএস যায় আপনার প্রতিষ্ঠানের নিজের এসএমএস অ্যাকাউন্ট দিয়ে।</p>
+              </div>
+            </div>
+
+            <p class="erp-start text-sm text-slate-300 leading-relaxed mb-4" data-i18n="erpMore.startText">প্রতিষ্ঠানের নাম, মূল ব্যবসার ধরন, ইমেইল আর পাসওয়ার্ড দিলেই শুরু। ইমেইলে আসা লিংক চাপলে কোম্পানি খুলে যায়, ৩০ দিন ফ্রি।</p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="https://app.truemarkerp.com/signup" class="inline-block bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#0a1730] rounded-lg px-4 py-2.5 text-sm font-bold transition-colors" data-i18n="truemark.erpSignup">৩০ দিন ফ্রি শুরু করুন</a>
+              <a href="https://truemarkerp.com/" class="text-sm font-bold text-sky-300 hover:text-sky-200" data-i18n="truemark.erpLink">truemarkerp.com দেখুন →</a>
             </div>
           </div>
         </div>
@@ -1737,6 +1803,34 @@
           'truemark.erpDesc': 'ব্যবসার হিসাব, বিক্রি, ক্রয় আর মজুদ এক জায়গায় চালানোর সফটওয়্যার। সাথে আছে এগারো ধরনের ব্যবসার নিজের কাজ, ট্রাভেল-হজ, হোটেল ও ম্যানপাওয়ারসহ। এখন চালু আছে, বিস্তারিত তথ্য truemarkerp.com-এ।',
           'truemark.erpSignup': '৩০ দিন ফ্রি শুরু করুন',
           'truemark.erpLink': 'truemarkerp.com দেখুন →',
+          'erpMore.title': 'TrueMark ERP-এ যা যা পাবেন',
+          'erpMore.intro': 'বাংলা আর ইংরেজিতে চলে। ইন্টারনেটে খুলে কাজ করবেন, কিছু ইনস্টল করতে হয় না। হিসাব রাখা হয় IFRS মেনে।',
+          'erpMore.accTitle': 'হিসাব',
+          'erpMore.accText': 'ভাউচার দিলেই খতিয়ান, লাভ-ক্ষতি আর আর্থিক অবস্থার বিবরণী নিজে থেকে তৈরি হয়।',
+          'erpMore.salesTitle': 'বিক্রি',
+          'erpMore.salesText': 'বিল, ডেলিভারি, কোন গ্রাহকের কাছে কত বাকি আর টাকা আদায়।',
+          'erpMore.buyTitle': 'ক্রয়',
+          'erpMore.buyText': 'সরবরাহকারীর বিল, টাকা পরিশোধ আর কার কাছে কত দেনা।',
+          'erpMore.stockTitle': 'মজুদ',
+          'erpMore.stockText': 'কোন মাল কত আছে, কত ঢুকল আর কত বের হলো, মালের দাম কত।',
+          'erpMore.kindsTitle': 'এগারো ধরনের ব্যবসার নিজের কাজ',
+          'erpMore.k1': 'ট্রেডার (কেনা-বেচা)',
+          'erpMore.k2': 'ডিলার',
+          'erpMore.k3': 'ডিপো',
+          'erpMore.k4': 'সেবা প্রতিষ্ঠান',
+          'erpMore.k5': 'জমি-ফ্ল্যাট ডেভেলপার',
+          'erpMore.k6': 'ডায়াগনস্টিক সেন্টার',
+          'erpMore.k7': 'হাসপাতাল ও ক্লিনিক',
+          'erpMore.k8': 'শিক্ষা প্রতিষ্ঠান',
+          'erpMore.k9': 'ট্রাভেল ও হজ-ওমরাহ',
+          'erpMore.k10': 'আবাসিক হোটেল',
+          'erpMore.k11': 'ম্যানপাওয়ার (বিদেশে কর্মী পাঠানো)',
+          'erpMore.moreTitle': 'আরও যা আছে',
+          'erpMore.tradeTitle': 'আমদানি-রপ্তানি',
+          'erpMore.tradeText': 'এলসি ফাইল, এলসির খরচ আর শুল্ক মিলিয়ে মালের আসল দাম, রপ্তানির টাকা আদায়। সব হিসাব টাকায়।',
+          'erpMore.msgTitle': 'এসএমএস ও ইমেইলে তাগাদা',
+          'erpMore.msgText': 'বাকি থাকা গ্রাহককে তাগাদা, আর বিল ও মাসের হিসাব ইমেইলে পাঠানো যায়। এসএমএস যায় আপনার প্রতিষ্ঠানের নিজের এসএমএস অ্যাকাউন্ট দিয়ে।',
+          'erpMore.startText': 'প্রতিষ্ঠানের নাম, মূল ব্যবসার ধরন, ইমেইল আর পাসওয়ার্ড দিলেই শুরু। ইমেইলে আসা লিংক চাপলে কোম্পানি খুলে যায়, ৩০ দিন ফ্রি।',
           'portfolio.eyebrow': 'ডিজিটাল কাজ',
           'portfolio.title': 'আমাদের তৈরি সফটওয়্যার ও ওয়েবসাইট',
           'portfolio.subtitle': 'নিজেদের সফটওয়্যার আর গ্রাহকদের জন্য তৈরি ওয়েবসাইট: বাংলা ও ইংরেজি দুই ভাষায়, মোবাইলেও মানানসই।',
@@ -1926,6 +2020,34 @@
           'truemark.erpDesc': 'Software for running your accounts, sales, purchases and stock in one place, with ready workflows for eleven types of business, including travel and Hajj, hotels and manpower recruitment. Now available, with full details on truemarkerp.com.',
           'truemark.erpSignup': 'Start free for 30 days',
           'truemark.erpLink': 'Visit truemarkerp.com →',
+          'erpMore.title': 'What you get in TrueMark ERP',
+          'erpMore.intro': 'Works in Bangla and English. Open it on the internet and start, nothing to install. Books are kept to IFRS.',
+          'erpMore.accTitle': 'Accounting',
+          'erpMore.accText': 'Enter a voucher and the ledgers, profit and loss and statement of financial position are made for you.',
+          'erpMore.salesTitle': 'Sales',
+          'erpMore.salesText': 'Bills, deliveries, how much each customer owes, and collections.',
+          'erpMore.buyTitle': 'Purchases',
+          'erpMore.buyText': 'Supplier bills, payments, and how much you owe to whom.',
+          'erpMore.stockTitle': 'Stock',
+          'erpMore.stockText': 'How much of each item you have, what came in and went out, and what it cost.',
+          'erpMore.kindsTitle': 'Ready workflows for eleven types of business',
+          'erpMore.k1': 'Trader (buying and selling)',
+          'erpMore.k2': 'Dealer',
+          'erpMore.k3': 'Depot',
+          'erpMore.k4': 'Service business',
+          'erpMore.k5': 'Land and flat developer',
+          'erpMore.k6': 'Diagnostic centre',
+          'erpMore.k7': 'Hospital and clinic',
+          'erpMore.k8': 'School and education',
+          'erpMore.k9': 'Travel, Hajj and Umrah',
+          'erpMore.k10': 'Residential hotel',
+          'erpMore.k11': 'Manpower (overseas recruitment)',
+          'erpMore.moreTitle': 'Also included',
+          'erpMore.tradeTitle': 'Import and export',
+          'erpMore.tradeText': 'LC files, the true cost of goods with LC charges and duty, and export receipts. All accounts kept in taka.',
+          'erpMore.msgTitle': 'SMS and e-mail reminders',
+          'erpMore.msgText': 'Send reminders to customers who owe you, and send bills and monthly statements by e-mail. SMS goes through your own SMS account.',
+          'erpMore.startText': 'Just enter your business name, your main type of business, e-mail and a password. Click the link in the e-mail and your company opens, free for 30 days.',
           'portfolio.eyebrow': 'DIGITAL WORK',
           'portfolio.title': 'Software and Websites We Built',
           'portfolio.subtitle': 'Our own software and websites built for clients: in Bangla and English, and easy to use on a phone.',
